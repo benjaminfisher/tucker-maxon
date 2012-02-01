@@ -164,6 +164,7 @@ function restore_bak($id) {
 		copy($tmpfile, $newfile);
 		unlink($tmpfile);
 	}
+	generate_sitemap();
 } 
 
 /**
@@ -471,9 +472,9 @@ function valid_xml($file) {
 	$xmlv = getXML($file);
 	global $i18n;
 	if ($xmlv) {
-		return '<span class="OKmsg" >XML Valid - '.i18n_r('OK').'</span>';
+		return '<span class="OKmsg" >'.i18n_r('XML_VALID').' - '.i18n_r('OK').'</span>';
 	} else {
-		return '<span class="ERRmsg" >XML Invalid - '.i18n_r('ERROR').'!</span>';
+		return '<span class="ERRmsg" >'.i18n_r('XML_INVALID').' - '.i18n_r('ERROR').'!</span>';
 	}
 }
 
@@ -564,8 +565,7 @@ function passhash($p) {
 /**
  * Get Available Pages
  *
- * Lists all available pages for plugin use
- * same exact code as menu_data();
+ * Lists all available pages for plugin/api use
  *
  * @since 2.0
  * @uses GSDATAPAGESPATH
@@ -573,11 +573,9 @@ function passhash($p) {
  * @uses getXML
  * @uses subval_sort
  *
- * @param bool $xml Optional, default is false. 
- *				True will return value in XML format. False will return an array
  * @return array|string Type 'string' in this case will be XML 
  */
-function get_available_pages($id = null,$xml=false) {
+function get_available_pages() {
     $menu_extract = '';
     
     $path = GSDATAPAGESPATH;
@@ -599,9 +597,9 @@ function get_available_pages($id = null,$xml=false) {
                 if ($data->private != 'Y') {
                     $pagesArray[$count]['menuStatus'] = $data->menuStatus;
                     $pagesArray[$count]['menuOrder'] = $data->menuOrder;
-                    $pagesArray[$count]['menu'] = $data->menu;
+                    $pagesArray[$count]['menu'] = strip_decode($data->menu);
                     $pagesArray[$count]['parent'] = $data->parent;
-                    $pagesArray[$count]['title'] = $data->title;
+                    $pagesArray[$count]['title'] = strip_decode($data->title);
                     $pagesArray[$count]['url'] = $data->url;
                     $pagesArray[$count]['private'] = $data->private;
                     $pagesArray[$count]['pubDate'] = $data->pubDate;
@@ -611,61 +609,26 @@ function get_available_pages($id = null,$xml=false) {
         }
     }
     
-    $pagesSorted = subval_sort($pagesArray,'menuOrder');
+    $pagesSorted = subval_sort($pagesArray,'title');
     if (count($pagesSorted) != 0) { 
       $count = 0;
-      if (!$xml){
-        foreach ($pagesSorted as $page) {
-          $text = (string)$page['menu'];
-          $pri = (string)$page['menuOrder'];
-          $parent = (string)$page['parent'];
-          $title = (string)$page['title'];
-          $slug = (string)$page['url'];
-          $menuStatus = (string)$page['menuStatus'];
-          $private = (string)$page['private'];
-					$pubDate = (string)$page['pubDate'];
-          
-          $url = find_url($slug,$parent);
-          
-          $specific = array("slug"=>$slug,"url"=>$url,"parent_slug"=>$parent,"title"=>$title,"menu_priority"=>$pri,"menu_text"=>$text,"menu_status"=>$menuStatus,"private"=>$private,"pub_date"=>$pubDate);
-          
-          if ($id == $slug) { 
-              return $specific; 
-              exit; 
-          } else {
-              $menu_extract[] = $specific;
-          }
-        } 
-        return $menu_extract;
-      } else {
-        $xml = '<?xml version="1.0" encoding="UTF-8"?><channel>';    
-	        foreach ($pagesSorted as $page) {
-            $text = $page['menu'];
-            $pri = $page['menuOrder'];
-            $parent = $page['parent'];
-            $title = $page['title'];
-            $slug = $page['url'];
-            $pubDate = $page['pubDate'];
-            $menuStatus = $page['menuStatus'];
-            $private = $page['private'];
-           	
-            $url = find_url($slug,$parent);
-            
-            $xml.="<item>";
-            $xml.="<slug><![CDATA[".$slug."]]></slug>";
-            $xml.="<pubDate><![CDATA[".$pubDate."]]></pubDate>";
-            $xml.="<url><![CDATA[".$url."]]></url>";
-            $xml.="<parent><![CDATA[".$parent."]]></parent>";
-            $xml.="<title><![CDATA[".$title."]]></title>";
-            $xml.="<menuOrder><![CDATA[".$pri."]]></menuOrder>";
-            $xml.="<menu><![CDATA[".$text."]]></menu>";
-            $xml.="<menuStatus><![CDATA[".$menuStatus."]]></menuStatus>";
-            $xml.="<private><![CDATA[".$private."]]></private>";
-            $xml.="</item>";
-	        }
-	        $xml.="</channel>";
-	        return $xml;
-        }
+      foreach ($pagesSorted as $page) {
+        $text = (string)$page['menu'];
+        $pri = (string)$page['menuOrder'];
+        $parent = (string)$page['parent'];
+        $title = (string)$page['title'];
+        $slug = (string)$page['url'];
+        $menuStatus = (string)$page['menuStatus'];
+        $private = (string)$page['private'];
+				$pubDate = (string)$page['pubDate'];
+        
+        $url = find_url($slug,$parent);
+        
+        $specific = array("slug"=>$slug,"url"=>$url,"parent_slug"=>$parent,"title"=>$title,"menu_priority"=>$pri,"menu_text"=>$text,"menu_status"=>$menuStatus,"private"=>$private,"pub_date"=>$pubDate);
+        
+        $extract[] = $specific;
+      } 
+      return $extract;
     }
 }
 
@@ -679,8 +642,13 @@ function get_available_pages($id = null,$xml=false) {
  * @uses XMLsave
  *
  */
-function updateSlugs($existingUrl){
-      global $url;
+function updateSlugs($existingUrl, $newurl=null){
+      
+      if (!$newurl){
+      	global $url;
+      } else {
+      	$url = $newurl;
+      }
 
       $path = GSDATAPAGESPATH;
       $dir_handle = @opendir($path) or die("Unable to open $path");
@@ -891,6 +859,7 @@ function ckeditor_add_page_link(){
  */
 function get_pages_menu($parent, $menu,$level) {
 	global $pagesSorted;
+	
 	$items=array();
 	foreach ($pagesSorted as $page) {
 		if ($page['parent']==$parent){
@@ -916,12 +885,12 @@ function get_pages_menu($parent, $menu,$level) {
 			if ($page['private'] != '' ) { $page['private'] = ' <sup>['.i18n_r('PRIVATE_SUBTITLE').']</sup>'; } else { $page['private'] = ''; }
 			if ($page['url'] == 'index' ) { $homepage = ' <sup>['.i18n_r('HOMEPAGE_SUBTITLE').']</sup>'; } else { $homepage = ''; }
 			$menu .= '<td class="pagetitle">'. $dash .'<a title="'.i18n_r('EDITPAGE_TITLE').': '. cl($page['title']) .'" href="edit.php?id='. $page['url'] .'" >'. cl($page['title']) .'</a><span class="showstatus toggle" >'. $homepage . $page['menuStatus'] . $page['private'] .'</span></td>';
-			$menu .= '<td style="width:80px;text-align:right;" ><span>'. shtDate($page['date']) .'</span></td>';
+			$menu .= '<td style="width:80px;text-align:right;" ><span>'. shtDate($page['pubDate']) .'</span></td>';
 			$menu .= '<td class="secondarylink" >';
 			$menu .= '<a title="'.i18n_r('VIEWPAGE_TITLE').': '. cl($page['title']) .'" target="_blank" href="'. find_url($page['url'],$page['parent']) .'">#</a>';
 			$menu .= '</td>';
 			if ($page['url'] != 'index' ) {
-				$menu .= '<td class="delete" ><a class="delconfirm" href="deletefile.php?id='. $page['url'] .'&nonce='.get_nonce("delete", "deletefile.php").'" title="'.i18n_r('DELETEPAGE_TITLE').': '. cl($page['title']) .'" >X</a></td>';
+				$menu .= '<td class="delete" ><a class="delconfirm" href="deletefile.php?id='. $page['url'] .'&amp;nonce='.get_nonce("delete", "deletefile.php").'" title="'.i18n_r('DELETEPAGE_TITLE').': '. cl($page['title']) .'" >&times;</a></td>';
 			} else {
 				$menu .= '<td class="delete" ></td>';
 			}
@@ -980,6 +949,201 @@ function get_pages_menu_dropdown($parentitem, $menu,$level) {
 	return $menu;
 }
 
+/**
+ * Get API Details
+ *
+ * Returns the contents of an API url request
+ *
+ * This is needed because of the "XmlHttpRequest error: Origin null is not allowed by Access-Control-Allow-Origin"
+ * error that javascript gets when trying to access outside domains sometimes. 
+ *
+ * @since 3.1
+ * @uses GSADMININCPATH
+ * @uses GSCACHEPATH
+ *
+ * @param string $type, default is 'core'
+ * @param array $args, default is empty
+ * 
+ * @returns string
+ */
+function get_api_details($type='core', $args=null) {
+	include(GSADMININCPATH.'configuration.php');
+	
+	# core api details
+	if ($type=='core') {
+		$fetch_this_api = $api_url .'?v='.GSVERSION;
+	}
+	
+	# plugin api details. requires a passed plugin id
+	if ($type=='plugin' && $args) {
+		$apiurl = 'http://get-simple.info/api/extend/?file=';
+		$fetch_this_api = $apiurl.$args;
+	}
+	
+	# custom api details. requires a passed url
+	if ($type=='custom' && $args) {
+		$fetch_this_api = $args;
+	}
+		
+	# check to see if cache is available for this
+	$cachefile = md5($fetch_this_api).'.txt';
 
+	if (file_exists(GSCACHEPATH.$cachefile) && time() - 40000 < filemtime(GSCACHEPATH.$cachefile)) {
+		# grab the api request from the cache
+		
+		$data = file_get_contents(GSCACHEPATH.$cachefile);
+	} else {	
+		# make the api call
+		if (function_exists('curl_exec')) {
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_TIMEOUT, 2);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_URL, $fetch_this_api);
+			$data = curl_exec($ch);
+			curl_close($ch);
+		} else {
+			$data = file_get_contents($fetch_this_api);
+		}
+		file_put_contents(GSCACHEPATH.$cachefile, $data);
+  	chmod(GSCACHEPATH.$cachefile, 0644);
+	}
+	return $data;
+}
+
+/**
+ * Get GetSimple Version
+ *
+ * Returns the version of this GetSimple installation
+ *
+ * @since 3.1
+ * @uses GSADMININCPATH
+ * @uses GSVERSION
+ * 
+ * @returns string
+ */
+function get_gs_version() {
+	include(GSADMININCPATH.'configuration.php');
+	return GSVERSION;
+}
+
+
+/**
+ * Creates Sitemap
+ *
+ * Creates sitemap.xml in the site's root.
+ */
+function generate_sitemap() {
+	
+	// Variable settings
+	global $SITEURL;
+	$path = GSDATAPAGESPATH;
+	$count="0";
+	
+	$filenames = getFiles($path);
+	
+	if (count($filenames) != 0)	{ 
+		foreach ($filenames as $file)	{
+			if ( isFile($file, $path, 'xml')) {
+				$data = getXML($path . $file);
+				if ($data->url != '404') {
+					$status = $data->menuStatus;
+					$pagesArray[$count]['url'] = $data->url;
+					$pagesArray[$count]['parent'] = $data->parent;
+					$pagesArray[$count]['date'] = $data->pubDate;
+					$pagesArray[$count]['private'] = $data->private;
+					$pagesArray[$count]['menuStatus'] = $data->menuStatus;
+					$count++;
+				}
+			}
+		}
+	}
+	
+	$pagesSorted = subval_sort($pagesArray,'menuStatus');
+	
+	if (count($pagesSorted) != 0)
+	{ 
+		$xml = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8"?><urlset></urlset>');
+		$xml->addAttribute('xsi:schemaLocation', 'http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd', 'http://www.w3.org/2001/XMLSchema-instance');
+		$xml->addAttribute('xmlns', 'http://www.sitemaps.org/schemas/sitemap/0.9');
+		
+		foreach ($pagesSorted as $page)
+		{	
+			if ($page['private'] != 'Y')
+			{
+				// set <loc>
+				$pageLoc = find_url($page['url'], $page['parent']);
+				
+				// set <lastmod>
+				$tmpDate = date("Y-m-d H:i:s", strtotime($page['date']));
+				$pageLastMod = makeIso8601TimeStamp($tmpDate);
+				
+				// set <changefreq>
+				$pageChangeFreq = 'weekly';
+				
+				// set <priority>
+				if ($page['menuStatus'] == 'Y') {
+					$pagePriority = '1.0';
+				} else {
+					$pagePriority = '0.5';
+				}
+				
+				//add to sitemap
+				$url_item = $xml->addChild('url');
+				$url_item->addChild('loc', $pageLoc);
+				$url_item->addChild('lastmod', $pageLastMod);
+				$url_item->addChild('changefreq', $pageChangeFreq);
+				$url_item->addChild('priority', $pagePriority);
+				exec_action('sitemap-additem');
+			}
+			
+			//create xml file
+			$file = GSROOTPATH .'sitemap.xml';
+			exec_action('save-sitemap');
+			XMLsave($xml, $file);
+		}
+	}
+	
+	if (!defined('GSDONOTPING')) {
+		if (file_exists(GSROOTPATH .'sitemap.xml')){
+			if( 200 === ($status=pingGoogleSitemaps($SITEURL.'sitemap.xml')))	{
+				#sitemap successfully created & pinged
+				return true;
+			} else {
+				error_log(i18n_r('SITEMAP_ERRORPING'));
+				return i18n_r('SITEMAP_ERRORPING');
+			}
+		} else {
+			error_log(i18n_r('SITEMAP_ERROR'));
+			return i18n_r('SITEMAP_ERROR');
+		}
+	} else {
+		#sitemap successfully created - did not ping
+		return true;
+	}
+}
+
+
+
+/**
+ * Creates tar.gz Archive 
+ *
+ * Creates sitemap.xml in the site's root.
+ */
+function archive_targz() {
+	if(!function_exists('exec')) {
+    return false;
+    exit;
+	}
+	$timestamp = gmdate('Y-m-d-Hi_s');
+	$saved_zip_file_path = GSBACKUPSPATH.'zip/';
+	$saved_zip_file = $timestamp .'_archive.tar.gz';	
+	$script_contents = "tar -cvzf ".$saved_zip_file_path.$saved_zip_file." ".GSROOTPATH.".htaccess ".GSROOTPATH."gsconfig.php ".GSROOTPATH."data ".GSROOTPATH."plugins ".GSROOTPATH."theme ".GSROOTPATH."admin/lang > /dev/null 2>&1";
+	exec($script_contents, $output, $rc);
+	if (file_exists($saved_zip_file_path.$saved_zip_file)) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 ?>

@@ -26,12 +26,16 @@ if (isset($_SERVER['HTTP_REFERER'])) {
 
 login_cookie_check();
 	
-if (isset($_POST['submitted']))
-{
-	$nonce = $_POST['nonce'];
-	if(!check_nonce($nonce, "edit", "edit.php")) {
-		die("CSRF detected!");	
+if (isset($_POST['submitted'])) {
+	
+	// check for csrf
+	if (!defined('GSNOCSRF') || (GSNOCSRF == FALSE) ) {
+		$nonce = $_POST['nonce'];
+		if(!check_nonce($nonce, "edit", "edit.php")) {
+			die("CSRF detected!");	
+		}
 	}
+	
 	if ( $_POST['post-title'] == '' )	{
 		redirect("edit.php?upd=edit-err&type=".urlencode(i18n_r('CANNOT_SAVE_EMPTY')));
 	}	else {
@@ -41,11 +45,17 @@ if (isset($_POST['submitted']))
 		// is a slug provided?
 		if ($_POST['post-id']) { 
 			$url = $_POST['post-id'];
-      $url = to7bit($url, "UTF-8");
-      $url = clean_url($url); //old way
+			if (isset($i18n['TRANSLITERATION']) && is_array($translit=$i18n['TRANSLITERATION']) && count($translit>0)) {
+				$url = str_replace(array_keys($translit),array_values($translit),$url);
+			}
+			$url = to7bit($url, "UTF-8");
+			$url = clean_url($url); //old way
 		} else {
 			if ($_POST['post-title'])	{ 
 				$url = $_POST['post-title'];
+				if (isset($i18n['TRANSLITERATION']) && is_array($translit=$i18n['TRANSLITERATION']) && count($translit>0)) {
+					$url = str_replace(array_keys($translit),array_values($translit),$url);
+				}
 				$url = to7bit($url, "UTF-8");
 				$url = clean_url($url); //old way
 			} else {
@@ -85,11 +95,12 @@ if (isset($_POST['submitted']))
 		if(isset($_POST['post-title'])) 			{	$title = safe_slash_html($_POST['post-title']);	}
 		if(isset($_POST['post-metak'])) 			{	$metak = safe_slash_html($_POST['post-metak']);	}
 		if(isset($_POST['post-metad'])) 			{	$metad = safe_slash_html($_POST['post-metad']);	}
+		if(isset($_POST['post-author'])) 			{	$author = safe_slash_html($_POST['post-author']);	}
 		if(isset($_POST['post-template'])) 		{ $template = $_POST['post-template']; }
 		if(isset($_POST['post-parent'])) 			{ $parent = $_POST['post-parent']; }
 		if(isset($_POST['post-menu'])) 				{ $menu = safe_slash_html($_POST['post-menu']); }
 		if(isset($_POST['post-menu-enable'])) { $menuStatus = "Y"; } else { $menuStatus = ""; }
-		if(isset($_POST['post-private'])) 		{ $private = "Y"; } else { $private = ""; }
+		if(isset($_POST['post-private']) ) 		{ $private = safe_slash_html($_POST['post-private']); }
 		if(isset($_POST['post-content'])) 		{	$content = safe_slash_html($_POST['post-content']);	}
 		if(isset($_POST['post-menu-order'])) 	{ 
 			if (is_numeric($_POST['post-menu-order'])) 
@@ -102,16 +113,13 @@ if (isset($_POST['submitted']))
 			}
 		}		
 		//check to make sure we dont overwrite any good files upon create
-		if ( file_exists($file) && ($url != $_POST['existing-url']) ) 
-		{
+		if ( file_exists($file) && ($url != $_POST['existing-url']) ) {
 			$count = "1";
 			$file = GSDATAPAGESPATH . $url ."-".$count.".xml";
-			while ( file_exists($file) ) 
-			{
+			while ( file_exists($file) ) {
 				$count++;
 				$file = GSDATAPAGESPATH . $url ."-".$count.".xml";
 			}
-			
 			$url = $url .'-'. $count;
 		}
 
@@ -159,15 +167,39 @@ if (isset($_POST['submitted']))
 		
 		$note = $xml->addChild('private');
 		$note->addCData($private);
+		
+		$note = $xml->addChild('author');
+		$note->addCData($author);
 
 		exec_action('changedata-save');
+		if (isset($_POST['autosave']) && $_POST['autosave'] == 'true') {
+			XMLsave($xml, GSAUTOSAVEPATH.$url);
+		} else {
+			XMLsave($xml, $file);
+		}
 		
-		XMLsave($xml, $file);
+		//ending actions
+		exec_action('changedata-aftersave');
+		generate_sitemap();
 		
 		// redirect user back to edit page 
-		redirect("edit.php?id=". $url ."&upd=edit-success&type=edit");
+		if (isset($_POST['autosave']) && $_POST['autosave'] == 'true') {
+			echo 'OK';
+		} else {
+			
+			if ($_POST['redirectto']!='') {
+				$redirect_url = $_POST['redirectto'];
+			} else {
+				$redirect_url = 'edit.php';
+			}
+			
+			if ($url == $_POST['existing-url']) {
+				redirect($redirect_url."?id=". $url ."&upd=edit-success&type=edit");
+			} else {
+				redirect($redirect_url."?id=". $url ."&old=".$_POST['existing-url']."&upd=edit-success&type=edit");
+			}
+		}
 	}
 } else {
 	redirect('pages.php');
 }
-?>

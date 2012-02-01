@@ -71,6 +71,58 @@ function to7bit($text,$from_enc="UTF-8") {
     return $text;
 }
 
+
+/**
+ * Formats Email to HTML Style
+ *
+ * @since 3.1
+ *
+ * @param string $message
+ * @return string
+ */
+function email_template($message) {
+	$data = '
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" >
+	<style>
+	 table td p {margin-bottom:15px;}
+	</style>
+	</head>
+	<body style="padding:0;margin:0;background: #f3f3f3;font-family:arial, \'helvetica neue\', helvetica, serif" >
+	<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" style="padding: 0 0 35px 0; background: #f3f3f3;">
+  	<tr>
+	    <td align="center" style="margin: 0; padding: 0;">
+	      <center>
+	        <table border="0" cellpadding="0" cellspacing="0" width="580" style="border-radius:3px;">
+						<tr>
+							<th style="padding:15px 0 15px 20px;text-align:left;vertical-align:top;background:#171E25;border-radius:4px 4px 0 0;" >
+								<a href="http://get-simple.info/"><img src="http://get-simple.info/GSSW/gssw_assets/images/logo.png" alt="GetSimple CMS"></a>
+							</th>
+						</tr>
+						<tr>
+							<td style="background:#fff;border-bottom:1px solid #e1e1e1;border-right:1px solid #e1e1e1;border-left:1px solid #e1e1e1;font-size:13px;font-family:arial, helvetica, sans-serif;padding:20px;line-height:22px;" >
+								'.$message.'
+							</td>
+						</tr>
+						<tr>
+							<td style="padding-top:10px;font-size:10px;color:#aaa;line-height:14px;font-family:arial, \'helvetica neue\', helvetica, serif" >
+								<p class="meta">This is a system-generated email, please do not reply to it. For help or questions about GetSimple, please visit our <a href="http://get-simple.info/" style="color:#aaa;" >website</a>.<br />&copy; '.date('Y').' GetSimple CMS. All Rights Reserved.&nbsp;<a href="http://get-simple.info/start/privacy" style="color:#aaa;" >Privacy Policy</a>. </p>
+							</td>
+						</tr>
+					</table>
+				</center>
+			</td>
+		</tr>
+	</table>
+	</body>
+	</html>
+	';
+	return $data;
+}
+
+
 /**
  * Send Email
  *
@@ -84,6 +136,8 @@ function to7bit($text,$from_enc="UTF-8") {
  * @return string
  */
 function sendmail($to,$subject,$message) {
+	
+	$message = email_template($message);
 
 	if (defined('GSFROMEMAIL')){
 		$fromemail = GSFROMEMAIL; 
@@ -92,11 +146,11 @@ function sendmail($to,$subject,$message) {
 	}
 	
 	global $EMAIL;
-	$headers  = "From: ".$fromemail."\r\n";
-	$headers .= "Reply-To: ".$fromemail."\r\n";
-	$headers .= "Return-Path: ".$fromemail."\r\n";
-	$headers .= "MIME-Version: 1.0\r\n";
-	$headers .= "Content-type: text/html; charset=UTF-8\r\n";
+	$headers  ='"MIME-Version: 1.0' . PHP_EOL;
+	$headers .= 'Content-Type: text/html; charset=UTF-8' . PHP_EOL;
+	$headers .= 'From: '.$fromemail . PHP_EOL;
+  $headers .= 'Reply-To: '.$fromemail . PHP_EOL;
+  $headers .= 'Return-Path: '.$fromemail . PHP_EOL;
 	
 	if( mail($to,'=?UTF-8?B?'.base64_encode($subject).'?=',"$message",$headers) ) {
 		return 'success';
@@ -114,37 +168,20 @@ function sendmail($to,$subject,$message) {
  *
  * @param array $a
  * @param string $subkey Key within the array passed you want to sort by
+ * @param string $order - order 'asc' ascending or 'desc' descending
  * @return array
  */
-function subval_sort($a,$subkey) {
+function subval_sort($a,$subkey, $order='asc') {
 	if (count($a) != 0 || (!empty($a))) { 
 		foreach($a as $k=>$v) {
 			$b[$k] = lowercase($v[$subkey]);
 		}
-		asort($b);
+		($order=='asc')? asort($b) : arsort($b);
 		foreach($b as $key=>$val) {
 			$c[] = $a[$key];
 		}
 		return $c;
 	}
-}
-
-/**
- * JSON Decode
- *
- * Allows backward compatibility for servers that do not have the JSON decoder installed
- *
- * @since 2.0
- * @author Martijn van der Ven
- *
- * @param string $api_data
- * @return object
- */
-if(!function_exists('json_decode')) {
-  function json_decode($api_data) {
-    preg_match('/(?P<status>[^"]+)","((api_key":"(?P<api_key>[^"]+))|(latest":"(?P<latest>[^"]+)))/',$api_data,$api_data);
-    return (object)$api_data;
-  }
 }
 
 /**
@@ -198,7 +235,9 @@ function getFiles($path) {
 	$handle = opendir($path) or die("Unable to open $path");
 	$file_arr = array();
 	while ($file = readdir($handle)) {
-		$file_arr[] = $file;
+		if ($file != '.' && $file != '..') {
+			$file_arr[] = $file;
+		}
 	}
 	closedir($handle);
 	return $file_arr;
@@ -292,6 +331,7 @@ function shtDate($dt) {
  */
 function cl($data){
 	$data = stripslashes(strip_tags(html_entity_decode($data, ENT_QUOTES, 'UTF-8')));
+	$data = preg_replace('/[[:cntrl:]]/', '', $data); //remove control characters that cause interface to choke
 	return $data;
 }
 
@@ -579,6 +619,7 @@ function safe_slash_html($text) {
 	} else {
 		$text = htmlentities($text, ENT_QUOTES, 'UTF-8');
 	}
+	$text = preg_replace('/[[:cntrl:]]/', '', $text); //remove control characters that cause interface to choke
 	return $text;
 }
 
@@ -644,6 +685,7 @@ function pathinfo_filename($file) {
  *
  * @since 2.04
  * @uses $GSAMIN
+ * @uses http_protocol
  * @author ccagle8
  *
  * @param bool $parts 
@@ -651,16 +693,18 @@ function pathinfo_filename($file) {
  */
 function suggest_site_path($parts=false) {
 	global $GSADMIN;
+	$protocol = http_protocol();
 	$path_parts = pathinfo(htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES));
 	$path_parts = str_replace("/".$GSADMIN, "", $path_parts['dirname']);
+	$port = ($p=$_SERVER['SERVER_PORT'])!='80'&&$p!='443'?':'.$p:'';
 	
 	if($path_parts == '/') {
 	
-		$fullpath = "http://". htmlentities($_SERVER['SERVER_NAME'], ENT_QUOTES) . "/";
+		$fullpath = $protocol."://". htmlentities($_SERVER['SERVER_NAME'], ENT_QUOTES) . $port . "/";
 	
 	} else {
 		
-		$fullpath = "http://". htmlentities($_SERVER['SERVER_NAME'], ENT_QUOTES) . $path_parts ."/";
+		$fullpath = $protocol."://". htmlentities($_SERVER['SERVER_NAME'], ENT_QUOTES) . $port . $path_parts ."/";
 		
 	}
 		
@@ -712,6 +756,7 @@ function get_themes($temp) {
 	return $templates;
 }
 
+
 /**
  * HTML Decode 
  *
@@ -736,7 +781,7 @@ function htmldecode($text) {
  */
 function lowercase($text) {
 	if (function_exists('mb_strtolower')) {
-		$text = mb_strtolower($text); 
+		$text = mb_strtolower($text, 'UTF-8'); 
 	} else {
 		$text = strtolower($text); 
 	}
@@ -773,6 +818,7 @@ function find_accesskey($string) {
 function _id($text) {
 	$text = to7bit($text, "UTF-8");
 	$text = clean_url($text);
+	$text = preg_replace('/[[:cntrl:]]/', '', $text); //remove control characters that cause interface to choke
 	return lowercase($text);
 }
 
@@ -819,6 +865,27 @@ function check_empty_folder($folder) {
 
 
 /**
+ * Folder Items
+ *
+ * Return the amount of items within the given folder
+ * 
+ * @param string $folder
+ * @return string
+ */
+function folder_items($folder) {
+	$files = array ();
+	if ( $handle = opendir ( $folder ) ) {
+		while ( false !== ( $file = readdir ( $handle ) ) ) {
+			if ( $file != "." && $file != ".." ) {
+				$files [] = $file;
+			}
+		}
+		closedir($handle);
+	}
+	return count($files);
+}
+
+/**
  * Validate a URL String
  * 
  * @param string $u
@@ -829,4 +896,229 @@ function validate_url($u) {
 }
 
 
+/**
+ * Format XML to Formatted String
+ * 
+ * @param string $xml
+ * @return string
+ */
+function formatXmlString($xml) {  
+  
+  // add marker linefeeds to aid the pretty-tokeniser (adds a linefeed between all tag-end boundaries)
+  $xml = preg_replace('/(>)(<)(\/*)/', "$1\n$2$3", $xml);
+  
+  // now indent the tags
+  $token      = strtok($xml, "\n");
+  $result     = ''; // holds formatted version as it is built
+  $pad        = 0; // initial indent
+  $matches    = array(); // returns from preg_matches()
+  
+  // scan each line and adjust indent based on opening/closing tags
+  while ($token !== false) : 
+  
+    // test for the various tag states
+    
+    // 1. open and closing tags on same line - no change
+    if (preg_match('/.+<\/\w[^>]*>$/', $token, $matches)) : 
+      $indent=0;
+    // 2. closing tag - outdent now
+    elseif (preg_match('/^<\/\w/', $token, $matches)) :
+      $pad--;
+    // 3. opening tag - don't pad this one, only subsequent tags
+    elseif (preg_match('/^<\w[^>]*[^\/]>.*$/', $token, $matches)) :
+      $indent=1;
+    // 4. no indentation needed
+    else :
+      $indent = 0; 
+    endif;
+    
+    // pad the line with the required number of leading spaces
+    $line    = str_pad($token, strlen($token)+$pad, ' ', STR_PAD_LEFT);
+    $result .= $line . "\n"; // add to the cumulative result, with linefeed
+    $token   = strtok("\n"); // get the next token
+    $pad    += $indent; // update the pad size for subsequent lines    
+  endwhile; 
+  
+  return $result;
+}
+
+/**
+ * Check Server Protocol
+ * 
+ * Checks to see if the website should be served using HTTP or HTTPS
+ *
+ * @since 3.1
+ * @return string
+ */
+function http_protocol() {
+	if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) {
+	  return 'https';
+	} else {
+		return 'http';
+	}
+}
+
+/**
+ * Get File Mime-Type
+ *
+ * @since 3.1
+ * @param $file, absolute path
+ * @return string/bool
+ */
+function file_mime_type($file) {
+	if (!file_exists($file)) {
+		return false;
+		exit;
+	}
+	if(function_exists('finfo_open')) {
+		# http://www.php.net/manual/en/function.finfo-file.php
+		$finfo = finfo_open(FILEINFO_MIME_TYPE);
+		$mimetype = finfo_file($finfo, $file);
+		finfo_close($finfo);
+		
+	} elseif(function_exists('mime_content_type')) {
+		# Depreciated: http://php.net/manual/en/function.mime-content-type.php
+		$mimetype = mime_content_type($file);
+	} else {
+		return false;
+		exit;	
+	}
+	return $mimetype;
+}
+
+
+/**
+ * Check Is FrontEnd
+ * 
+ * Checks to see if the you are on the frontend or not
+ *
+ * @since 3.1
+ * @return bool
+ */
+function is_frontend() {
+	if(isset($base)) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+/**
+ * Get Installed GetSimple Version
+ *
+ * This will return the version of GetSimple that is installed
+ *
+ * @since 1.0
+ * @uses GSVERSION
+ *
+ * @param bool $echo Optional, default is true. False will 'return' value
+ * @return string Echos or returns based on param $echo
+ */
+function get_site_version($echo=true) {
+	include(GSADMININCPATH.'configuration.php');
+	if ($echo) {
+		echo GSVERSION;
+	} else {
+		return GSVERSION;
+	}
+}
+
+
+/**
+ * Get GetSimple Language
+ *
+ * @since 3.1
+ * @uses $LANG
+ *
+ * @param string
+ */
+function get_site_lang($short=false) {
+	global $LANG;
+	if ($short) {
+		$LANG_header = preg_replace('/(?:(?<=([a-z]{2}))).*/', '', $LANG);
+		return $LANG_header;
+	} else {
+		return $LANG;
+	}
+}
+
+/**
+ * Convert to Bytes
+ *
+ * @since 3.0
+ *
+ * @param $str string
+ * @return string
+ */
+function toBytes($str){
+	$val = trim($str);
+	$last = strtolower($str[strlen($str)-1]);
+		switch($last) {
+			case 'g': $val *= 1024;
+			case 'm': $val *= 1024;
+			case 'k': $val *= 1024;
+		}
+	return $val;
+}
+
+/**
+ * Remove Relative Paths
+ *
+ * @since 3.1
+ *
+ * @param $file string
+ * @return string
+ */
+function removerelativepath($file) {
+	while(strpos($file,'../')!==false) { 
+		$file = str_replace('../','',$file);
+	}
+	return $file;
+}
+
+/**
+ * Debug Console Log
+ *
+ * @since 3.1
+ *
+ * @param $txt string
+ */
+function debugLog($txt) {
+	global $GS_debug;	
+	array_push($GS_debug,$txt.'<br/>');
+}
+
+
+/**
+ * Return a directory of files and folders
+ *
+ * @since 3.1
+ *
+ * @param $directory string directory to scan
+ * @param $recursive boolean whether to do a recursive scan or not. 
+ * @return array or files and folders
+ */
+function directoryToArray($directory, $recursive) {
+	$array_items = array();
+	if ($handle = opendir($directory)) {
+		while (false !== ($file = readdir($handle))) {
+			if ($file != "." && $file != "..") {
+				if (is_dir($directory. "/" . $file)) {
+					if($recursive) {
+						$array_items = array_merge($array_items, directoryToArray($directory. "/" . $file, $recursive));
+					}
+					$file = $directory . "/" . $file;
+					$array_items[] = preg_replace("/\/\//si", "/", $file);
+				} else {
+					$file = $directory . "/" . $file;
+					$array_items[] = preg_replace("/\/\//si", "/", $file);
+				}
+			}
+		}
+		closedir($handle);
+	}
+	return $array_items;
+}
+
+	
 ?>

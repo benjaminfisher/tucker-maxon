@@ -47,57 +47,73 @@ if ($_GET['p'] != '') {
 }
 
 if ($p == 'delete') {
-	$nonce = $_GET['nonce'];
-	if(!check_nonce($nonce, "delete", "backup-edit.php")) {
-		die("CSRF detected!");
+	// check for csrf
+	if (!defined('GSNOCSRF') || (GSNOCSRF == FALSE) ) {
+		$nonce = $_GET['nonce'];
+		if(!check_nonce($nonce, "delete", "backup-edit.php")) {
+			die("CSRF detected!");
+		}
 	}
-
 	delete_bak($id);
 	redirect("backups.php?upd=bak-success&id=".$id);
 } 
 
 elseif ($p == 'restore') {
-	$nonce = $_GET['nonce'];
-	if(!check_nonce($nonce, "restore", "backup-edit.php")) {
-		die("CSRF detected!");	
+	// check for csrf
+	if (!defined('GSNOCSRF') || (GSNOCSRF == FALSE) ) {
+		$nonce = $_GET['nonce'];
+		if(!check_nonce($nonce, "restore", "backup-edit.php")) {
+			die("CSRF detected!");	
+		}
 	}
-	restore_bak($id);
-	redirect("edit.php?id=". $id ."&upd=edit-success&type=restore");
+	if (isset($_GET['new'])) {
+		updateSlugs($_GET['new'], $id);
+		restore_bak($id);
+		$existing = GSDATAPAGESPATH . $_GET['new'] .".xml";
+		$bakfile = GSBACKUPSPATH."pages/". $_GET['new'] .".bak.xml";
+		copy($existing, $bakfile);
+		unlink($existing);
+		redirect("edit.php?id=". $id ."&old=".$_GET['new']."&upd=edit-success&type=restore");
+	} else {
+		restore_bak($id);
+		redirect("edit.php?id=". $id ."&upd=edit-success&type=restore");
+	}
+	
+	
 }
-?>
 
-<?php get_template('header', cl($SITENAME).' &raquo; '. i18n_r('BAK_MANAGEMENT').' &raquo; '.i18n_r('VIEWPAGE_TITLE')); ?>
+get_template('header', cl($SITENAME).' &raquo; '. i18n_r('BAK_MANAGEMENT').' &raquo; '.i18n_r('VIEWPAGE_TITLE')); 
+
+?>
 	
-	<h1><a href="<?php echo $SITEURL; ?>" target="_blank" ><?php echo cl($SITENAME); ?></a> <span>&raquo;</span> <?php i18n('BAK_MANAGEMENT'); ?> <span>&raquo;</span> <?php i18n('VIEWING');?> &lsquo;<span class="filename" ><?php echo $url; ?></span>&rsquo;</h1>
-	
-	<?php include('template/include-nav.php'); ?>
-	<?php include('template/error_checking.php'); ?>
-	<div class="bodycontent">
+<?php include('template/include-nav.php'); ?>
+
+<div class="bodycontent clearfix">
 	
 	<div id="maincontent">
 		<div class="main" >
 		<h3 class="floated"><?php i18n('BACKUP_OF');?> &lsquo;<em><?php echo $url; ?></em>&rsquo;</h3>
 		
 		<div class="edit-nav" >
-			 <a href="backup-edit.php?p=restore&amp;id=<?php echo $id; ?>&amp;nonce=<?php echo get_nonce("restore", "backup-edit.php"); ?>" accesskey="<?php echo find_accesskey(i18n_r('ASK_RESTORE'));?>" ><?php i18n('ASK_RESTORE');?></a> <a href="backup-edit.php?p=delete&amp;id=<?php echo $id; ?>&amp;nonce=<?php echo get_nonce("delete", "backup-edit.php"); ?>" title="<?php i18n('DELETEPAGE_TITLE'); ?>: <?php echo $title; ?>?" id="delback" accesskey="<?php echo find_accesskey(i18n_r('ASK_DELETE'));?>" class="delconfirm" ><?php i18n('ASK_DELETE');?></a>
+			 <a href="backup-edit.php?p=restore&amp;id=<?php echo $id; ?>&amp;nonce=<?php echo get_nonce("restore", "backup-edit.php"); ?>" accesskey="<?php echo find_accesskey(i18n_r('ASK_RESTORE'));?>" ><?php i18n('ASK_RESTORE');?></a> <a href="backup-edit.php?p=delete&amp;id=<?php echo $id; ?>&amp;nonce=<?php echo get_nonce("delete", "backup-edit.php"); ?>" title="<?php i18n('DELETEPAGE_TITLE'); ?>: <?php echo $title; ?>?" id="delback" accesskey="<?php echo find_accesskey(i18n_r('ASK_DELETE'));?>" class="delconfirm noajax" ><?php i18n('ASK_DELETE');?></a>
 			<div class="clear"></div>
 		</div>
 		
 		<table class="simple highlight" >
-		<tr><td style="width:125px;" ><b><?php i18n('PAGE_TITLE');?>:</b></td><td><b><?php echo cl($title); ?></b> <?php echo $private; ?></td></tr>
-		<tr><td><b><?php i18n('BACKUP_OF');?>:</b></td><td>
+		<tr><td class="title" ><?php i18n('PAGE_TITLE');?>:</td><td><b><?php echo cl($title); ?></b> <?php echo $private; ?></td></tr>
+		<tr><td class="title" ><?php i18n('BACKUP_OF');?>:</td><td>
 			<?php 
 			if(isset($id)) {
 					echo '<a target="_blank" href="'. find_url($url, $parent) .'">'. find_url($url, $parent) .'</a>'; 
 			} 
 			?>
 		</td></tr>
-		<tr><td><b><?php i18n('DATE');?>:</b></td><td><?php echo lngDate($pubDate); ?></td></tr>
-		<tr><td><b><?php i18n('TAG_KEYWORDS');?>:</b></td><td><em><?php echo $metak; ?></em></td></tr>
-		<tr><td><b><?php i18n('META_DESC');?>:</b></td><td><em><?php echo $metad; ?></em></td></tr>
-		<tr><td><b><?php i18n('MENU_TEXT');?>:</b></td><td><?php echo $menu; ?></td></tr>
-		<tr><td><b><?php i18n('PRIORITY');?>:</b></td><td><?php echo $menuOrder; ?></td></tr>
-		<tr><td><b><?php i18n('ADD_TO_MENU');?></b></td><td><?php echo $menuStatus; ?></td></tr>
+		<tr><td class="title" ><?php i18n('DATE');?>:</td><td><?php echo lngDate($pubDate); ?></td></tr>
+		<tr><td class="title" ><?php i18n('TAG_KEYWORDS');?>:</td><td><em><?php echo $metak; ?></em></td></tr>
+		<tr><td class="title" ><?php i18n('META_DESC');?>:</td><td><em><?php echo $metad; ?></em></td></tr>
+		<tr><td class="title" ><?php i18n('MENU_TEXT');?>:</td><td><?php echo $menu; ?></td></tr>
+		<tr><td class="title" ><?php i18n('PRIORITY');?>:</td><td><?php echo $menuOrder; ?></td></tr>
+		<tr><td class="title" ><?php i18n('ADD_TO_MENU');?></td><td><?php echo $menuStatus; ?></td></tr>
 		</table>
 		
 		<textarea id="codetext" wrap='off' style="background:#f4f4f4;padding:4px;width:635px;color:#444;border:1px solid #666;" readonly ><?php echo strip_decode($content); ?></textarea>
@@ -145,7 +161,6 @@ elseif ($p == 'restore') {
 	<div id="sidebar" >
 		<?php include('template/sidebar-backups.php'); ?>
 	</div>
-	
-	<div class="clear"></div>
-	</div>
+
+</div>
 <?php get_template('footer'); ?>

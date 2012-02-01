@@ -7,7 +7,6 @@
  */
 
 $MSG = null;
-include('plugin_functions.php');
 # if the login cookie is already set, redirect user to control panel
 if(cookie_check()) {
 	redirect($cookie_redirect);                                             
@@ -78,7 +77,7 @@ if(isset($_POST['submitted'])) {
 		if( $authenticated ) {
 			# YES - set the login cookie, then redirect user to secure panel		
 			create_cookie();
-			setcookie('GS_ADMIN_USERNAME', $USR);
+			setcookie('GS_ADMIN_USERNAME', $USR, time() + 3600,'/');
 			exec_action('successful-login-end');
 			redirect($cookie_redirect); 
 		} else {

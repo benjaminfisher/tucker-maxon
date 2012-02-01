@@ -2,9 +2,9 @@
 /**
  * English Language File
  *
- * Date:				16 Oct 2010
+ * Date:				6 December 2011
  * Revision:		Feb 2011
- * Version:			GetSimple 3.0
+ * Version:			GetSimple 3.1
  * Traductors: 	Chris Cagle 
  *
  * @package GetSimple
@@ -25,7 +25,7 @@ $i18n = array(
 "WEBSITEURL_ERROR"	=>	"<b>Error:</b> There was a problem with your website URL",
 "USERNAME_ERROR"		=>	"<b>Error:</b> Username was not set",
 "EMAIL_ERROR"				=>	"<b>Error:</b> There was a problem with your email address",
-"CHMOD_ERROR"				=>	"<b>Unable to continue:</b> Unable to write config file. <em>CHMOD 777</em> the folders /data, /backups and their sub-folders and retry",
+"CHMOD_ERROR"				=>	"<b>Unable to continue:</b> Unable to write config file. CHMOD 755 or 777 the folders /data, /backups and their sub-folders and retry",
 "EMAIL_COMPLETE"		=>	"Setup Complete",
 "EMAIL_USERNAME"		=>	"Your username is",
 "EMAIL_PASSWORD"		=>	"Your new password is",
@@ -56,9 +56,9 @@ $i18n = array(
 "VIEWPAGE_TITLE"		=>	"View Page",
 "DELETEPAGE_TITLE"	=>	"Delete Page",
 "PAGE_MANAGEMENT"		=>	"Page Management",
-"TOGGLE_STATUS"			=>	"Toggle Status",
+"TOGGLE_STATUS"			=>	"Toggle Stat<em>u</em>s",
 "TOTAL_PAGES"				=>	"total pages",
-"ALL_PAGES"					=>	"All Pages",
+"ALL_PAGES"					=>	"Pages",
 
 /* 
  * For: edit.php
@@ -71,24 +71,25 @@ $i18n = array(
 "PAGE"							=>	"Page",
 "NEW_PAGE"					=>	"New Page",
 "PAGE_EDIT_MODE"		=>	"Edit Page",
-"CREATE_NEW_PAGE"		=>	"Create New Page",
+"CREATE_NEW_PAGE"		=>	"Add New Page",
 "VIEW"							=>	"<em>V</em>iew",
 "PAGE_OPTIONS"			=>	"Page Optio<em>n</em>s",
-"SLUG_URL"					=>	"Slug/URL",
+"SLUG_URL"					=>	"Custom URL (Slug)",
 "TAG_KEYWORDS"			=>	"Tags &amp; Keywords",
-"PARENT_PAGE"				=>	"Parent Page",
-"TEMPLATE"					=>	"Template",
-"KEEP_PRIVATE"			=>	"Keep Page Private?",
-"ADD_TO_MENU"				=>	"Add to Menu?",
+"PARENT_PAGE"				=>	"Page Parent",
+"TEMPLATE"					=>	"Page Template",
+"KEEP_PRIVATE"			=>	"Page Visibility",
+"ADD_TO_MENU"				=>	"Add this page to the menu",
 "PRIORITY"					=>	"Priority",
 "MENU_TEXT"					=>	"Menu Text",
 "LABEL_PAGEBODY"		=>	"Page Body",
 "CANCEL"						=>	"Cancel",
 "BACKUP_AVAILABLE"	=>	"Backup Available",
 "MAX_FILE_SIZE"			=>	"Max file size",
-"LAST_SAVED"				=>	"Last Saved",
+"LAST_SAVED"				=>	"Last saved by %s on",
 "FILE_UPLOAD"				=>	"File Upload",
 "OR"								=>	"or",
+"SAVE_AND_CLOSE"		=> "Save &amp; Close",
 
 /* 
  * For: upload.php
@@ -100,7 +101,7 @@ $i18n = array(
 "SHOW_ALL"					=>	"Show All",
 "VIEW_FILE"					=>	"View File",
 "DELETE_FILE"				=>	"Delete File",
-"TOTAL_FILES"				=>	"total files",
+"TOTAL_FILES"				=>	"total files &amp; folders",
 
 /* 
  * For: logout.php
@@ -194,7 +195,7 @@ $i18n = array(
 "CHOOSE_THEME"			=>	"Choose Your Theme",
 "ACTIVATE_THEME"		=>	"Activate Theme",
 "THEME_SCREENSHOT"	=>	"Theme Screenshot",
-"THEME_PATH"				=>	"Current theme path",
+"THEME_PATH"				=>	"Theme Folder Location",
 
 /* 
  * For: resetpassword.php
@@ -221,7 +222,7 @@ $i18n = array(
 "CONFIRM_PASSWORD"	=>	"Confirm Password",
 "PASSWORD_NO_MATCH"	=>	"Passwords do not match",
 "PERMALINK" 				=> 	"Custom Permalink Structure",
-"MORE" 							=> 	"Learn More...",
+"MORE" 							=> 	"more",
 "HELP" 							=> 	"help",
 
 /* 
@@ -267,8 +268,8 @@ $i18n = array(
 /* 
  * For: archive.php
 */
-"SUCC_WEB_ARCHIVE"	=>	"Successful website archive!",
-"SUCC_WEB_ARC_DEL"	=>	"Website archive successfully deleted",
+"SUCC_WEB_ARCHIVE"	=>	"An archive of your website has been successfully created",
+"SUCC_WEB_ARC_DEL"	=>	"The seleted archive has been successfully deleted",
 "WEBSITE_ARCHIVES"	=>	"Website Archives",
 "ARCHIVE_DELETED"		=>	"Archive deleted successfully",
 "CREATE_NEW_ARC"		=>	"Create a New Archive",
@@ -302,7 +303,7 @@ $i18n = array(
 */
 "SIDE_SUPPORT_LOG"	=>	"Supp<em>o</em>rt",
 "SIDE_HEALTH_CHK"		=>	"Website <em>H</em>ealth Check",
-"SIDE_DOCUMENTATION"=>	"Documentation",
+"SIDE_DOCUMENTATION"=>	"Wiki Documentation",
 "SIDE_VIEW_LOG"=>	"<em>V</em>iew Log",
 
 /* 
@@ -337,11 +338,11 @@ $i18n = array(
  * For: error_checking.php
 */
 "ER_PWD_CHANGE"			=>	"Don't forget to <a href=\"settings.php#profile\">change your password</a> from that random generated one you have now...",
-"ER_BAKUP_DELETED"	=>	"The backup has been deleted for %s",
+"ER_BAKUP_DELETED"	=>	"The backup has been deleted for <b>%s</b>",
 "ER_REQ_PROC_FAIL"	=>	"The requested process failed",
-"ER_YOUR_CHANGES"		=>	"Your changes to %s have been saved",
-"ER_HASBEEN_REST"		=>	"%s has been restored",
-"ER_HASBEEN_DEL"		=>	"%s has been deleted",
+"ER_YOUR_CHANGES"		=>	"Your changes to <b>%s</b> have been saved",
+"ER_HASBEEN_REST"		=>	"<b>%s</b> has been restored",
+"ER_HASBEEN_DEL"		=>	"<b>%s</b> has been deleted",
 "ER_CANNOT_INDEX"		=>	"You cannot change the URL of the index page",
 "ER_SETTINGS_UPD"		=>	"Your settings have been updated",
 "ER_OLD_RESTORED"		=>	"Your old settings have been restored",
@@ -386,10 +387,10 @@ $i18n = array(
 "DATE_AND_TIME_FORMAT"				=>	"F jS, Y - g:i A", //date and time
 
 /* 
- * For: welcome.php
+ * For: support.php
 */
-"WELCOME_MSG"				=>	"Thank you for choosing GetSimple as your CMS!",
-"WELCOME_P"					=>	"GetSimple makes managing your website as simple as possible with its top-of-the-class user interface and the easiest templating system around.",
+"WELCOME_MSG"				=>	"Thank you for choosing GetSimple as your content management system!",
+"WELCOME_P"					=>	"GetSimple makes managing a website as simple as possible with its best-in-class user interface. We strive to keep the system easy enough for anyone to use, yet powerful enough for a developer to enable all the features that are needed.</p><p><strong>Some first steps that might be useful:</strong></p>",
 "GETTING_STARTED"		=>	"Getting Started",
 
 /* 
@@ -418,7 +419,7 @@ $i18n = array(
 "PLUGINS_MANAGEMENT"=> "Plugin Management",
 "PLUGINS_INSTALLED" => "plugins installed",
 "SHOW_PLUGINS"			=> "Installed Plu<em>g</em>ins",
-"PLUGIN_NAME" 			=> "Name",
+"PLUGIN_NAME" 			=> "Plugin",
 "PLUGIN_DESC" 			=> "Description",
 "PLUGIN_VER" 				=> "Version",
 
@@ -443,7 +444,8 @@ $i18n = array(
 /*
  * Misc Cleanup Work
  */
- 
+
+# new to 3.0 
 "HOMEPAGE_DELETE_ERROR" => "You cannot delete your homepage", //deletefile
 "NO_ZIPARCHIVE" => "ZipArchive extension is not installed. Unable to continue", //zip
 "REDIRECT_MSG"=> "If your browser does not redirect you, click <a href=\"%s\">here</a>", //basic
@@ -456,20 +458,20 @@ $i18n = array(
 "REQS_MORE_INFO"=> "For more information on the required modules, visit the <a href=\"%s\" target=\"_blank\" >requirements page</a>.", //install & health-check
 "SYSTEM_UPDATE" => "System Update", // update.php
 "AUTHOR" 				=> "Author", //plugins.php
-"ENABLE" 				=> "Enable", //plugins.php
-"DISABLE" 				=> "Disable", //plugins.php
-"NO_THEME_SCREENSHOT" => "No theme screenshot available", //theme.php
+"ENABLE" 				=> "Activate", //plugins.php
+"DISABLE" 				=> "Deactivate", //plugins.php
+"NO_THEME_SCREENSHOT" => "Your theme does not have a screenshot preview", //theme.php
 "UNSAVED_INFORMATION" => "You are about to leave this page and will lose any unsaved information.", //edit.php
 "BACK_TO_WEBSITE" => "Back to Website", //index & resetpassword
 "SUPPORT_FORUM" => "Support Forum", //support.php
-"FILTER" => "Filter", //pages.php
+"FILTER" => "Filte<em>r</em>", //pages.php
 "UPLOADIFY_BUTTON" => "Upload files and/or images...", //upload.php
 "FILE_BROWSER" => "File Browser", //filebrowser.php
 "SELECT_FILE" => "Select file", //filebrowser.php
 "CREATE_FOLDER" => "Create Folder", //upload.php
 "THUMBNAIL" => "Thumbnail", //filebrowser.php
 "ERROR_FOLDER_EXISTS" => "The folder you are trying to create already exists", //upload.php
-"FOLDER_CREATED" => "The new folder was successfully created: <strong>%s</strong>", //upload.php
+"FOLDER_CREATED" => "The new folder was successfully created: <b>%s</b>", //upload.php
 "ERROR_CREATING_FOLDER" => "There was an error creating the new folder", //upload.php
 "DELETE_FOLDER" => "Delete Folder", //upload.php
 "FILE_NAME" => "File Name", //multiple tr header rows
@@ -477,9 +479,57 @@ $i18n = array(
 "ARCHIVE_DATE" => "Archive Date", //archive.php
 "CKEDITOR_LANG" => "en", // edit.php ; set CKEditor language, don't forget to include CKEditor language file in translation zip
 
-"X" => "not translated"
+# new to 3.1 
+"XML_INVALID" => "XML Invalid", //template-functions.php
+"XML_VALID" => "XML Valid",
+"UPDATE_AVAILABLE" => "Update to", //plugins.php
+"STATUS" => "Status", //plugins.php
+"CLONE" => "Clone", //edit.php
+"CLONE_SUCCESS" => "Successfully created %s", //pages.php
+"COPY" => "Copy", //pages.php
+"CLONE_ERROR" => "There was a problem trying to clone <b>%s</b>",  //pages.php
+"AUTOSAVE_NOTIFY" => 'Page autosaved at', //edit.php
+"MENU_MANAGER" => '<em>M</em>enu Manager', //edit.php
+"GET_PLUGINS_LINK" => 'Download <em>M</em>ore Plugins',
+"SITEMAP_REFRESHED" => "Your sitemap has been refreshed", //edit.php
+"LOG_FILE_EMPTY" 		=> 	"This log file is empty", //log.php
+"SHARE" 		=> 	"Share", //footer.php
+"NO_PARENT" => "No Parent", //edit.php
+"REMAINING" => "characters remaining", //edit.php
+"NORMAL" => "Normal", //edit.php
+"ERR_CANNOT_DELETE" => "Cannot delete %s. Please do this manually.", //common.php
+"ADDITIONAL_ACTIONS" => "Other Actions", //edit.php
+"ITEMS" => "items", //upload.php
+"SAVE_MENU_ORDER" => "Save Menu Order", //menu-manager.php
+"MENU_MANAGER_DESC" => "Drag-and-drop the menu items around until you have the order you want, then click the <strong>'Save Menu Order'</strong> button.", //menu-manager.php
+"MENU_MANAGER_SUCCESS" => "The new menu order has been saved", //menu-manager.php
 
 
+/* 
+ * For: api related pages
+ */
+"API_ERR_MISSINGPARAM" => 'parameter data does not exist',
+"API_ERR_BADMETHOD" => 'method %s does not exist',
+"API_ERR_AUTHFAILED" => 'authentication failed',
+"API_ERR_AUTHDISABLED" => 'authentication disabled',
+"API_ERR_NOPAGE" => 'requested page %s does not exist',
+"API_CONFIGURATION" => 'API Configuration',
+"API_ENABLE" => 'Enable the API',
+"API_REGENKEY" => 'Regenerate Key',
+"API_DISCLAIMER" => "By enabling this API you are allowing any external application that has a copy of your key to have access to your website's data. <b>Only share this key with applications you trust.</b>",
+"API_REGEN_DISCLAIMER" => "When you regenerate your API Key, you will need to enter the new key into any external application using this API to connect to your website.",
+"API_CONFIRM" => "ARE YOU SURE?",
+
+
+
+
+"X" => "not translated",
+
+
+/*
+ * Additions for 3.1
+ */
+"DEBUG_CONSOLE" => 'Debug Console'
 
 );
 

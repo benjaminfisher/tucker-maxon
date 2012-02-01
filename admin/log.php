@@ -21,15 +21,17 @@ $log_path = GSDATAOTHERPATH.'logs/';
 $log_file = $log_path . $log_name;
 
 if (!is_file($log_file)) {
-	$log_name = '';
 	$log_data = false;
 }
 
 if (isset($_GET['action']) && $_GET['action'] == 'delete' && strlen($log_name)>0) {
-	$nonce = $_GET['nonce'];
-	if(!check_nonce($nonce, "delete"))
-		die("CSRF detected!");	
-
+	// check for csrf
+	if (!defined('GSNOCSRF') || (GSNOCSRF == FALSE) ) {
+		$nonce = $_GET['nonce'];
+		if(!check_nonce($nonce, "delete")) {
+			die("CSRF detected!");	
+		}
+	}
 	unlink($log_file);
 	exec_action('logfile_delete');
 	redirect('support.php?success='.urlencode('Log '.$log_name . i18n_r('MSG_HAS_BEEN_CLR')));
@@ -37,15 +39,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'delete' && strlen($log_name)>0
 
 if (!isset($log_data)) $log_data = getXML($log_file);
 
+get_template('header', cl($SITENAME).' &raquo; '.i18n_r('SUPPORT').' &raquo; '.i18n_r('LOGS')); 
+
 ?>
-
-<?php get_template('header', cl($SITENAME).' &raquo; '.i18n_r('SUPPORT').' &raquo; '.i18n_r('LOGS')); ?>
 	
-	<h1><a href="<?php echo $SITEURL; ?>" target="_blank" ><?php echo cl($SITENAME); ?></a> <span>&raquo;</span> <?php i18n('SUPPORT');?> <span>&raquo;</span> <?php i18n('VIEWING');?> &lsquo;<span class="filename" ><?php echo $log_name; ?></span>&rsquo;</h1>
-	<?php include('template/include-nav.php'); ?>
-	<?php include('template/error_checking.php'); ?>
+<?php include('template/include-nav.php'); ?>
 
-<div class="bodycontent">
+<div class="bodycontent clearfix">
 	
 	<div id="maincontent">
 		<div class="main">
@@ -54,6 +54,7 @@ if (!isset($log_data)) $log_data = getXML($log_file);
 				<a href="log.php?log=<?php echo $log_name; ?>&action=delete&nonce=<?php echo get_nonce("delete"); ?>" accesskey="<?php echo find_accesskey(i18n_r('CLEAR_ALL_DATA'));?>" title="<?php i18n('CLEAR_ALL_DATA');?> <?php echo $log_name; ?>?" /><?php i18n('CLEAR_THIS_LOG');?></a>
 				<div class="clear"></div>
 			</div>
+			<?php if (!$log_data) echo '<p><em>'.i18n_r('LOG_FILE_EMPTY').'</em></p>'; ?>
 			<ol class="more" >
 				<?php 
 				$count = 1;
@@ -101,7 +102,7 @@ if (!isset($log_data)) $log_data = getXML($log_file);
 						echo "</p></li>";
 						$count++;
 					}
-				}
+				} 
 				
 				?>
 			</ol>
@@ -112,7 +113,6 @@ if (!isset($log_data)) $log_data = getXML($log_file);
 	<div id="sidebar" >
 		<?php include('template/sidebar-support.php'); ?>
 	</div>	
-	
-	<div class="clear"></div>
-	</div>
+
+</div>
 <?php get_template('footer'); ?>

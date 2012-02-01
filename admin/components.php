@@ -27,12 +27,14 @@ if (isset($_POST['submitted'])){
 	$title = $_POST['title'];
 	$ids = $_POST['id'];
 	
-	# check for csrf
-	$nonce = $_POST['nonce'];	
-	if(!check_nonce($nonce, "modify_components")) {
-		die("CSRF detected!");
+	// check for csrf
+	if (!defined('GSNOCSRF') || (GSNOCSRF == FALSE) ) {
+		$nonce = $_POST['nonce'];	
+		if(!check_nonce($nonce, "modify_components")) {
+			die("CSRF detected!");
+		}
 	}
-	
+
 	# create backup file for undo           
 	createBak($file, $path, $bakpath);
 	
@@ -99,7 +101,7 @@ if (count($componentsec) != 0) {
 	foreach ($componentsec as $component) {
 		$table .= '<div class="compdiv" id="section-'.$count.'"><table class="comptable" ><tr><td><b title="'.i18n_r('DOUBLE_CLICK_EDIT').'" class="editable">'. stripslashes($component->title) .'</b></td>';
 		$table .= '<td style="text-align:right;" ><code>&lt;?php get_component(<span class="compslugcode">\''.$component->slug.'\'</span>); ?&gt;</code></td><td class="delete" >';
-		$table .= '<a href="#" title="'.i18n_r('DELETE_COMPONENT').': '. cl($component->title).'?" id="del-'.$count.'" onClick="DeleteComp(\''.$count.'\'); return false;" >X</a></td></tr></table>';
+		$table .= '<a href="#" title="'.i18n_r('DELETE_COMPONENT').': '. cl($component->title).'?" class="delcomponent" rel="'.$count.'" >&times;</a></td></tr></table>';
 		$table .= '<textarea name="val[]">'. stripslashes($component->value) .'</textarea>';
 		$table .= '<input type="hidden" class="compslug" name="slug[]" value="'. $component->slug .'" />';
 		$table .= '<input type="hidden" class="comptitle" name="title[]" value="'. stripslashes($component->title) .'" />';
@@ -121,14 +123,14 @@ if (count($componentsec) != 0) {
 		$submitclass = 'hidden';
 		
 	}
+
+get_template('header', cl($SITENAME).' &raquo; '.i18n_r('COMPONENTS')); 
+
 ?>
+	
+<?php include('template/include-nav.php'); ?>
 
-<?php get_template('header', cl($SITENAME).' &raquo; '.i18n_r('COMPONENTS')); ?>
-
-	<h1><a href="<?php echo $SITEURL; ?>" target="_blank" ><?php echo cl($SITENAME); ?></a> <span>&raquo;</span> <?php i18n('THEME_MANAGEMENT');?> <span>&raquo;</span> <?php i18n('COMPONENTS');?></h1>
-	<?php include('template/include-nav.php'); ?>
-	<?php include('template/error_checking.php'); ?>
-<div class="bodycontent">
+<div class="bodycontent clearfix">
 	
 	<div id="maincontent">
 	<div class="main">
@@ -156,7 +158,5 @@ if (count($componentsec) != 0) {
 		<?php if ($listc != '') { echo '<div class="compdivlist">'.$listc .'</div>'; } ?>
 	</div>
 
-	
-	<div class="clear"></div>
-	</div>
+</div>
 <?php get_template('footer'); ?>

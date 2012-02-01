@@ -13,8 +13,8 @@
  * Bad stuff protection
  */
 define('IN_GS', TRUE);
-include_once('nonce.php');
-include_once('xss.php');
+include_once('security_functions.php');
+
 if (version_compare(PHP_VERSION, "5")  >= 0) {
 	foreach ($_GET as &$xss) $xss = antixss($xss);
 }
@@ -24,6 +24,7 @@ if (version_compare(PHP_VERSION, "5")  >= 0) {
  */
 include('basic.php');
 include('template_functions.php');
+
 
 define('GSROOTPATH', get_root_path());
 
@@ -53,19 +54,27 @@ define('GSBACKUPSPATH', GSROOTPATH. 'backups/');
 define('GSTHEMESPATH', GSROOTPATH. 'theme/');
 define('GSUSERSPATH', GSROOTPATH. 'data/users/');
 define('GSBACKUSERSPATH', GSROOTPATH. 'backups/users/');
+define('GSCACHEPATH', GSROOTPATH. 'data/cache/');
+define('GSAUTOSAVEPATH', GSROOTPATH. 'data/pages/autosave/');
 
-/**
- * Debugging
- */
-if ( defined('GSDEBUG') && (GSDEBUG == TRUE) ) {
-	error_reporting(E_ALL | E_STRICT);
-	ini_set('display_errors', 1);
-} else {
-	error_reporting(0);
-	ini_set('display_errors', 0);
+/* create new folders */
+if (!file_exists(GSCACHEPATH)) {
+	if (defined('GSCHMOD')) { 
+		$chmod_value = GSCHMOD; 
+	} else {
+		$chmod_value = 0755;
+	}
+	mkdir(GSCACHEPATH, $chmod_value);
 }
-ini_set('log_errors', 1);
-ini_set('error_log', GSDATAOTHERPATH .'logs/errorlog.txt');
+
+if (!file_exists(GSAUTOSAVEPATH)) {
+	if (defined('GSCHMOD')) { 
+		$chmod_value = GSCHMOD; 
+	} else {
+		$chmod_value = 0755;
+	}
+	mkdir(GSAUTOSAVEPATH, $chmod_value);
+}
 
 
 /**
@@ -79,23 +88,19 @@ $load['plugin'] = (isset($load['plugin'])) ? $load['plugin'] : '';
 
 
 /**
- * Check to see what database engine to use
- * XML is the default
+ * Debugging
  */
- /*
-define('GSSAVETYPE', 'XML');
-	# mysql 
-	$mysql_constants = array('GSSTORAGE','DB_HOST','DB_PASS','DB_USER','DB_DATABASE');
-	if (defined_array($mysql_constants) && lowercase(GSSTORAGE) == 'mysql') {
-		include_once('mysql_functions.php');
-		if (storage_connect()) {
-			define('GSSAVETYPE', 'MYSQL');
-		}
-	}
+if ( defined('GSDEBUG') && (GSDEBUG == TRUE) ) {
+	error_reporting(E_ERROR | (defined('ERROR_WARNING')? ERROR_WARNING : 0));
+	ini_set('display_errors', 1);
+} else {
+	error_reporting(0);
+	ini_set('display_errors', 0);
+}
+ini_set('log_errors', 1);
+ini_set('error_log', GSDATAOTHERPATH .'logs/errorlog.txt');
 
-# if xml is still the storage method, include it's storage functions
-if(GSSAVETYPE == 'XML') include_once('xml_functions.php');
-*/
+
 
 
 /**
@@ -113,28 +118,25 @@ if (file_exists($thisfilew)) {
 	$PERMALINK = $dataw->PERMALINK;
 } 
 
+
 /** grab user data */
-if(!isset($base)) {
-	if (isset($_COOKIE['GS_ADMIN_USERNAME'])) {
-		$cookie_user_id = _id($_COOKIE['GS_ADMIN_USERNAME']);
-		if (file_exists(GSUSERSPATH . $cookie_user_id.'.xml')) {
-			$datau = getXML(GSUSERSPATH  . $cookie_user_id.'.xml');
-			$USR = stripslashes($datau->USR);
-			$HTMLEDITOR = $datau->HTMLEDITOR;
-			$TIMEZONE = $datau->TIMEZONE;
-			$LANG = $datau->LANG;
-		} else {
-			$USR = null;
-			$TIMEZONE = 'America/New_York';	
-		}
+if (isset($_COOKIE['GS_ADMIN_USERNAME'])) {
+	$cookie_user_id = _id($_COOKIE['GS_ADMIN_USERNAME']);
+	if (file_exists(GSUSERSPATH . $cookie_user_id.'.xml')) {
+		$datau = getXML(GSUSERSPATH  . $cookie_user_id.'.xml');
+		$USR = stripslashes($datau->USR);
+		$HTMLEDITOR = $datau->HTMLEDITOR;
+		$TIMEZONE = $datau->TIMEZONE;
+		$LANG = $datau->LANG;
 	} else {
 		$USR = null;
-		$TIMEZONE = 'America/New_York';
+		$TIMEZONE = "";	
 	}
 } else {
 	$USR = null;
-	$TIMEZONE = 'America/New_York';
+	$TIMEZONE = "";
 }
+
 
 /** grab authorization and security data */
 if (file_exists(GSDATAOTHERPATH .'authorization.xml')) {
@@ -149,7 +151,7 @@ $SESSIONHASH = sha1($SALT . $SITENAME);
 /**
  * Timezone setup
  */
-if( function_exists('date_default_timezone_set') && ($TIMEZONE != '' || stripos($TIMEZONE, '--')) ) { 
+if( function_exists('date_default_timezone_set') && ($TIMEZONE != "" || stripos($TIMEZONE, '--')) ) { 
 	date_default_timezone_set($TIMEZONE);
 }
 
@@ -158,7 +160,13 @@ if( function_exists('date_default_timezone_set') && ($TIMEZONE != '' || stripos(
  * Language control
  */
 if(!isset($LANG) || $LANG == '') {
-	$LANG = 'en_US';
+	$filenames = getFiles(GSLANGPATH);
+	$cntlang = count($filenames);
+	if ($cntlang == 1) {
+		$LANG = basename($filenames[0], ".php");
+	} elseif($cntlang > 1) {
+		$LANG = 'en_US';
+	}
 }
 include_once(GSLANGPATH . $LANG . '.php');
 
@@ -166,15 +174,14 @@ include_once(GSLANGPATH . $LANG . '.php');
 /**
  * Variable Globalization
  */
-global $SITENAME, $SITEURL, $TEMPLATE, $TIMEZONE, $LANG, $SALT, $i18n, $USR, $PERMALINK, $GSADMIN;
+global $SITENAME, $SITEURL, $TEMPLATE, $TIMEZONE, $LANG, $SALT, $i18n, $USR, $PERMALINK, $GSADMIN, $components;
 
+$GS_debug        = array();
 
 /**
  * $base is if the site is being viewed from the front-end
  */
-if(!isset($base)) {
-	include_once(GSADMININCPATH.'cookie_functions.php');
-} else {
+if(isset($base)) {
 	include_once(GSADMININCPATH.'theme_functions.php');
 }
 
@@ -198,14 +205,18 @@ if (get_filename_id() != 'install' && get_filename_id() != 'setup' && get_filena
 	} 
 	
 	# if you've made it this far, the site is already installed so remove the installation files
+	$filedeletionstatus=true;
 	if (file_exists(GSADMINPATH.'install.php'))	{
-		unlink(GSADMINPATH.'install.php');
+		$filedeletionstatus = unlink(GSADMINPATH.'install.php');
 	}
 	if (file_exists(GSADMINPATH.'setup.php'))	{
-		unlink(GSADMINPATH.'setup.php');
+		$filedeletionstatus = unlink(GSADMINPATH.'setup.php');
 	}
 	if (file_exists(GSADMINPATH.'update.php'))	{
-		unlink(GSADMINPATH.'update.php');
+		$filedeletionstatus = unlink(GSADMINPATH.'update.php');
+	}
+	if (!$filedeletionstatus) {
+		$error = sprintf(i18n_r('ERR_CANNOT_DELETE'), '<code>/'.$GSADMIN.'/install.php</code>, <code>/'.$GSADMIN.'/setup.php</code> or <code>/'.$GSADMIN.'/update.php</code>');
 	}
 }
 
@@ -213,7 +224,26 @@ if (get_filename_id() != 'install' && get_filename_id() != 'setup' && get_filena
 /**
  * Include other files depending if they are needed or not
  */
+include_once(GSADMININCPATH.'cookie_functions.php');
+if(isset($load['plugin']) && $load['plugin']){
+	# remove the pages.php plugin if it exists. 	
+	if (file_exists(GSPLUGINPATH.'pages.php'))	{
+		unlink(GSPLUGINPATH.'pages.php');
+	}
+	include_once(GSADMININCPATH.'plugin_functions.php');
+	if(get_filename_id()=='settings' || get_filename_id()=='load') {
+		/* this core plugin only needs to be visible when you are viewing the 
+		settings page since that is where it's sidebar item is. */
+		if (defined('GSEXTAPI') && GSEXTAPI==1) {
+			include_once('api.plugin.php');
+		}
+	}
+	# include core plugin for page caching
+	include_once('caching_functions.php');
+	
+	# main hook for common.php
+	exec_action('common');
+	
+}
 if(isset($load['login']) && $load['login']){ 	include_once(GSADMININCPATH.'login_functions.php'); }
-if(isset($load['plugin']) && $load['plugin']){ 	include_once(GSADMININCPATH.'plugin_functions.php'); }
-
 ?>

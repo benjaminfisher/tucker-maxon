@@ -14,8 +14,10 @@
 include('inc/common.php');
 login_cookie_check();
 
+$filesSorted=null;$dirsSorted=null;
 $path = (isset($_GET['path'])) ? "../data/uploads/".$_GET['path'] : "../data/uploads/";
 $subPath = (isset($_GET['path'])) ? $_GET['path'] : "";
+$returnid = (isset($_GET['returnid'])) ? $_GET['returnid'] : "";
 $path = tsl($path);
 // check if host uses Linux (used for displaying permissions
 $isUnixHost = (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' ? false : true);
@@ -40,9 +42,16 @@ $LANG_header = preg_replace('/(?:(?<=([a-z]{2}))).*/', '', $LANG);
 	</style>
 	<script type='text/javascript'>
 	function submitLink($funcNum, $url) {
-		if(window.opener){
-			window.opener.CKEDITOR.tools.callFunction($funcNum, $url);
+		if ($funcNum=="2"){
+			if(window.opener){
+				window.opener.CKEDITOR.tools.callFunction($funcNum, $url);
+			}
 		}
+		<?php if (isset($_GET['returnid'])){ ?>
+			if(window.opener){
+				window.opener.document.getElementById('<?php echo $returnid; ?>').value=$url;
+			}
+		<?php } ?>	
 		window.close();
 	}
 	</script>
@@ -104,7 +113,12 @@ $LANG_header = preg_replace('/(?:(?<=([a-z]{2}))).*/', '', $LANG);
 			echo '<tr class="All" >';  
 			echo '<td class="" colspan="5">';
 			$adm = substr($path . $upload['name'] ,  16); 
-			echo '<img src="template/images/folder.png" width="11" /> <a href="filebrowser.php?path='.$adm.'&amp;CKEditorFuncNum='.$CKEditorFuncNum.'&amp;type='.$type.'" title="'. $upload['name'] .'"  ><strong>'.$upload['name'].'</strong></a>';
+			if ($returnid!='') {
+				$returnlink = '&returnid='.$returnid;
+			} else {
+				$returnlink='';
+			}
+			echo '<img src="template/images/folder.png" width="11" /> <a href="filebrowser.php?path='.$adm.'&amp;CKEditorFuncNum='.$CKEditorFuncNum.'&amp;type='.$type.$returnlink.'" title="'. $upload['name'] .'"  ><strong>'.$upload['name'].'</strong></a>';
 			echo '</td>';
 			echo '</tr>';
 		}
@@ -112,6 +126,7 @@ $LANG_header = preg_replace('/(?:(?<=([a-z]{2}))).*/', '', $LANG);
 
 	if (count($filesSorted) != 0) { 			
 		foreach ($filesSorted as $upload) {
+			$upload['name'] = rawurlencode($upload['name']);
 			$thumb = null; $thumbnailLink = null;
 			$subDir = ($subPath == '' ? '' : $subPath.'/');
 			$selectLink = 'title="'.i18n_r('SELECT_FILE').': '. htmlspecialchars($upload['name']) .'" href="javascript:void(0)" onclick="submitLink('.$CKEditorFuncNum.',\''.$fullPath.$subDir.$upload['name'].'\')"';
@@ -146,12 +161,10 @@ $LANG_header = preg_replace('/(?:(?<=([a-z]{2}))).*/', '', $LANG);
 			echo '<td style="width:80px;text-align:right;" ><span>'. $upload['size'] .'</span></td>';
 
 			// get the file permissions.
-			if ($isUnixHost && defined('GSDEBUG')) {
+			if ($isUnixHost && defined('GSDEBUG') && function_exists('posix_getpwuid')) {
 				$filePerms = substr(sprintf('%o', fileperms($path.$upload['name'])), -4);
 				$fileOwner = posix_getpwuid(fileowner($path.$upload['name']));
-				if (($filePerms) && ($fileOwner['name'])){
-					echo '<td style="width:70px;text-align:right;"><span>'.$fileOwner['name'].'/'.$filePerms.'</span></td>';
-				}
+				echo '<td style="width:70px;text-align:right;"><span>'.$fileOwner['name'].'/'.$filePerms.'</span></td>';
 			}
 
 			echo '<td style="width:85px;text-align:right;" ><span>'. shtDate($upload['date']) .'</span></td>';

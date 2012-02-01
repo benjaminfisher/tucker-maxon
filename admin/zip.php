@@ -22,7 +22,7 @@ if ($_REQUEST['s'] === $SESSIONHASH) {
 	# fix from hameau 
 	//$timestamp = date('Y-m-d-Hi');
 	$timestamp = gmdate('Y-m-d-Hi_s');
-	
+	$zipcreated = true;
 	
 	ini_set("memory_limit","600M"); 
 
@@ -42,10 +42,10 @@ if ($_REQUEST['s'] === $SESSIONHASH) {
 		foreach($iter as $element) {
 		    /* @var $element SplFileInfo */
 		    $dir = str_replace($sourcePath, '', $element->getPath()) . '/';
-		    if ( strstr($dir, $GSADMIN.'/') || strstr($dir, 'backups/') ) {
-		    	#don't archive these folders
-		  	} else {
-			    if ($element->isDir()) {
+		    if ( strstr($dir, $GSADMIN.'/') || strstr($dir, 'backups/')) {
+  				#don't archive these folders
+				} else if ($element->getFilename() != '..') { // FIX: if added to ignore parent directories
+				  if ($element->isDir()) {
 				     $archiv->addEmptyDir($dir);
 			    } elseif ($element->isFile()) {
 			        $file         = $element->getPath() .
@@ -63,12 +63,19 @@ if ($_REQUEST['s'] === $SESSIONHASH) {
 		// save and close 
 		$status = $archiv->close();
 		if (!$status) {
-			redirect('archive.php?nozip');
+			$zipcreated = false;
 		}
 		
 	} else {
-		redirect('archive.php?nozip');	
+		$zipcreated = false;	
 	}
+	if (!$zipcreated) {
+		$zipcreated = archive_targz();
+	}
+	if (!$zipcreated) {
+		redirect('archive.php?nozip');
+	} 
+	
 	// redirect back to archive page with a success
 	redirect('archive.php?done');
 

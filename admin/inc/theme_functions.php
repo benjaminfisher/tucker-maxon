@@ -293,12 +293,13 @@ function get_header($full=true) {
 	
 	$keywords = get_page_meta_keywords(FALSE);
 	
-	echo '<meta name="description" content="'.encode_quotes($description).'" />'."\n";
-	echo '<meta name="keywords" content="'.encode_quotes($keywords).'" />'."\n";
+	echo '<meta name="description" content="'.get_page_meta_desc(false).'" />'."\n";
+	echo '<meta name="keywords" content="'.get_page_meta_keywords(false).'" />'."\n";
 	if ($full) {
 		echo '<meta name="generator" content="'. $site_full_name .'" />'."\n";
 		echo '<link rel="canonical" href="'. get_page_url(true) .'" />'."\n";
 	}
+	get_scripts_frontend();
 	exec_action('theme-header');
 }
 
@@ -315,6 +316,7 @@ function get_header($full=true) {
  * @return string HTML for template header
  */
 function get_footer() {
+	get_scripts_frontend(TRUE);
 	exec_action('theme-footer');
 }
 
@@ -388,8 +390,10 @@ function get_site_name($echo=true) {
 
 /**
  * Get Administrator's Email Address
- *
+ * 
  * This will return the value set in the control panel
+ * 
+ * @depreciated as of 3.0
  *
  * @since 1.0
  * @uses $EMAIL
@@ -408,25 +412,6 @@ function get_site_email($echo=true) {
 	}
 }
 
-/**
- * Get Installed GetSimple Version
- *
- * This will return the version of GetSimple that is installed
- *
- * @since 1.0
- * @uses GSVERSION
- *
- * @param bool $echo Optional, default is true. False will 'return' value
- * @return string Echos or returns based on param $echo
- */
-function get_site_version($echo=true) {
-	include(GSADMININCPATH.'configuration.php');
-	if ($echo) {
-		echo GSVERSION;
-	} else {
-		return GSVERSION;
-	}
-}
 
 /**
  * Get Site Credits
@@ -447,7 +432,7 @@ function get_site_version($echo=true) {
 function get_site_credits($text ='Powered by ') {
 	include(GSADMININCPATH.'configuration.php');
 	
-	$site_credit_link = '<a href="'.$site_link_back_url.'" >'.$text.' '.$site_full_name.'</a>';
+	$site_credit_link = '<a href="'.$site_link_back_url.'" target="_blank" >'.$text.' '.$site_full_name.'</a>';
 	echo stripslashes($site_credit_link);
 }
 
@@ -567,24 +552,29 @@ function menu_data($id = null,$xml=false) {
  * @since 1.0
  * @uses GSDATAOTHERPATH
  * @uses getXML
+ * @modified mvlcek 6/12/2011
  *
  * @param string $id This is the ID of the component you want to display
  *				True will return value in XML format. False will return an array
  * @return string 
  */
 function get_component($id) {
-	if (file_exists(GSDATAOTHERPATH.'components.xml')) {
-		$data = getXML(GSDATAOTHERPATH.'components.xml');
-		$components = $data->item;
-		
-		if (count($components) != 0) {
-			foreach ($components as $component) {
-				if ($id == $component->slug) { 
-					eval("?>" . strip_decode($component->value) . "<?php "); 
-				}
-			}
-		}
-	}
+    global $components;
+    if (!$components) {
+         if (file_exists(GSDATAOTHERPATH.'components.xml')) {
+            $data = getXML(GSDATAOTHERPATH.'components.xml');
+            $components = $data->item;
+        } else {
+            $components = array();
+        }
+    }
+    if (count($components) > 0) {
+        foreach ($components as $component) {
+            if ($id == $component->slug) { 
+                eval("?>" . strip_decode($component->value) . "<?php "); 
+            }
+        }
+    }
 }
 
 /**
@@ -608,33 +598,7 @@ function get_navigation($currentpage) {
 
 	$menu = '';
 
-	$path = GSDATAPAGESPATH;
-	$dir_handle = opendir($path) or die("Unable to open $path");
-	$filenames = array();
-	while ($filename = readdir($dir_handle)) {
-		$filenames[] = $filename;
-	}
-	
-	$count="0";
-	$pagesArray = array();
-	if (count($filenames) != 0) {
-		foreach ($filenames as $file) {
-			if ($file == "." || $file == ".." || is_dir($path . $file) || $file == ".htaccess"  ) {
-				// not a page data file
-			} else {
-				$data = getXML($path . $file);
-				if ($data->private != 'Y') {
-					$pagesArray[$count]['menuStatus'] = $data->menuStatus;
-					$pagesArray[$count]['menuOrder'] = $data->menuOrder;
-					$pagesArray[$count]['menu'] = strip_decode($data->menu);
-					$pagesArray[$count]['url'] = $data->url;
-					$pagesArray[$count]['title'] = strip_decode($data->title);
-					$pagesArray[$count]['parent'] = $data->parent;
-					$count++;
-				}
-			}
-		}
-	}
+	global $pagesArray;
 	
 	$pagesSorted = subval_sort($pagesArray,'menuOrder');
 	if (count($pagesSorted) != 0) { 
@@ -646,13 +610,12 @@ function get_navigation($currentpage) {
 				if ("$currentpage" == "$url_nav") { $classes = "current ". $page['parent'] ." ". $url_nav; } else { $classes = trim($page['parent'] ." ". $url_nav); }
 				if ($page['menu'] == '') { $page['menu'] = $page['title']; }
 				if ($page['title'] == '') { $page['title'] = $page['menu']; }
-				$menu .= '<li class="'. $classes .'"><a href="'. find_url($page['url'],$page['parent']) . '" title="'. strip_quotes($page['title']) .'">'.$page['menu'].'</a></li>'."\n";
+				$menu .= '<li class="'. $classes .'"><a href="'. find_url($page['url'],$page['parent']) . '" title="'. $page['title'] .'">'.$page['menu'].'</a></li>'."\n";
 			}
 		}
 		
 	}
 	
-	closedir($dir_handle);
 	echo exec_filter('menuitems',$menu);
 }
 

@@ -29,9 +29,22 @@ if ($_POST['sessionHash'] === $SESSIONHASH) {
 
 		$targetFile =  str_replace('//','/',$targetPath) . $name;
 		
-		move_uploaded_file($tempFile, $targetFile);
-		chmod($targetFile, 0644);   
-		$ext = lowercase(substr($name, strrpos($name, '.') + 1));	
+		//validate file
+		if (validate_safe_file($tempFile, $_FILES["Filedata"]["name"], $_FILES["Filedata"]["type"])) {
+			move_uploaded_file($tempFile, $targetFile);
+			if (defined('GSCHMOD')) {
+				chmod($targetFile, GSCHMOD);
+			} else {
+				chmod($targetFile, 0644);
+			}
+			exec_action('file-uploaded');
+		} else {
+			i18n('ERROR_UPLOAD');
+			exit;
+		}
+		
+		   
+		$ext = lowercase(pathinfo($name,PATHINFO_EXTENSION));	
 		
 		if ($ext == 'jpg' || $ext == 'jpeg' || $ext == 'gif' || $ext == 'png' )	{
 			
@@ -39,7 +52,12 @@ if ($_POST['sessionHash'] === $SESSIONHASH) {
 			$thumbsPath = GSTHUMBNAILPATH.$path;
 			
 			if (!(file_exists($thumbsPath))) {
-				mkdir($thumbsPath, 0755);
+				if (defined('GSCHMOD')) { 
+					$chmod_value = GSCHMOD; 
+				} else {
+					$chmod_value = 0755;
+				}
+				mkdir($thumbsPath, $chmod_value);
 			}
 			echo $path;
 			echo " ".$thumbsPath;
@@ -137,4 +155,3 @@ if ($_POST['sessionHash'] === $SESSIONHASH) {
 } else {
 	echo 'Wrong session hash!';
 }
-?>

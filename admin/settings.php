@@ -25,14 +25,18 @@ $pwd1 =null;$error =null;$success=null;$pwd2 =null;$editorchck =null; $prettychc
 
 # if the undo command was invoked
 if (isset($_GET['undo'])) { 
+	
 	# first check for csrf
-	$nonce = $_GET['nonce'];
-	if(!check_nonce($nonce, "undo")) {
-		die("CSRF detected!");
+	if (!defined('GSNOCSRF') || (GSNOCSRF == FALSE) ) {
+		$nonce = $_GET['nonce'];
+		if(!check_nonce($nonce, "undo")) {
+			die("CSRF detected!");
+		}
 	}
 	# perform undo
 	undo($file, GSUSERSPATH, GSBACKUSERSPATH);
 	undo($wfile, GSDATAOTHERPATH, GSBACKUPSPATH.'other/');
+	generate_sitemap();
 	
 	# redirect back to yourself to show the new restored data
 	redirect('settings.php?restored=true');
@@ -49,11 +53,13 @@ if (isset($_GET['restored'])) {
 if(isset($_POST['submitted'])) {
 	
 	# first check for csrf
-	$nonce = $_POST['nonce'];
-	if(!check_nonce($nonce, "save_settings")) {
-		die("CSRF detected!");	
+	if (!defined('GSNOCSRF') || (GSNOCSRF == FALSE) ) {
+		$nonce = $_POST['nonce'];
+		if(!check_nonce($nonce, "save_settings")) {
+			die("CSRF detected!");	
+		}
 	}
-
+	
 	# website-specific fields
 	if(isset($_POST['sitename'])) { 
 		$SITENAME = htmlentities($_POST['sitename'], ENT_QUOTES, 'UTF-8'); 
@@ -115,6 +121,9 @@ if(isset($_POST['submitted'])) {
 		$xml->addChild('HTMLEDITOR', $HTMLEDITOR);
 		$xml->addChild('TIMEZONE', $TIMEZONE);
 		$xml->addChild('LANG', $LANG);
+		
+		exec_action('settings-user');
+		
 		if (! XMLsave($xml, GSUSERSPATH . $file) ) {
 			$error = i18n_r('CHMOD_ERROR');
 		}
@@ -130,6 +139,9 @@ if(isset($_POST['submitted'])) {
 		$note->addCData($TEMPLATE);
 		$xmls->addChild('PRETTYURLS', $PRETTYURLS);
 		$xmls->addChild('PERMALINK', $PERMALINK);
+		
+		exec_action('settings-website');
+		
 		if (! XMLsave($xmls, GSDATAOTHERPATH . $wfile) ) {
 			$error = i18n_r('CHMOD_ERROR');
 		}
@@ -139,6 +151,7 @@ if(isset($_POST['submitted'])) {
 		
 		if (!$error) {
 			$success = i18n_r('ER_SETTINGS_UPD').'. <a href="settings.php?undo&nonce='.get_nonce("undo").'">'.i18n_r('UNDO').'</a>';
+			generate_sitemap();
 		}
 		
 	}
@@ -168,13 +181,14 @@ if (count($lang_array) != 0) {
 } else {
 	$langs = '<option value="" selected="selected" >-- '.i18n_r('NONE').' --</option>';
 }
-?>
 
-<?php get_template('header', cl($SITENAME).' &raquo; '.i18n_r('GENERAL_SETTINGS')); ?>
-	<h1><a href="<?php echo $SITEURL; ?>" target="_blank" ><?php echo cl($SITENAME); ?></a> <span>&raquo;</span> <?php i18n('GENERAL_SETTINGS');?></h1>
-	<?php include('template/include-nav.php'); ?>
-	<?php include('template/error_checking.php'); ?>
-<div class="bodycontent">
+get_template('header', cl($SITENAME).' &raquo; '.i18n_r('GENERAL_SETTINGS')); 
+
+?>
+	
+<?php include('template/include-nav.php'); ?>
+
+<div class="bodycontent clearfix">
 	
 	<div id="maincontent">
 		<form class="largeform" action="<?php myself(); ?>" method="post" accept-charset="utf-8" >
@@ -193,7 +207,7 @@ if (count($lang_array) != 0) {
 		<div class="clear"></div>
 		
 		<div class="leftsec">
-			<p><label for="permalink" ><?php i18n('PERMALINK');?>:</label><input class="text" name="permalink" id="permalink" type="text" value="<?php if(isset($PERMALINK)) { echo $PERMALINK; } ?>" /><br /><a href="http://get-simple.info/wiki/pretty_urls" style="font-size:11px;" target="_blank" ><?php i18n('MORE');?></a></p>
+			<p><label for="permalink"  class="clearfix"><?php i18n('PERMALINK');?>: <span class="right"><a href="http://get-simple.info/wiki/pretty_urls" target="_blank" ><?php i18n('MORE');?></a></span></label><input class="text" name="permalink" id="permalink" type="text" value="<?php if(isset($PERMALINK)) { echo $PERMALINK; } ?>" /></p>
 		</div>
 		<div class="clear"></div>
 		
@@ -208,7 +222,7 @@ if (count($lang_array) != 0) {
 			<p><label for="user" ><?php i18n('LABEL_USERNAME');?>:</label><input class="text" id="user" name="user" type="text" readonly value="<?php if(isset($USR1)) { echo $USR1; } else { echo $USR; } ?>" /></p>
 		</div>
 		<div class="rightsec">
-			<p><label for="email" ><?php i18n('LABEL_EMAIL');?>:</label><input class="text" id="email" name="email" type="text" value="<?php if(isset($EMAIL1)) { echo $EMAIL1; } else { echo $EMAIL; } ?>" /></p>
+			<p><label for="email" ><?php i18n('LABEL_EMAIL');?>:</label><input class="text" id="email" name="email" type="email" value="<?php if(isset($EMAIL1)) { echo $EMAIL1; } else { echo $EMAIL; } ?>" /></p>
 			<?php if (! check_email_address($EMAIL)) {
 				echo '<p style="margin:-15px 0 20px 0;color:#D94136;font-size:11px;" >'.i18n_r('WARN_EMAILINVALID').'</p>';
 			}?>
@@ -224,10 +238,10 @@ if (count($lang_array) != 0) {
 			</p>
 		</div>
 		<div class="rightsec">
-			<p><label for="lang" ><?php i18n('LANGUAGE');?>:</label>
+			<p><label for="lang" ><?php i18n('LANGUAGE');?>: <span class="right"><a href="http://get-simple.info/wiki/languages" target="_blank" ><?php i18n('MORE');?></a></span></label>
 			<select name="lang" id="lang" class="text">
 				<?php echo $langs; ?>
-			</select><br /><a href="http://get-simple.info/wiki/languages" style="font-size:11px;" target="_blank" ><?php i18n('MORE');?></a>
+			</select>
 			</p>
 		</div>
 		<div class="clear"></div>
@@ -253,15 +267,10 @@ if (count($lang_array) != 0) {
 	</form>
 	
 	</div>
-
-
-
-
 	
 	<div id="sidebar" >
 		<?php include('template/sidebar-settings.php'); ?>		
 	</div>
-	
-	<div class="clear"></div>
-	</div>
+
+</div>
 <?php get_template('footer'); ?>

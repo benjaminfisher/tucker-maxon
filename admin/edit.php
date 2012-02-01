@@ -34,18 +34,17 @@ $menuStatus = '';
 $private = ''; 
 $menu = ''; 
 $content = '';
+$author = '';
 $title = '';
 $url = '';
 $metak = '';
 $metad = '';
 
-if ($id)
-{
+if ($id){
 	// get saved page data
 	$file = $id .'.xml';
 	
-	if (!file_exists($path . $file))
-	{ 
+	if (!file_exists($path . $file)){ 
 		redirect('pages.php?error='.urlencode(i18n_r('PAGE_NOTEXIST')));
 	}
 
@@ -58,14 +57,21 @@ if ($id)
 	$content = stripslashes($data_edit->content);
 	$template = $data_edit->template;
 	$parent = $data_edit->parent;
+	$author = $data_edit->author;
 	$menu = stripslashes($data_edit->menu);
 	$private = $data_edit->private;
 	$menuStatus = $data_edit->menuStatus;
 	$menuOrder = $data_edit->menuOrder;
 	$buttonname = i18n_r('BTN_SAVEUPDATES');
-} 
-else 
-{
+} else {
+	// prefill fields is provided
+	$title 		=  isset($_GET['title']) ? $_GET['title'] : '';
+	$template 	=  isset($_GET['template']) ? $_GET['template'] : '';
+	$parent 	=  isset($_GET['parent']) ? $_GET['parent'] : '';
+	$menu		=  isset($_GET['menu']) ? $_GET['menu'] : '';
+	$private 	=  isset($_GET['private']) ? $_GET['private'] : '';
+	$menuStatus =  isset($_GET['menuStatus']) ? $_GET['menuStatus'] : '';
+	$menuOrder =  isset($_GET['menuOrder']) ? $_GET['menuOrder'] : '';
 	$buttonname = i18n_r('BTN_SAVEPAGE');
 }
 
@@ -77,7 +83,7 @@ $themes_path = GSTHEMESPATH . $TEMPLATE;
 $themes_handle = opendir($themes_path) or die("Unable to open ". GSTHEMESPATH);		
 while ($file = readdir($themes_handle))	{		
 	if( isFile($file, $themes_path, 'php') ) {		
-		if ($file != 'functions.php') {		
+		if ($file != 'functions.php' && !strpos(strtolower($file), '.inc.php')) {		
       $templates[] = $file;		
     }		
 	}		
@@ -85,23 +91,16 @@ while ($file = readdir($themes_handle))	{
 		
 sort($templates);
 
-foreach ($templates as $file)
-{
-	if ($template == $file)
-	{ 
+foreach ($templates as $file){
+	if ($template == $file)	{ 
 		$sel="selected"; 
-	} 
-	else
-	{ 
+	} else{ 
 		$sel=""; 
 	}
 	
-	if ($file == 'template.php')
-	{ 
+	if ($file == 'template.php'){ 
 		$templatename=i18n_r('DEFAULT_TEMPLATE'); 
-	} 
-	else 
-	{ 
+	} else { 
 		$templatename=$file;
 	}
 	
@@ -110,23 +109,18 @@ foreach ($templates as $file)
 
 // SETUP CHECKBOXES
 $sel_m = ($menuStatus != '') ? 'checked' : '' ;
-$sel_p = ($private != '') ? 'checked' : '' ;
+$sel_p = ($private == 'Y') ? 'selected' : '' ;
 if ($menu == '') { $menu = $title; } 
-?>		
 
+get_template('header', cl($SITENAME).' &raquo; '.i18n_r('PAGE_MANAGEMENT')); 
 
-<?php get_template('header', cl($SITENAME).' &raquo; '.i18n_r('PAGE_MANAGEMENT')); ?>
-	
-	<h1>
-		<a href="<?php echo $SITEURL; ?>" target="_blank" ><?php echo cl($SITENAME); ?></a> <span>&raquo;</span> <?php i18n('PAGE_MANAGEMENT'); ?> <span>&raquo;</span> <?php if(isset($data_edit)) { echo i18n_r('PAGE').' &lsquo;<span class="filename" >'. $url .'</span>&rsquo;'; } else { echo i18n_r('NEW_PAGE'); } ?>		
-	</h1>
-	
-	<?php 
-		include('template/include-nav.php');
-		include('template/error_checking.php'); 
-	?>
-	
-	<div class="bodycontent">
+?>
+
+<noscript><style>#metadata_window {display:block !important} </style></noscript>
+
+<?php include('template/include-nav.php'); ?>
+
+<div class="bodycontent clearfix">
 	
 	<div id="maincontent">
 		<div class="main">
@@ -136,7 +130,7 @@ if ($menu == '') { $menu = $title; }
 		<!-- pill edit navigation -->
 		<div class="edit-nav" >
 			<?php 
-			if( (isset($id)) && ($private != 'Y' )) {
+			if(isset($id)) {
 				echo '<a href="', find_url($url, $parent) ,'" target="_blank" accesskey="', find_accesskey(i18n_r('VIEW')), '" >', i18n_r('VIEW'), ' </a>';
 			} 
 			?>
@@ -146,7 +140,7 @@ if ($menu == '') { $menu = $title; }
 			
 		<form class="largeform" id="editform" action="changedata.php" method="post" accept-charset="utf-8" >
 			<input id="nonce" name="nonce" type="hidden" value="<?php echo get_nonce("edit", "edit.php"); ?>" />			
-
+			<input id="author" name="post-author" type="hidden" value="<?php echo $USR; ?>" />	
 
 			<!-- page title toggle screen -->
 			<p id="edit_window">
@@ -158,66 +152,65 @@ if ($menu == '') { $menu = $title; }
 			<!-- metadata toggle screen -->
 			<div style="display:none;" id="metadata_window" >
 			<div class="leftopt">
-				<p>
-					<label for="post-id"><?php i18n('SLUG_URL'); ?>:</label>
-          <input class="text short" type="text" id="post-id" name="post-id" value="<?php echo $url; ?>" <?php echo ($url=='index'?'readonly="readonly" ':''); ?>/>
+				<p class="inline clearfix" id="post-private-wrap" >
+					<label for="post-private" ><?php i18n('KEEP_PRIVATE'); ?>: &nbsp; </label>
+					<select id="post-private" name="post-private" class="text autowidth" >
+						<option value="" ><?php i18n('NORMAL'); ?></option>
+						<option value="Y" <?php echo $sel_p; ?> ><?php echo ucwords(i18n_r('PRIVATE_SUBTITLE')); ?></option>
+					</select>
 				</p>
-				<p>
+				<p class="inline clearfix" >
 					<label for="post-parent"><?php i18n('PARENT_PAGE'); ?>:</label>
-					<select class="text short" id="post-parent" name="post-parent"> 
+					<select class="text autowidth" id="post-parent" name="post-parent"> 
 						<?php 
-						$path 		= GSDATAPAGESPATH;
-						$counter 	= '0';
-						
-						//get all pages
-						$filenames = getFiles($path);
-						
-						$count="0";
-						$pagesArray = array();
-						if (count($filenames) != 0) { 
-							foreach ($filenames as $file) {
-								if (isFile($file, $path, 'xml')) {
-									$data = getXML($path .$file);
-									$status = $data->menuStatus;
-									$pagesArray[$count]['parent'] = $data->parent;
-									if ($data->parent != '') { 
-										$parentdata = getXML($path . $data->parent .'.xml');
-										$parentTitle = $parentdata->title;
-										$pagesArray[$count]['sort'] = $parentTitle .' '. $data->title;
-									} else {
-										$pagesArray[$count]['sort'] = $data->title;
-									}
-									$pagesArray[$count]['url'] = $data->url;
-									$parentTitle = '';
-									$count++;
-								}
+						getPagesXmlValues();
+						$count = 0;
+						foreach ($pagesArray as $page) {
+							if ($page['parent'] != '') { 
+								$parentdata = getXML(GSDATAPAGESPATH . $page['parent'] .'.xml');
+								$parentTitle = $parentdata->title;
+								$sort = $parentTitle .' '. $page['title'];
+							} else {
+								$sort = $page['title'];
 							}
+							$page = array_merge($page, array('sort' => $sort));
+							$pagesArray_tmp[$count] = $page;
+							$count++;
 						}
+						$pagesArray = $pagesArray_tmp;
 						$pagesSorted = subval_sort($pagesArray,'sort');
 						$ret=get_pages_menu_dropdown('','',0);
 						
-						if ($parent == null) { $none="selected"; } else { $none=""; }
+						// handle 'no parents' correctly
+						if ($parent == '') { 
+							$none='selected';
+							$noneText=null; 
+						} else { 
+							$none=null; 
+							$noneText='< '.i18n_r('NO_PARENT').' >'; 
+						}
 						
 						// Create base option
-						echo '<option '.$none.' value="" ></option>';
+						echo '<option '.$none.' value="" >'.$noneText.'</option>';
 						echo $ret;
 						?>
 					</select>
 				</p>			
-				<p>
+				<p class="inline clearfix" >
 					<label for="post-template"><?php i18n('TEMPLATE'); ?>:</label>
-					<select class="text short" id="post-template" name="post-template" >
+					<select class="text autowidth" id="post-template" name="post-template" >
 						<?php echo $theme_templates; ?>
 					</select>
 				</p>
 				
-				<p class="inline">
-					<label for="post-menu-enable" ><?php i18n('ADD_TO_MENU'); ?></label> &ndash; <span><a href="navigation.php" rel="facybox" ><?php echo strip_tags(i18n_r('VIEW')); ?></a></span>&nbsp;&nbsp;&nbsp;<input type="checkbox" id="post-menu-enable" name="post-menu-enable" <?php echo $sel_m; ?> /><br />
+				<p class="inline post-menu clearfix">
+					<input type="checkbox" id="post-menu-enable" name="post-menu-enable" <?php echo $sel_m; ?> />&nbsp;&nbsp;&nbsp;<label for="post-menu-enable" ><?php i18n('ADD_TO_MENU'); ?></label><a href="navigation.php" class="viewlink" rel="facybox" ><img src="template/images/search.png" id="tick" alt="<?php echo strip_tags(i18n_r('VIEW')); ?>" /></a>
 				</p>
 				<div id="menu-items">
-					<span style="float:left;width:84%" ><label for="post-menu"><?php i18n('MENU_TEXT'); ?></label></span><span style="float:left;width:10%;" ><label for="post-menu-order"><?php i18n('PRIORITY'); ?></label></span>
+					<img src="template/images/tick.png" id="tick" />
+					<span style="float:left;width:81%;" ><label for="post-menu"><?php i18n('MENU_TEXT'); ?></label></span><span style="float:left;width:10%;" ><label for="post-menu-order"><?php i18n('PRIORITY'); ?></label></span>
 					<div class="clear"></div>
-					<input class="text" style="width:79%;" id="post-menu" name="post-menu" type="text" value="<?php echo $menu; ?>" />&nbsp; <select class="text"  style="width:16%" id="post-menu-order" name="post-menu-order" >
+					<input class="text" style="width:73%;" id="post-menu" name="post-menu" type="text" value="<?php echo $menu; ?>" />&nbsp;&nbsp;&nbsp;&nbsp;<select class="text"  style="width:16%" id="post-menu-order" name="post-menu-order" >
 					<?php if(isset($menuOrder)) { 
 						if($menuOrder == 0) {
 							echo '<option value="" selected>-</option>'; 
@@ -228,7 +221,7 @@ if ($menu == '') { $menu = $title; }
 						<option value="">-</option>
 						<?php
 						$i = 1;
-						while ($i <= 20) { 
+						while ($i <= 30) { 
 							echo '<option value="'.$i.'">'.$i.'</option>';
 							$i++;
 						}
@@ -239,16 +232,18 @@ if ($menu == '') { $menu = $title; }
 			
 			<div class="rightopt">
 				<p>
+					<label for="post-id"><?php i18n('SLUG_URL'); ?>:</label>
+          <input class="text short" type="text" id="post-id" name="post-id" value="<?php echo $url; ?>" <?php echo ($url=='index'?'readonly="readonly" ':''); ?>/>
+				</p>
+				<p>
 					<label for="post-metak"><?php i18n('TAG_KEYWORDS'); ?>:</label>
 					<input class="text short" id="post-metak" name="post-metak" type="text" value="<?php echo $metak; ?>" />
 				</p>
 				<p>
-					<label for="post-metad"><?php i18n('META_DESC'); ?>:</label>
+					<label for="post-metad" class="clearfix"><?php i18n('META_DESC'); ?>: <span id="countdownwrap"><strong id="countdown" ></strong> <?php i18n('REMAINING'); ?></span></label>
 					<textarea class="text" id="post-metad" name="post-metad" ><?php echo $metad; ?></textarea>
 				</p>
-				<p class="inline" id="post-private-wrap" >
-					<label for="post-private" ><?php i18n('KEEP_PRIVATE'); ?></label> &nbsp;&nbsp;&nbsp; <input type="checkbox" id="post-private" name="post-private" <?php echo $sel_p; ?> />
-				</p>
+				
 
 			</div>
 			<div class="clear"></div>
@@ -269,18 +264,33 @@ if ($menu == '') { $menu = $title; }
 				echo '<input type="hidden" name="existing-url" value="'. $url .'" />'; 
 			} ?>	
 			
-			<p id="submit_line" >
-				<span><input class="submit" type="submit" name="submitted" value="<?php echo $buttonname; ?>" onclick="warnme=false;" /></span>&nbsp;&nbsp;
-				<?php i18n('OR'); ?>&nbsp;&nbsp;
-				<a class="cancel" href="pages.php?cancel" title="<?php i18n('CANCEL'); ?>"><?php i18n('CANCEL'); ?></a><?php if(isset($url) && $url!='index' ) { ?>&nbsp;/&nbsp;<a class="cancel" href="deletefile.php?id=<?php echo $url; ?>&amp;nonce=<?php echo get_nonce("delete","deletefile.php"); ?>" title="<?php i18n('DELETEPAGE_TITLE'); ?>" ><?php i18n('ASK_DELETE'); ?></a><?php } ?>
-			</p>
+			<div id="submit_line" >
+				<input type="hidden" name="redirectto" value="" />
+				
+				<span><input class="submit" type="submit" name="submitted" value="<?php echo $buttonname; ?>" onclick="warnme=false;" /></span>
+				
+				<div id="dropdown">
+					<h6 class="dropdownaction"><?php i18n('ADDITIONAL_ACTIONS'); ?></h6>
+					<ul class="dropdownmenu">
+						<li id="save-close" ><a href="#" ><?php i18n('SAVE_AND_CLOSE'); ?></a></li>
+						<?php if($url != '') { ?>
+							<li><a href="pages.php?id=<?php echo $url; ?>&amp;action=clone&amp;nonce=<?php echo get_nonce("clone","pages.php"); ?>" ><?php i18n('CLONE'); ?></a></li>
+						<?php } ?>
+						<li id="cancel-updates" class="alertme"><a href="pages.php?cancel" ><?php i18n('CANCEL'); ?></a></li>
+						<?php if($url != 'index' && $url != '') { ?>
+							<li class="alertme" ><a href="deletefile.php?id=<?php echo $url; ?>&amp;nonce=<?php echo get_nonce("delete","deletefile.php"); ?>" ><?php echo strip_tags(i18n_r('ASK_DELETE')); ?></a></li>
+						<?php } ?>
+					</ul>
+				</div>
+				
+			</div>
 			
 			<small><?php 
 					if (isset($pubDate)) { 
-						echo i18n_r('LAST_SAVED').': '. lngDate($pubDate).'&nbsp; ';
+						echo sprintf(i18n_r('LAST_SAVED'), $author).' '. lngDate($pubDate).'&nbsp; ';
 					}
 					if ( file_exists(GSBACKUPSPATH.'pages/'.$url.'.bak.xml') ) {	
-						echo '-&nbsp; <a href="backup-edit.php?p=view&amp;id='.$url.'" >'.i18n_r('BACKUP_AVAILABLE').'</a>';
+						echo '-&nbsp; <a href="backup-edit.php?p=view&amp;id='.$url.'" target="_blank" >'.i18n_r('BACKUP_AVAILABLE').'</a>';
 					} 
 			?></small>
 		</form>
@@ -318,7 +328,7 @@ if ($menu == '') { $menu = $title; }
 	        ?>
             contentsCss: '<?php echo $fullpath; ?>theme/<?php echo $TEMPLATE; ?>/editor.css',
           <?php } ?>
-	        entities : true,
+	        entities : false,
 	        uiColor : '#FFFFFF',
 			height: '<?php echo $EDHEIGHT; ?>',
 			baseHref : '<?php echo $SITEURL; ?>',
@@ -333,6 +343,16 @@ if ($menu == '') { $menu = $title; }
 	        filebrowserWindowWidth : '730',
 	        filebrowserWindowHeight : '500'
     		});
+    		CKEDITOR.instances["post-content"].on("instanceReady", InstanceReadyEvent);
+				var yourText = $('#post-content').val();
+				function InstanceReadyEvent() {
+				  this.document.on("keyup", function () {
+				  		warnme = true;
+				      yourText = CKEDITOR.instances["post-content"].getData();
+				      $('#cancel-updates').show();
+				  });
+				}
+
 			</script>
 			
 			<?php
@@ -347,17 +367,60 @@ if ($menu == '') { $menu = $title; }
 		
 		<script type="text/javascript">
 			/* Warning for unsaved Data */
-    	var warnme = false;	
+			var yourText = null;
+			var warnme = false;
+			$('#cancel-updates').hide();	
 			window.onbeforeunload = function () {
-		    if (warnme) {
-		      return "<?php i18n('UNSAVED_INFORMATION'); ?>";
-		    }
+			  if (warnme) {
+			    return "<?php i18n('UNSAVED_INFORMATION'); ?>";
+			  }
 			}
 			
 			jQuery(document).ready(function() { 
-				$('input,textarea,select').change(function(){
-	    		warnme = true;
-	    	});	
+	    
+		    <?php if (defined('GSAUTOSAVE') && (int)GSAUTOSAVE != 0) { /* IF AUTOSAVE IS TURNED ON via GSCONFIG.PHP */ ?>	
+		    	function autoSave() {
+		    		$('input[type=submit]').attr('disabled', 'disabled');
+		    		if (!yourText) {
+			    		$('#post-content').val(yourText);
+			    	}
+		    		var dataString = $("#editform").serialize();
+		    		
+						var currentTime = new Date();
+						var hours = currentTime.getHours();
+						var minutes = currentTime.getMinutes();
+						if (minutes < 10){ minutes = "0" + minutes; }
+						if(hours > 11){ daypart = "PM";	} else {	daypart = "AM";	}
+						$.ajax({
+							type: "POST",
+							url: "changedata.php",
+							data: dataString+'&autosave=true&submitted=true',
+							success: function(msg) {
+								if (msg.toString()=='OK') {
+									$('#autosavenotify').text("<?php i18n('AUTOSAVE_NOTIFY'); ?> "+ hours +":"+minutes+" "+daypart);
+									$('input[type=submit]').attr('disabled', '');
+									warnme = false;
+									$('#cancel-updates').hide();
+								}
+							}
+						});	
+		    	}
+		    	
+		    	$('#editform').change(function(){
+							warnme = true;
+							clearTimeout($.data(this, 'timer'));
+						  var wait = setTimeout(autoSave, <?php echo (int)GSAUTOSAVE; ?>);
+						  $(this).data('timer', wait);
+						  $('#cancel-updates').show();
+		    	});
+		    	
+		    	<?php } else { /* AUTOSAVE IS NOT TURNED ON */ ?>
+			    	$('#editform').change(function(){
+							warnme = true;
+							$('#cancel-updates').show();
+			    	});
+					<?php } ?>
+				
 			});
 		</script>
 	</div>
@@ -367,7 +430,6 @@ if ($menu == '') { $menu = $title; }
 	<div id="sidebar" >
 		<?php include('template/sidebar-pages.php'); ?>	
 	</div>
-	
-	<div class="clear"></div>
-	</div>
+
+</div>
 <?php get_template('footer'); ?>
