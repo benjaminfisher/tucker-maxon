@@ -1,0 +1,21 @@
+body {
+	background: lightblue;
+}
+
+header{
+	background:blue;
+	width:100%;
+}
+#content {
+	float:left;
+	height:500px;
+	margin-right:50px;
+	width:500px;
+}
+aside{
+	margin-left:50px;
+}
+
+footer{
+	clear:both;
+}
