@@ -111,3 +111,73 @@ footer {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
+/* line 3, scss/main.scss */
+#homeWrapper {
+  width: 951px;
+  height: auto;
+  margin: auto;
+}
+
+/* line 10, scss/main.scss */
+#homeWrapper #slideshow {
+  width: auto;
+  height: 350px;
+  background-color: #ccc;
+  border: solid 1px black;
+}
+
+/* line 18, scss/main.scss */
+#homeWrapper #slideshow header {
+  width: 250px;
+  height: auto;
+  padding: 20px;
+  background-color: #fff;
+  border: solid 1px black;
+}
+
+/* line 27, scss/main.scss */
+#homeWrapper #slideshow header h1 {
+  font-size: 60px;
+}
+
+/* line 31, scss/main.scss */
+#homeWrapper #feature {
+  width: auto;
+  height: 250px;
+}
+
+/* line 37, scss/main.scss */
+#homeWrapper #feature #mission {
+  width: 625px;
+  height: 250px;
+  float: left;
+  border: solid 1px black;
+}
+
+/* line 45, scss/main.scss */
+#homeWrapper #feature #news {
+  width: 315px;
+  height: 250px;
+  float: right;
+  border: solid 1px black;
+}
+
+/* line 53, scss/main.scss */
+#homeWrapper #schoolFeature {
+  width: auto;
+  height: 250px;
+}
+
+/* line 59, scss/main.scss */
+#homeWrapper #schoolFeature .gradeLevel {
+  width: 315px;
+  height: 250px;
+  float: left;
+  background-color: #ccc;
+  border: solid 1px black;
+}
+
+/* line 70, scss/main.scss */
+#homeWrapper #schoolFeature .gradeLevel h1 {
+  position: bottom left;
+}

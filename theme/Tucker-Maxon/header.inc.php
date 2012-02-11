@@ -7,15 +7,17 @@
 *
 *****************************************************/
 ?>
+
+<!-- GLOBAL HEADER: BENJAMIN F. -->
 <header>
+	<a class="logo" href="<?php get_site_url(); ?>">
+		<img src="<?php get_theme_url() ?>/assets/images/logo.png" alt="Tucker-Maxon School" />
+	</a>
 	
 	<nav>
 		<ul>
 			<?php get_navigation(return_page_slug()); ?>
 		</ul>
 	</nav>
-	
-	<span class="logo2" href="<?php get_site_url(); ?>"><?php get_site_name(); ?></span>
-	<a class="logo" href="<?php get_site_url(); ?>"><?php get_site_name(); ?></a>
 
 </header>

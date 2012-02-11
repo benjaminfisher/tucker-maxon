@@ -1,0 +1,19 @@
+@import 'compass/reset', 'compass/css3', 'mixins', 'header', 'footer';
+
+/**
+ * Global Styles for Tucker-Maxon Theme
+ * 
+ * _compass/reset_ is a standard set of reset styles included with Compass
+ * 
+ * _compass/css3_ includes mixins for various css3 styles including gradients, rounded corners etc.
+ * - Please see http://compass-style.org/reference/compass/css3/ for details on usage
+ * 
+ * _mixins_ will hold site wide variables and mixins for colors, type-faces and other styling
+ * standards that are used across the entire site. Styles that are defined within the file
+ * can be included in other scss sheets
+ * 
+ * _header_ contains styles for the site wide header.
+ * 
+ * _footer_ contains styles for the site wide footer.  
+ * 
+ */

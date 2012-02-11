@@ -15,36 +15,59 @@
 	<title><?php get_page_clean_title(); ?> | <?php get_site_name(); ?></title>
 	<?php get_header(); ?>
 	
-	<link rel="stylesheet" href="<?php get_theme_url(); ?>/assets/css/global.css" media="screen" />
+	<link rel="stylesheet" href="<?php get_theme_url(); ?>/assets/css/main.css" media="screen" />
 
 </head>
 <body id="<?php get_page_slug(); ?>" >
 	
 	<?php include 'header.inc.php'; ?>
 	
-	<section id="content">
-		<h1><?php get_page_title(); ?></h1>	
-			<div id="page-content">
-				<div class="page-text">
-					<?php get_page_content(); ?>
-				</div>
-			</div>
-	</section>
+	<!-- INDEX BODY CONTENT: JAKE R. -->
+	<section id="homeWrapper">
 		
-	<aside id="sidebar">
-		<div class="section">
-			<?php get_component('sidebar');	?>
-		</div>
-		<div class="section credits">
-			<p><?php echo date('Y'); ?> - <strong><?php get_site_name(); ?></strong></p>
-		</div>
-	</aside>
+		<div id="slideshow">
+			<header>
+				<h1>Welcome</h1>
+				<h2>Slogan or Desription for slide</h2>
+			</header>
+		</div><!-- END: slideshow -->
+		
+		<section id="feature">
+		
+			<article id="mission">
+				<header>
+					<h1>Mission Statement</h1>
+				</header>
+				<p>Here is the content for the mission statement.</p>
+			</article>
+			
+			<article id="news">
+				<header>
+					<h1>News/Events</h1>
+				</header>
+				<p>Here is the content for the News/Events.</p>
+			</article>
+			
+		</section><!-- END: featured -->
+		
+		<section id="schoolFeature">
+		
+			<div class="gradeLevel" id="preschool">
+				<h1>Preschool</h1>
+			</div>
+			
+			<div class="gradeLevel" id="elementary">
+				<h1>Elementary</h1>
+			</div>
+			
+			<div class="gradeLevel" id="kindergarten">
+				<h1>Kindergarten</h1>
+			</div>
+			
+		</section> <!-- END: schoolCategory -->
+	</section> <!-- END: homeWrapper -->
 	
-	<footer>
-		<?php get_footer(); ?>
-		<p class="credits"><?php get_site_credits(); ?></p>
-		<p class="page-meta">Published on &nbsp;<span><?php get_page_date('F jS, Y'); ?></span></p>
-	</footer>
+	<?php include 'footer.inc.php'; ?>
 	
 </body>
 </html>

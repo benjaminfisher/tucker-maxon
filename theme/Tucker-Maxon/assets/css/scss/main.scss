@@ -1,0 +1,73 @@
+@import 'global';
+
+#homeWrapper {
+  width:951px;
+  height:auto;
+  margin:auto;
+
+}
+
+#homeWrapper #slideshow {
+  width:auto;
+  height:350px;
+  background-color:#ccc;
+  
+  border:solid 1px black;
+}
+
+#homeWrapper #slideshow header {
+  width:250px;
+  height:auto;
+  padding:20px;
+  background-color:#fff;
+  
+  border:solid 1px black;
+}
+
+#homeWrapper #slideshow header h1 {
+  font-size:60px;
+}
+
+#homeWrapper #feature {
+  width:auto;
+  height:250px;
+  
+}
+
+#homeWrapper #feature #mission {
+  width:625px;
+  height:250px;
+  float:left;
+  
+  border:solid 1px black;
+}
+
+#homeWrapper #feature #news {
+  width:315px;
+  height:250px;
+  float:right;
+  
+  border:solid 1px black;
+}
+
+#homeWrapper #schoolFeature {
+  width:auto;
+  height:250px;
+
+}
+
+#homeWrapper #schoolFeature .gradeLevel {
+  width:315px;
+  height:250px;
+  float:left;
+  background-color:#ccc;
+  
+  
+  border:solid 1px black;
+  
+}
+
+#homeWrapper #schoolFeature .gradeLevel h1 {
+position: bottom left;
+  
+}

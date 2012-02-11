@@ -1,0 +1,23 @@
+
+header{
+  float:left;
+  position:relative;
+  width:100%;
+  
+  a.logo{ float:left; }
+  
+  nav{
+    bottom:0px;
+    position:absolute;
+    right:50px;
+    
+    ul{
+      list-style-type:none;
+      
+      li{
+        float:left;
+        margin-right:20px;
+      }
+    }// End Nav ul styles
+  } // End Nav Styles
+}
