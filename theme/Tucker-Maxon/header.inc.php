@@ -6,10 +6,17 @@
 * @Action:		Tucker-Maxon theme for the GetSimple CMS
 *
 *****************************************************/
-?>
+?><!DOCTYPE html>
 
-<!-- GLOBAL HEADER: BENJAMIN F. -->
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<title><?php return_page_slug(); ?> | <?php get_site_name(); ?></title>
+	<?php get_header(); ?>
+	
+	<script src="<?php get_theme_url(); ?>/assets/js/head.min.js" charset="utf-8"></script>
+	<link rel="stylesheet" href="<?php get_theme_url(); ?>/assets/css/main.css" media="screen" />
+
 <header>
+	<!-- GLOBAL HEADER: BENJAMIN F. -->
 	<a class="logo" href="<?php get_site_url(); ?>">
 		<img src="<?php get_theme_url() ?>/assets/images/logo.png" alt="Tucker-Maxon School" />
 	</a>

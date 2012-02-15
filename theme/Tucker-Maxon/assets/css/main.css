@@ -65,25 +65,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 2, scss/_header.scss */
 header {
-  float: left;
+  height: 120px;
+  margin: 0 auto;
   position: relative;
-  width: 100%;
+  width: 960px;
 }
-/* line 7, scss/_header.scss */
+/* line 8, scss/_header.scss */
 header a.logo {
   float: left;
 }
-/* line 9, scss/_header.scss */
+/* line 10, scss/_header.scss */
 header nav {
   bottom: 0px;
   position: absolute;
   right: 50px;
 }
-/* line 14, scss/_header.scss */
+/* line 15, scss/_header.scss */
 header nav ul {
   list-style-type: none;
 }
-/* line 17, scss/_header.scss */
+/* line 18, scss/_header.scss */
 header nav ul li {
   float: left;
   margin-right: 20px;
@@ -92,6 +93,8 @@ header nav ul li {
 /* line 2, scss/_footer.scss */
 footer {
   clear: both;
+  margin: 0 auto;
+  width: 960px;
 }
 
 /**
@@ -111,14 +114,20 @@ footer {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
-/* line 3, scss/main.scss */
-#homeWrapper {
-  width: 951px;
-  height: auto;
-  margin: auto;
+/* line 21, scss/_global.scss */
+html, body {
+  width: 100%;
 }
 
-/* line 10, scss/main.scss */
+/* line 3, scss/main.scss */
+#homeWrapper {
+  clear: both;
+  height: auto;
+  margin: auto;
+  width: 960px;
+}
+
+/* line 11, scss/main.scss */
 #homeWrapper #slideshow {
   width: auto;
   height: 350px;
@@ -126,8 +135,8 @@ footer {
   border: solid 1px black;
 }
 
-/* line 18, scss/main.scss */
-#homeWrapper #slideshow header {
+/* line 19, scss/main.scss */
+#homeWrapper #slideshow hgroup {
   width: 250px;
   height: auto;
   padding: 20px;
@@ -135,18 +144,18 @@ footer {
   border: solid 1px black;
 }
 
-/* line 27, scss/main.scss */
-#homeWrapper #slideshow header h1 {
+/* line 28, scss/main.scss */
+#homeWrapper #slideshow hgroup h1 {
   font-size: 60px;
 }
 
-/* line 31, scss/main.scss */
+/* line 32, scss/main.scss */
 #homeWrapper #feature {
   width: auto;
   height: 250px;
 }
 
-/* line 37, scss/main.scss */
+/* line 38, scss/main.scss */
 #homeWrapper #feature #mission {
   width: 625px;
   height: 250px;
@@ -154,7 +163,7 @@ footer {
   border: solid 1px black;
 }
 
-/* line 45, scss/main.scss */
+/* line 46, scss/main.scss */
 #homeWrapper #feature #news {
   width: 315px;
   height: 250px;
@@ -162,13 +171,13 @@ footer {
   border: solid 1px black;
 }
 
-/* line 53, scss/main.scss */
+/* line 54, scss/main.scss */
 #homeWrapper #schoolFeature {
   width: auto;
   height: 250px;
 }
 
-/* line 59, scss/main.scss */
+/* line 60, scss/main.scss */
 #homeWrapper #schoolFeature .gradeLevel {
   width: 315px;
   height: 250px;
@@ -177,7 +186,7 @@ footer {
   border: solid 1px black;
 }
 
-/* line 70, scss/main.scss */
+/* line 71, scss/main.scss */
 #homeWrapper #schoolFeature .gradeLevel h1 {
   position: bottom left;
 }

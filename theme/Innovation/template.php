@@ -13,7 +13,7 @@
 Innovation_Settings();
 
 # Include the header template
-include('header.php'); 
+include('header.inc.php'); 
 ?>
 	
 	<div class="wrapper clearfix">

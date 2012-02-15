@@ -1,9 +1,10 @@
 @import 'global';
 
 #homeWrapper {
-  width:951px;
+  clear:both;
   height:auto;
   margin:auto;
+  width: $content_width;
 
 }
 
@@ -15,7 +16,7 @@
   border:solid 1px black;
 }
 
-#homeWrapper #slideshow header {
+#homeWrapper #slideshow hgroup {
   width:250px;
   height:auto;
   padding:20px;
@@ -24,7 +25,7 @@
   border:solid 1px black;
 }
 
-#homeWrapper #slideshow header h1 {
+#homeWrapper #slideshow hgroup h1 {
   font-size:60px;
 }
 

@@ -65,25 +65,26 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 2, scss/_header.scss */
 header {
-  float: left;
+  height: 120px;
+  margin: 0 auto;
   position: relative;
-  width: 100%;
+  width: 960px;
 }
-/* line 7, scss/_header.scss */
+/* line 8, scss/_header.scss */
 header a.logo {
   float: left;
 }
-/* line 9, scss/_header.scss */
+/* line 10, scss/_header.scss */
 header nav {
   bottom: 0px;
   position: absolute;
   right: 50px;
 }
-/* line 14, scss/_header.scss */
+/* line 15, scss/_header.scss */
 header nav ul {
   list-style-type: none;
 }
-/* line 17, scss/_header.scss */
+/* line 18, scss/_header.scss */
 header nav ul li {
   float: left;
   margin-right: 20px;
@@ -92,6 +93,8 @@ header nav ul li {
 /* line 2, scss/_footer.scss */
 footer {
   clear: both;
+  margin: 0 auto;
+  width: 960px;
 }
 
 /**
@@ -111,3 +114,7 @@ footer {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
+/* line 21, scss/_global.scss */
+html, body {
+  width: 100%;
+}

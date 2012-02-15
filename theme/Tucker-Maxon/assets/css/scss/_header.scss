@@ -1,8 +1,9 @@
 
 header{
-  float:left;
+  height:120px;
+  margin: 0 auto;
   position:relative;
-  width:100%;
+  width: $content_width;
   
   a.logo{ float:left; }
   
