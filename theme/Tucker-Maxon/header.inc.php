@@ -15,6 +15,8 @@
 	<script src="<?php get_theme_url(); ?>/assets/js/head.min.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="<?php get_theme_url(); ?>/assets/css/main.css" media="screen" />
 
+<body class="<?php get_page_slug(); ?>" >
+
 <header>
 	<!-- GLOBAL HEADER: BENJAMIN F. -->
 	<a class="logo" href="<?php get_site_url(); ?>">

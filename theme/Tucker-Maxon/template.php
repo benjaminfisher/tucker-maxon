@@ -6,13 +6,16 @@
 * @Action:		Tucker-Maxon theme for the GetSimple CMS
 *
 *****************************************************/
+
+include 'header.inc.php';
+	
+if(return_page_slug() != 'index' && strlen(return_parent()) != 0) get_component('sidebar');
 ?>
 
-<?php include 'header.inc.php'; ?>
-
-<body id="<?php get_page_slug(); ?>" >
-	
-	<?php get_page_content(); ?>
+	<section class="content">
+		<?php get_page_content(); ?>
+		
+	</section>
 	
 	<?php include 'footer.inc.php'; ?>
 	
