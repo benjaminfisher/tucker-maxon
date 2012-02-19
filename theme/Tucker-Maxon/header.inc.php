@@ -10,6 +10,7 @@
 
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<title><?php return_page_slug(); ?> | <?php get_site_name(); ?></title>
+	
 	<?php get_header(); ?>
 	
 	<script src="<?php get_theme_url(); ?>/assets/js/head.min.js" charset="utf-8"></script>
