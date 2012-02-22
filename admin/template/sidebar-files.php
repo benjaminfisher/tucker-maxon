@@ -8,27 +8,18 @@
 $path = (isset($_GET['path'])) ? $_GET['path'] : "";
 ?>
 <ul class="snav">
-	<li><a href="upload.php" <?php check_menu('upload');  ?>><?php i18n('FILE_MANAGEMENT');?></a></li>
-	<?php if(isset($_GET['i']) && $_GET['i'] != '') { ?><li><a href="#" class="current"><?php i18n('IMG_CONTROl_PANEL');?></a></li><?php } ?>
+	<li id="sb_upload" ><a href="upload.php" <?php check_menu('upload');  ?>><?php i18n('FILE_MANAGEMENT');?></a></li>
+	<?php if(isset($_GET['i']) && $_GET['i'] != '') { ?><li id="sb_image" ><a href="#" class="current"><?php i18n('IMG_CONTROl_PANEL');?></a></li><?php } ?>
 	
 	<?php exec_action("files-sidebar"); ?>
 
 <?php if (!defined('GSNOUPLOADIFY')) { ?>	
-	<li class="upload">
+	<li class="upload" id="sb_uploadify" >
 		<div id="uploadify"></div>
 	<?php 
-	function toBytes($str){
-		$val = trim($str);
-		$last = strtolower($str[strlen($str)-1]);
-			switch($last) {
-				case 'g': $val *= 1024;
-				case 'm': $val *= 1024;
-				case 'k': $val *= 1024;
-			}
-		return $val;
-	}
+	
 	// create Uploadify uploader
-	$debug = (GSDEBUG == 1) ? 'true' : 'false';
+	$debug = (defined('GSDEBUG') && GSDEBUG == 1) ? 'true' : 'false';
 	$fileSizeLimit = toBytes(ini_get('upload_max_filesize'))/1024;
 	echo "
 	<script type=\"text/javascript\">
@@ -74,7 +65,7 @@ $path = (isset($_GET['path'])) ? $_GET['path'] : "";
 	 ?>
 	</li>
 <?php } ?>
-	<li style="float:right;"><small><?php i18n('MAX_FILE_SIZE'); ?>: <strong><?php echo ini_get('upload_max_filesize'); ?>B</strong></small></li>
+	<li style="float:right;" id="sb_filesize" ><small><?php i18n('MAX_FILE_SIZE'); ?>: <strong><?php echo (toBytes(ini_get('upload_max_filesize'))/1024)/1024; ?>MB</strong></small></li>
 </ul>
 
 

@@ -22,11 +22,17 @@ if ($SITEURL==""){
 	$SITEURL=suggest_site_path();
 }
 
-// register jquery, fancybox & GS Scripts for loading in the header
-register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', '1.7.1', FALSE);
-register_script('jquery-ui','//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js','1.8.16',FALSE);
+/**
+ * Register shared javascript/css scripts for loading into the header
+ */
+if (!defined('GSNOCDN')){
+	register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js', '1.7.1', FALSE);
+	register_script('jquery-ui','//ajax.googleapis.com/ajax/libs/jqueryui/1.8.17/jquery-ui.min.js','1.8.17',FALSE);
+} else {
+	register_script('jquery', $SITEURL.$GSADMIN.'/template/js/jquery.min.js', '1.7.1', FALSE);
+	register_script('jquery-ui', $SITEURL.$GSADMIN.'/template/js/jquery-ui.min.js', '1.8.17', FALSE);
+}
 register_script('fancybox', $SITEURL.$GSADMIN.'/template/js/fancybox/jquery.fancybox.pack.js', '2.0.4',FALSE);
-
 register_style('fancybox-css', $SITEURL.$GSADMIN.'/template/js/fancybox/jquery.fancybox.css', '2.0.4', 'screen');
 
 /**
@@ -34,7 +40,6 @@ register_style('fancybox-css', $SITEURL.$GSADMIN.'/template/js/fancybox/jquery.f
  */
 queue_script('jquery', GSBACK);
 queue_script('fancybox', GSBACK);
-
 queue_style('fancybox-css',GSBACK);
 
 
@@ -57,7 +62,7 @@ if (!file_exists(GSDATAOTHERPATH."plugins.xml")){
 read_pluginsxml();        // get the live plugins into $live_plugins array
 
 
-create_pluginsxml();      // check that plugins have not been removed or added to the directory
+//create_pluginsxml();      // check that plugins have not been removed or added to the directory
 
 // load each of the plugins
 foreach ($live_plugins as $file=>$en) {
@@ -95,7 +100,7 @@ function change_plugin($name){
 	  } else {
 	    $live_plugins[$name]="true";
 	  }
-	  create_pluginsxml();
+	  create_pluginsxml(true);
 	}
 }
 
@@ -114,7 +119,6 @@ function read_pluginsxml(){
    
   $data = getXML(GSDATAOTHERPATH . "plugins.xml");
   $componentsec = $data->item;
-  $count= 0;
   if (count($componentsec) != 0) {
     foreach ($componentsec as $component) {
       $live_plugins[(string)$component->plugin]=(string)$component->enabled;
@@ -135,16 +139,16 @@ function read_pluginsxml(){
  * @uses $live_plugins
  *
  */
-function create_pluginsxml(){
+function create_pluginsxml($force=false){
   global $live_plugins;   
   if (file_exists(GSPLUGINPATH)){
     $pluginfiles = getFiles(GSPLUGINPATH);
   }  
+  $plugincount=0;
   $xml = @new SimpleXMLExtended('<?xml version="1.0" encoding="UTF-8"?><channel></channel>'); 
   foreach ($pluginfiles as $fi) {
     $pathExt = lowercase(pathinfo($fi,PATHINFO_EXTENSION));
     $pathName= pathinfo_filename($fi);
-    $count=0;
     if ($pathExt=="php")
     {
       $components = $xml->addChild('item');  
@@ -156,9 +160,12 @@ function create_pluginsxml(){
       } else {
          $c_note->addCData('true'); 
       } 
+	  $plugincount++;
     }
-  }    
-  XMLsave($xml, GSDATAOTHERPATH."plugins.xml");
+  }
+  if ($plugincount!=count($live_plugins) || $force==true ){    
+  	XMLsave($xml, GSDATAOTHERPATH."plugins.xml");
+  }
   read_pluginsxml();
 }
 
@@ -363,7 +370,6 @@ function register_script($handle, $src, $ver, $in_footer=FALSE){
 	  'src' => $src,
 	  'ver' => $ver,
 	  'in_footer' => $in_footer,
-	  'load' => $load,
 	  'where' => 0
 	);
 }

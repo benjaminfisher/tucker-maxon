@@ -5,5 +5,8 @@ _February 21, 2012_
 
 * Benjamin
 	* Added git deploy on tmos.benjaminjfisher.com
-	* Removed data/users from the Git Repo. New users on the staging server will need to be added via CMS
+	* Ingnoring data directory in the Git Repo
+		* New users on the staging server will need to be added via CMS
+		* New pages and page content will need to be added via the CMS
+	* Updated Get Simple to Version 3.1 (now a stable release) and removed Innovation and Cardinal themes
 	

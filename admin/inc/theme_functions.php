@@ -73,7 +73,7 @@ function get_page_excerpt($n=200, $html=false) {
  */
 function get_page_meta_keywords($echo=true) {
 	global $metak;
-	$myVar = strip_decode($metak);
+	$myVar = encode_quotes(strip_decode($metak));
 	
 	if ($echo) {
 		echo $myVar;
@@ -94,7 +94,7 @@ function get_page_meta_keywords($echo=true) {
  */
 function get_page_meta_desc($echo=true) {
 	global $metad;
-	$myVar = strip_decode($metad);
+	$myVar = encode_quotes(strip_decode($metad));
 	
 	if ($echo) {
 		echo $myVar;
@@ -293,8 +293,9 @@ function get_header($full=true) {
 	
 	$keywords = get_page_meta_keywords(FALSE);
 	
-	echo '<meta name="description" content="'.get_page_meta_desc(false).'" />'."\n";
-	echo '<meta name="keywords" content="'.get_page_meta_keywords(false).'" />'."\n";
+	echo '<meta name="description" content="'.$description.'" />'."\n";
+	if ($keywords != '') echo '<meta name="keywords" content="'.$keywords.'" />'."\n";
+	
 	if ($full) {
 		echo '<meta name="generator" content="'. $site_full_name .'" />'."\n";
 		echo '<link rel="canonical" href="'. get_page_url(true) .'" />'."\n";
@@ -610,7 +611,7 @@ function get_navigation($currentpage) {
 				if ("$currentpage" == "$url_nav") { $classes = "current ". $page['parent'] ." ". $url_nav; } else { $classes = trim($page['parent'] ." ". $url_nav); }
 				if ($page['menu'] == '') { $page['menu'] = $page['title']; }
 				if ($page['title'] == '') { $page['title'] = $page['menu']; }
-				$menu .= '<li class="'. $classes .'"><a href="'. find_url($page['url'],$page['parent']) . '" title="'. $page['title'] .'">'.$page['menu'].'</a></li>'."\n";
+				$menu .= '<li class="'. $classes .'"><a href="'. find_url($page['url'],$page['parent']) . '" title="'. encode_quotes(cl($page['title'])) .'">'.strip_decode($page['menu']).'</a></li>'."\n";
 			}
 		}
 		

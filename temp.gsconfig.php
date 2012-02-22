@@ -60,7 +60,7 @@ define('GSDONOTPING', 1);
 # Set email from address
 #define('GSFROMEMAIL', 'noreply@get-simple.info');
 
-# Autosave within edit.php. Value is the autosave interval 
+# Autosave within edit.php. Value is the autosave interval in seconds
 #define('GSAUTOSAVE', 900);
 
 # Enable the External API to be shown on settings page 
@@ -69,5 +69,8 @@ define('GSDONOTPING', 1);
 # Set PHP locale
 # http://php.net/manual/en/function.setlocale.php
 #setlocale(LC_ALL, 'en_US');
+
+# Disable loading of external CDN versions of scripts (jQuery/jQueryUI)
+#define("GSNOCDN",true);
 
 ?>

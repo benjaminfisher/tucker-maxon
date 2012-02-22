@@ -331,7 +331,7 @@ function shtDate($dt) {
  */
 function cl($data){
 	$data = stripslashes(strip_tags(html_entity_decode($data, ENT_QUOTES, 'UTF-8')));
-	$data = preg_replace('/[[:cntrl:]]/', '', $data); //remove control characters that cause interface to choke
+	//$data = preg_replace('/[[:cntrl:]]/', '', $data); //remove control characters that cause interface to choke
 	return $data;
 }
 
@@ -467,8 +467,12 @@ function strip_quotes($text)  {
  * @return string
  */
 function encode_quotes($text)  { 
-	$text = strip_tags($text); 
-	$text = htmlspecialchars($text, ENT_QUOTES); 
+	$text = strip_tags($text);
+	if (version_compare(PHP_VERSION, "5.2.3")  >= 0) {	
+		$text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8', false);
+	} else {	
+		$text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
+	}
 	return trim($text); 
 } 
 
@@ -615,11 +619,12 @@ function i18n_merge_impl($plugin, $lang, &$globali18n) {
  */
 function safe_slash_html($text) {
 	if (get_magic_quotes_gpc()==0) {
-		$text = addslashes(htmlentities($text, ENT_QUOTES, 'UTF-8'));
+		$text = addslashes(htmlspecialchars($text, ENT_QUOTES, 'UTF-8'));
 	} else {
-		$text = htmlentities($text, ENT_QUOTES, 'UTF-8');
+		$text = htmlspecialchars($text, ENT_QUOTES, 'UTF-8');
 	}
-	$text = preg_replace('/[[:cntrl:]]/', '', $text); //remove control characters that cause interface to choke
+	$text = str_replace(chr(12), '', $text);
+	$text = str_replace(chr(3), ' ', $text);
 	return $text;
 }
 

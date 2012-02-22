@@ -25,7 +25,7 @@ $i18n = array(
 "WEBSITEURL_ERROR"	=>	"<b>Error:</b> There was a problem with your website URL",
 "USERNAME_ERROR"		=>	"<b>Error:</b> Username was not set",
 "EMAIL_ERROR"				=>	"<b>Error:</b> There was a problem with your email address",
-"CHMOD_ERROR"				=>	"<b>Unable to continue:</b> Unable to write config file. CHMOD 755 or 777 the folders /data, /backups and their sub-folders and retry",
+"CHMOD_ERROR"				=>	"<b>Unable to continue:</b> Unable to write the configuration file. CHMOD 755 or 777 the <code>/data</code>, <code>/backups</code> folders &amp; sub-folders and retry.",
 "EMAIL_COMPLETE"		=>	"Setup Complete",
 "EMAIL_USERNAME"		=>	"Your username is",
 "EMAIL_PASSWORD"		=>	"Your new password is",
@@ -37,7 +37,7 @@ $i18n = array(
 "NOTE_PASSWORD"			=>	"and your password is",
 "INSTALLATION"			=>	"Installation",
 "LABEL_WEBSITE"			=>	"Website Name",
-"LABEL_BASEURL"			=>	"Website Base URL",
+"LABEL_BASEURL"			=>	"Website URL",
 "LABEL_SUGGESTION"	=>	"Our suggestion is",
 "LABEL_USERNAME"		=>	"Username",
 "LABEL_EMAIL"				=>	"Email Address",
@@ -86,7 +86,7 @@ $i18n = array(
 "CANCEL"						=>	"Cancel",
 "BACKUP_AVAILABLE"	=>	"Backup Available",
 "MAX_FILE_SIZE"			=>	"Max file size",
-"LAST_SAVED"				=>	"Last saved by %s on",
+"LAST_SAVED"				=>	"Page last saved by %s on",
 "FILE_UPLOAD"				=>	"File Upload",
 "OR"								=>	"or",
 "SAVE_AND_CLOSE"		=> "Save &amp; Close",
@@ -241,7 +241,7 @@ $i18n = array(
 "WARNING"						=>	"Warning",
 "DATA_FILE_CHECK"		=>	"Data File Integrity Check",
 "DIR_PERMISSIONS"		=>	"Directory Permissions",
-"EXISTANCE"					=>	"%s Existance",
+"EXISTANCE"					=>	"%s Existence",
 "MISSING_FILE"			=>	"Missing file",
 "BAD_FILE"					=>	"Bad file",
 "NO_FILE"						=>	"No file",
@@ -357,8 +357,8 @@ $i18n = array(
 /* 
  * For: changedata.php
 */
-"CANNOT_SAVE_EMPTY"	=>	"You cannot save an empty page",
-"META_DESC" 				=> "Meta Description",
+"CANNOT_SAVE_EMPTY"	=>	"You cannot save a page with an empty title or slug",
+"META_DESC" 				=>  "Meta Description",
 
 /* 
  * For: template_functions.php
@@ -434,9 +434,9 @@ $i18n = array(
  * For: setup.php
  */
 
-"ROOT_HTACCESS_ERROR" => "Failed to create .htaccess in root! Please copy <b>%s</b> to <b>.htaccess</b> and change <code>%s</code> to <code>%s</code>",
-"REMOVE_TEMPCONFIG_ERROR" => "Failed to remove <b>%s</b>! Please do it manually.",
-"MOVE_TEMPCONFIG_ERROR" => "Failed to rename <b>%s</b> to <b>%s</b>! Please do it manually.",
+"ROOT_HTACCESS_ERROR" => "Failed to create .htaccess in root! Please copy <code>%s</code> to <code>.htaccess</code> and change <code>%s</code> to <code>%s</code>",
+"REMOVE_TEMPCONFIG_ERROR" => "Failed to remove <code>%s</code>! Please do it manually.",
+"MOVE_TEMPCONFIG_ERROR" => "Failed to rename <code>%s</code> to <code>%s</code>! Please do it manually.",
 "KILL_CANT_CONTINUE" => "Cannot continue. Please fix errors and try again.",
 "REFRESH" => "Refresh",
 "BETA"=> "Beta / Bleeding Edge",
