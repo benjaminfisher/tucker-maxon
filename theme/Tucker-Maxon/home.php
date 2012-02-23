@@ -1,0 +1,18 @@
+<?php if(!defined('IN_GS')){ die('you cannot load this page directly.'); }
+/****************************************************
+*
+* @File: 		home.php
+* @Package:		GetSimple
+* @Action:		Tucker-Maxon theme for the GetSimple CMS
+*
+*****************************************************/
+
+include 'header.inc.php';
+
+get_component('mission_statement');
+
+echo events_list();
+
+include 'footer.inc.php';
+?>
+

@@ -31,6 +31,5 @@
 			</div>
 	</section>
 
-	
 </body>
 </html>
