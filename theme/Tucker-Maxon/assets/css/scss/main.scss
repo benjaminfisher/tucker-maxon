@@ -5,24 +5,23 @@
   height:auto;
   margin:auto;
   width: $content_width;
-
-}
-
-#homeWrapper #slideshow {
-  width:auto;
-  height:350px;
-  background-color:#ccc;
   
-  border:solid 1px black;
-}
+  #slideshow {
+      width:auto;
+      height:350px;
+      background-color:#ccc;
+      
+      border:solid 1px black;
+      
+      hgroup {
+        width:250px;
+        height:auto;
+        padding:20px;
+        background-color:#fff;
+        
+        border:solid 1px black;
+    }
 
-#homeWrapper #slideshow hgroup {
-  width:250px;
-  height:auto;
-  padding:20px;
-  background-color:#fff;
-  
-  border:solid 1px black;
 }
 
 #homeWrapper #slideshow hgroup h1 {

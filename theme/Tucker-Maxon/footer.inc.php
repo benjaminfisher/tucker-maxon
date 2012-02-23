@@ -13,18 +13,24 @@
 	<nav class="tertiary">
 		<ul>
 			<li class="section_heading"><a href="#">Admissions</a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="#">Hearing</a></li>
+			<li><a href="#">Hearing Impaired</a></li>
 		</ul>
 		<ul>
 			<li class="section_heading"><a href="#">About</a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="#">History</a></li>
+			<li><a href="#">Board/Staff</a></li>
+			<li><a href="#">Technology</a></li>
+			<li><a href="#">Multimedia</a></li>
+			<li><a href="#">Community Partnership</a></li>
 		</ul>
 		<ul>
 			<li class="section_heading"><a href="#">Programs</a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="#">Preschool</a></li>
+			<li><a href="#">Elementary</a></li>
+			<li><a href="#">Kindergarden</a></li>
+			<li><a href="#">Summer Program</a></li>
+			<li><a href="#">Music and Art</a></li>
 		</ul>
 		<ul>
 			<li class="section_heading"><a href="#">Events</a></li>
@@ -37,10 +43,13 @@
 		</ul>
 		<ul>
 			<li class="section_heading"><a href="#">Services</a></li>
-			<li><a href="#"></a></li>
-			<li><a href="#"></a></li>
+			<li><a href="#">Audiology</a></li>
+			<li><a href="#">Speech Pathology</a></li>
+			<li><a href="#">Before/After School Care</a></li>
+			<li><a href="#">Facility Rental</a></li>
+			<li><a href="#">Insurance</a></li>
 		</ul>
-		<ul>
+		<ul class="social">
 			<li class="section_heading"><a href="#">Follow us</a></li>
 			<li class="social_links"><a href="#">Facebook</a></li>
 			<li class="social_links"><a href="#">Twitter</a></li>
