@@ -7,17 +7,10 @@
 *
 *****************************************************/
 
-include 'header.inc.php';
-	
-if(return_page_slug() != 'index' && strlen(return_parent()) != 0) get_component('sidebar');
-?>
+	include 'header.inc.php';
 
-	<div role="main" class="content">
-		<?php get_page_content(); ?>
+	get_page_content();
 		
-	</div>
-	
-	<?php include 'footer.inc.php'; ?>
-	
-</body>
-</html>
+	include 'footer.inc.php';
+
+?>

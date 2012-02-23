@@ -8,6 +8,8 @@
 *****************************************************/
 ?>
 
+</div><!-- End Main Content -->
+
 <!-- GLOBAL FOOTER: BENJAMIN F. -->
 <footer>
 	<nav class="tertiary">

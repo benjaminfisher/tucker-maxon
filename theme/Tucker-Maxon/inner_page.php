@@ -13,6 +13,7 @@
 
 	<!-- Site Title -->
 	<title><?php get_page_clean_title(); ?> | <?php get_site_name(); ?></title>
+	
 	<?php get_header(); ?>
 	
 	<link rel="stylesheet" href="<?php get_theme_url(); ?>/assets/css/inner.css" media="screen" />
