@@ -92,6 +92,7 @@ header nav ul li {
 
 /* line 2, scss/_footer.scss */
 footer {
+  border: 1px solid black;
   clear: both;
   margin: 0 auto;
   width: 960px;
@@ -119,74 +120,69 @@ html, body {
   width: 100%;
 }
 
+/* line 23, scss/_global.scss */
+body {
+  background-color: white;
+}
+
 /* line 3, scss/main.scss */
-#homeWrapper {
+div.content {
   clear: both;
   height: auto;
   margin: auto;
   width: 960px;
 }
-
-/* line 11, scss/main.scss */
-#homeWrapper #slideshow {
+/* line 9, scss/main.scss */
+div.content #slideshow {
   width: auto;
   height: 350px;
   background-color: #ccc;
   border: solid 1px black;
 }
-
-/* line 19, scss/main.scss */
-#homeWrapper #slideshow hgroup {
+/* line 16, scss/main.scss */
+div.content #slideshow hgroup {
   width: 250px;
   height: auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: white;
   border: solid 1px black;
 }
-
-/* line 28, scss/main.scss */
-#homeWrapper #slideshow hgroup h1 {
+/* line 23, scss/main.scss */
+div.content #slideshow hgroup h2 {
   font-size: 60px;
 }
 
-/* line 32, scss/main.scss */
-#homeWrapper #feature {
-  width: auto;
-  height: 250px;
-}
-
-/* line 38, scss/main.scss */
-#homeWrapper #feature #mission {
+/* line 28, scss/main.scss */
+div.content p.mission {
   width: 625px;
   height: 250px;
   float: left;
   border: solid 1px black;
 }
 
-/* line 46, scss/main.scss */
-#homeWrapper #feature #news {
-  width: 315px;
-  height: 250px;
-  float: right;
+/* line 36, scss/main.scss */
+div.content div.events {
   border: solid 1px black;
-}
-
-/* line 54, scss/main.scss */
-#homeWrapper #schoolFeature {
-  width: auto;
+  float: right;
   height: 250px;
+  width: 315px;
 }
 
-/* line 60, scss/main.scss */
-#homeWrapper #schoolFeature .gradeLevel {
-  width: 315px;
+/* line 43, scss/main.scss */
+div.content div.gradeLevel {
+  position: relative;
+  width: 317px;
   height: 250px;
   float: left;
   background-color: #ccc;
   border: solid 1px black;
 }
 
-/* line 71, scss/main.scss */
-#homeWrapper #schoolFeature .gradeLevel h1 {
-  position: bottom left;
+/* line 54, scss/main.scss */
+div.content .gradeLevel h2 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
 }

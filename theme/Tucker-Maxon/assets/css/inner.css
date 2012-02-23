@@ -92,6 +92,7 @@ header nav ul li {
 
 /* line 2, scss/_footer.scss */
 footer {
+  border: 1px solid black;
   clear: both;
   margin: 0 auto;
   width: 960px;
@@ -117,4 +118,9 @@ footer {
 /* line 21, scss/_global.scss */
 html, body {
   width: 100%;
+}
+
+/* line 23, scss/_global.scss */
+body {
+  background-color: white;
 }
