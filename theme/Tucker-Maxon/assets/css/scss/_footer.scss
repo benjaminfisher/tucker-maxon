@@ -5,4 +5,12 @@ footer{
   margin: 0 auto;
   width: $content_width;
   
-}
+  nav.tertiary{
+    ul{
+      float:left;
+      width:$content_width / 4;
+      
+      &.column{ clear:both; }
+    }
+  }
+} // End Global Footer styles

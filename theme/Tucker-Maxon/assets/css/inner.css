@@ -97,6 +97,15 @@ footer {
   margin: 0 auto;
   width: 960px;
 }
+/* line 9, scss/_footer.scss */
+footer nav.tertiary ul {
+  float: left;
+  width: 240px;
+}
+/* line 13, scss/_footer.scss */
+footer nav.tertiary ul.column {
+  clear: both;
+}
 
 /**
  * Global Styles for Tucker-Maxon Theme

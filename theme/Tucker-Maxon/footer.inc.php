@@ -13,7 +13,7 @@
 <!-- GLOBAL FOOTER: BENJAMIN F. -->
 <footer>
 	<nav class="tertiary">
-		<ul>
+		<ul class="column">
 			<li class="section_heading"><a href="#">Admissions</a></li>
 			<li><a href="#">Hearing</a></li>
 			<li><a href="#">Hearing Impaired</a></li>
@@ -26,7 +26,7 @@
 			<li><a href="#">Multimedia</a></li>
 			<li><a href="#">Community Partnership</a></li>
 		</ul>
-		<ul>
+		<ul class="column">
 			<li class="section_heading"><a href="#">Programs</a></li>
 			<li><a href="#">Preschool</a></li>
 			<li><a href="#">Elementary</a></li>
@@ -43,7 +43,7 @@
 		<ul>
 			<li class="section_heading"><a href="#">Contact</a></li>
 		</ul>
-		<ul>
+		<ul class="column">
 			<li class="section_heading"><a href="#">Services</a></li>
 			<li><a href="#">Audiology</a></li>
 			<li><a href="#">Speech Pathology</a></li>
