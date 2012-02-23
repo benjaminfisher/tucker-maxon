@@ -10,9 +10,54 @@
 
 <!-- GLOBAL FOOTER: BENJAMIN F. -->
 <footer>
-	<?php get_footer(); ?>
-	<p class="credits"><?php get_site_credits(); ?></p>
-	<p class="page-meta">Published on &nbsp;<span><?php get_page_date('F jS, Y'); ?></span></p>
+	<nav class="tertiary">
+		<ul>
+			<li class="section_heading"><a href="#">Admissions</a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+		<ul>
+			<li class="section_heading"><a href="#">About</a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+		<ul>
+			<li class="section_heading"><a href="#">Programs</a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+		<ul>
+			<li class="section_heading"><a href="#">Events</a></li>
+		</ul>
+		<ul>
+			<li class="section_heading"><a href="#">Calendar</a></li>
+		</ul>
+		<ul>
+			<li class="section_heading"><a href="#">Contact</a></li>
+		</ul>
+		<ul>
+			<li class="section_heading"><a href="#">Services</a></li>
+			<li><a href="#"></a></li>
+			<li><a href="#"></a></li>
+		</ul>
+		<ul>
+			<li class="section_heading"><a href="#">Follow us</a></li>
+			<li class="social_links"><a href="#">Facebook</a></li>
+			<li class="social_links"><a href="#">Twitter</a></li>
+			<li class="social_links"><a href="#">YouTube</a></li>
+		</ul>
+	</nav>
+	
+	<div class="locate">
+		<img src="#" alt="Map" />
+		<section class="address">
+			<h3>The Tucker-Maxon School</h3>
+			<p>2860 SE Holgate Blvd.</p>
+			<p>Portland, OR 97202</p>
+			<p>Phone: 503.235.6551</p>
+		</section>
+	</div>
+	<p class="copy">&copy; The Tucker-Maxon School 2012. All rights reserved.</p>
 </footer>
 
 <script>
