@@ -6,6 +6,9 @@
 /**
  * Global Styles for Tucker-Maxon Theme
  * 
+ * This sheet compiles all of the other styles for site wide sections (e.g. header and footer).
+ * Site wide default styles are also defined in this sheet.
+ * 
  * _compass/reset_ is a standard set of reset styles included with Compass
  * 
  * _compass/css3_ includes mixins for various css3 styles including gradients, rounded corners etc.
@@ -21,8 +24,17 @@
  * 
  */
 
+*{
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 html, body { width: 100%; }
 
 body{
   background-color: $bg_color;
+  color: $content_color;
+  font-size: 16px;
+  
+  a { color: $content_color; }
 }

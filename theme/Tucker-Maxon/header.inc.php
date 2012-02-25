@@ -10,7 +10,8 @@
 if(return_page_slug() == 'index') {
 	$style_sheet = 'main.css';
 } else {
-	if(get_parent(FALSE) == 'index') {$style_sheet = get_page_slug().'.css'; } else { $style_sheet = get_parent().'.css'; }
+	$style_sheet = 'inner.css';
+	//if(get_parent(FALSE) == 'index') {$style_sheet = get_page_slug().'.css'; } else { $style_sheet = get_parent().'.css'; }
 } ?>
 <!DOCTYPE html>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
