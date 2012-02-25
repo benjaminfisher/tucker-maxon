@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,93 +20,95 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 2, scss/_header.scss */
+/* line 2, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header {
   height: 120px;
   margin: 0 auto;
   position: relative;
   width: 960px;
 }
-/* line 8, scss/_header.scss */
+/* line 8, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header a.logo {
   float: left;
 }
-/* line 10, scss/_header.scss */
+/* line 10, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav {
   bottom: 0px;
   position: absolute;
   right: 50px;
 }
-/* line 15, scss/_header.scss */
+/* line 15, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav ul {
   list-style-type: none;
 }
-/* line 18, scss/_header.scss */
+/* line 18, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav ul li {
   float: left;
   margin-right: 20px;
 }
 
-/* line 2, scss/_footer.scss */
+/* line 2, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer {
   border: 1px solid black;
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
-/* line 9, scss/_footer.scss */
+/* line 9, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary ul {
   float: left;
   width: 240px;
 }
-/* line 13, scss/_footer.scss */
+/* line 13, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary ul.column {
   clear: both;
 }
 
+/*** Google Fonts import ***/
+@import url(http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic);
 /**
  * Global Styles for Tucker-Maxon Theme
  * 
@@ -124,12 +126,12 @@ footer nav.tertiary ul.column {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
-/* line 21, scss/_global.scss */
+/* line 24, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 html, body {
   width: 100%;
 }
 
-/* line 23, scss/_global.scss */
+/* line 26, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 body {
   background-color: white;
 }
