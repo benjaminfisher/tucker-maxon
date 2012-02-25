@@ -1,7 +1,75 @@
 
 footer{
+  @include border-top-radius($default_border_radius);
+  background-color: $footer_bg_color;
   clear:both;
   margin: 0 auto;
+  overflow: auto;
   width: $content_width;
   
-}
+  nav.tertiary{
+    div.column{
+      float:left;
+      margin-left: 1em;
+      
+      ul{
+        width:$content_width / 5;
+        
+        li:not(.heading) a { text-decoration: none; }
+        
+        li.heading{
+          font-family: 'Alegreya', serif;
+          font-weight: bold;
+          margin: 1em 0;
+          
+          a{
+            color: $heading_color;
+            font-size: 1.222222em;
+          }
+        }
+        
+        $sprite_size: 28px;
+        &.social li.social_link {
+          a {
+            background-image: url(../images/social_sprite.jpg);
+            display: block;
+            height: $sprite_size;
+            float:left;
+            margin-right: 1em;
+            text-indent:-9999em;
+            width: $sprite_size;
+          }
+          &:nth-child(3) a { background-position:-$sprite_size 0; }
+          &:nth-child(4) a { background-position:-($sprite_size * 2) 0; }
+        }
+      }
+    }
+  } // End nav.tertiary sytles
+  
+  div.locate {
+    text-align: center;
+    
+    section.address h3 {
+      color: $tm_red;
+      font-family: "Alegreya Black";
+      font-size: 1.2222222em;
+      margin: 1em 0;
+    }
+  }
+  
+  $h-padding:30px;
+  $v-padding:20px;
+  
+  p.copy{
+    @include border-bottom-radius($default_border_radius);
+    background-color: $tm_red;
+    clear:both;
+    color: white;
+    font-family: "Alegreya", serif;
+    font-weight: bold;
+    font-size: 1.22222em;
+    height: 55px - $v-padding;
+    padding: $v-padding 0 0 $h-padding;
+    width: $content_width - $h-padding;
+  }
+} // End Global Footer styles

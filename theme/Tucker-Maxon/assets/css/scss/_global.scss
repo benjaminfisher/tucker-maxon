@@ -1,7 +1,13 @@
 @import 'compass/reset', 'compass/css3', 'mixins', 'header', 'footer';
 
+/*** Google Fonts import ***/
+@import url(http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic);
+
 /**
  * Global Styles for Tucker-Maxon Theme
+ * 
+ * This sheet compiles all of the other styles for site wide sections (e.g. header and footer).
+ * Site wide default styles are also defined in this sheet.
  * 
  * _compass/reset_ is a standard set of reset styles included with Compass
  * 
@@ -18,8 +24,17 @@
  * 
  */
 
+*{
+  background-repeat: no-repeat;
+  position: relative;
+}
+
 html, body { width: 100%; }
 
 body{
   background-color: $bg_color;
+  color: $content_color;
+  font-size: 16px;
+  
+  a { color: $content_color; }
 }

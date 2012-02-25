@@ -9,10 +9,14 @@
 
 include 'header.inc.php';
 
+get_component('slideshow');
+
 get_component('mission_statement');
 
-echo events_list();
+echo '<div class="events">' .events_list() .'</div><!-- End Events -->';
+
+get_page_content();
 
 include 'footer.inc.php';
-?>
 
+?>

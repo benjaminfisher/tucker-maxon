@@ -6,15 +6,21 @@
 * @Action:		Tucker-Maxon theme for the GetSimple CMS
 *
 *****************************************************/
-?><!DOCTYPE html>
 
+if(return_page_slug() == 'index') {
+	$style_sheet = 'main.css';
+} else {
+	$style_sheet = 'inner.css';
+	//if(get_parent(FALSE) == 'index') {$style_sheet = get_page_slug().'.css'; } else { $style_sheet = get_parent().'.css'; }
+} ?>
+<!DOCTYPE html>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<title><?php return_page_slug(); ?> | <?php get_site_name(); ?></title>
 	
 	<?php get_header(); ?>
 	
 	<script src="<?php get_theme_url(); ?>/assets/js/head.min.js" charset="utf-8"></script>
-	<link rel="stylesheet" href="<?php get_theme_url(); ?>/assets/css/main.css" media="screen" />
+	<link rel="stylesheet" href="<?php echo get_theme_url() ."/assets/css/$style_sheet"; ?>" media="screen" />
 
 <body class="<?php get_page_slug(); ?>" >
 
@@ -31,3 +37,4 @@
 	</nav>
 
 </header>
+<div role="main" class="content">
