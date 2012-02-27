@@ -1,6 +1,8 @@
 Production Log
 ==============
 
+[Development Guidelines] (https://docs.google.com/document/pub?id=1uZhHgSASrI252WtD93TxkbatfO9pvHzpKZ4WwdLlzeE)
+
 _February 21, 2012_
 
 * Benjamin
