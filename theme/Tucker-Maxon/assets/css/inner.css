@@ -75,17 +75,17 @@ header a.logo {
   float: left;
 }
 /* line 10, scss/_header.scss */
-header nav {
+header nav.global {
   bottom: -10px;
   position: absolute;
   right: 0px;
 }
 /* line 15, scss/_header.scss */
-header nav ul {
+header nav.global ul {
   list-style-type: none;
 }
 /* line 18, scss/_header.scss */
-header nav ul li {
+header nav.global ul li {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -101,16 +101,39 @@ header nav ul li {
   background-color: #d85045;
   float: left;
   margin-left: 0.5em;
-  padding: 1em 1em 1.5em;
+  padding: 1em 2em 1.5em;
 }
 /* line 25, scss/_header.scss */
-header nav ul li a {
+header nav.global ul li a {
   text-shadow: #666666 1px 1px 1px;
   color: white;
-  font-family: "Alegreya SC";
+  font-family: "Alegreya";
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
+}
+/* line 37, scss/_header.scss */
+header nav.secondary {
+  line-height: 2em;
+  position: absolute;
+  right: -15px;
+  text-transform: uppercase;
+}
+/* line 43, scss/_header.scss */
+header nav.secondary ul li {
+  float: left;
+  margin-right: 1.5em;
+}
+/* line 46, scss/_header.scss */
+header nav.secondary ul li a {
+  color: #043276;
+  font-family: "Alegreya";
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 52, scss/_header.scss */
+header nav.secondary ul li a:hover {
+  text-decoration: underline;
 }
 
 /* line 2, scss/_footer.scss */

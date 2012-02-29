@@ -75,17 +75,17 @@ header a.logo {
   float: left;
 }
 /* line 10, scss/_header.scss */
-header nav {
+header nav.global {
   bottom: -10px;
   position: absolute;
   right: 0px;
 }
 /* line 15, scss/_header.scss */
-header nav ul {
+header nav.global ul {
   list-style-type: none;
 }
 /* line 18, scss/_header.scss */
-header nav ul li {
+header nav.global ul li {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -101,16 +101,39 @@ header nav ul li {
   background-color: #d85045;
   float: left;
   margin-left: 0.5em;
-  padding: 1em 1em 1.5em;
+  padding: 1em 2em 1.5em;
 }
 /* line 25, scss/_header.scss */
-header nav ul li a {
+header nav.global ul li a {
   text-shadow: #666666 1px 1px 1px;
   color: white;
-  font-family: "Alegreya SC";
+  font-family: "Alegreya";
   font-weight: bold;
   font-size: 18px;
   text-decoration: none;
+}
+/* line 37, scss/_header.scss */
+header nav.secondary {
+  line-height: 2em;
+  position: absolute;
+  right: -15px;
+  text-transform: uppercase;
+}
+/* line 43, scss/_header.scss */
+header nav.secondary ul li {
+  float: left;
+  margin-right: 1.5em;
+}
+/* line 46, scss/_header.scss */
+header nav.secondary ul li a {
+  color: #043276;
+  font-family: "Alegreya";
+  font-weight: bold;
+  text-decoration: none;
+}
+/* line 52, scss/_header.scss */
+header nav.secondary ul li a:hover {
+  text-decoration: underline;
 }
 
 /* line 2, scss/_footer.scss */
@@ -280,6 +303,35 @@ div.content #slideshow {
   border: solid 3px white;
 }
 /* line 16, scss/main.scss */
+div.content #slideshow::after, div.content #slideshow::before {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -o-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -khtml-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid white;
+  background: url(../images/arrow.png) 50% 50% yellow no-repeat;
+  content: "";
+  height: 55px;
+  position: absolute;
+  top: 50%;
+  width: 55px;
+}
+/* line 26, scss/main.scss */
+div.content #slideshow::after {
+  right: -35px;
+}
+/* line 29, scss/main.scss */
+div.content #slideshow::before {
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+  left: -30px;
+}
+/* line 34, scss/main.scss */
 div.content #slideshow hgroup {
   width: 250px;
   height: auto;
@@ -287,12 +339,12 @@ div.content #slideshow hgroup {
   background-color: white;
   border: solid 1px black;
 }
-/* line 23, scss/main.scss */
+/* line 41, scss/main.scss */
 div.content #slideshow hgroup h2 {
   font-size: 60px;
 }
 
-/* line 28, scss/main.scss */
+/* line 46, scss/main.scss */
 div.content div.mission {
   width: 625px;
   height: 250px;
@@ -300,7 +352,7 @@ div.content div.mission {
   border: solid 1px black;
 }
 
-/* line 36, scss/main.scss */
+/* line 54, scss/main.scss */
 div.content div.events {
   border: solid 1px black;
   float: right;
@@ -308,7 +360,7 @@ div.content div.events {
   width: 315px;
 }
 
-/* line 43, scss/main.scss */
+/* line 61, scss/main.scss */
 div.content div.gradeLevel {
   position: relative;
   width: 317px;
@@ -318,7 +370,7 @@ div.content div.gradeLevel {
   border: solid 1px black;
 }
 
-/* line 54, scss/main.scss */
+/* line 72, scss/main.scss */
 div.content .gradeLevel h2 {
   font-size: 24px;
   position: absolute;

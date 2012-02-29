@@ -7,7 +7,7 @@ header{
   
   a.logo{ float:left; }
   
-  nav{
+  nav.global {
     bottom:-10px;
     position:absolute;
     right: 0px;
@@ -20,17 +20,38 @@ header{
         background-color:#d85045;
         float:left;
         margin-left: 0.5em;
-        padding: 1em 1em 1.5em;
+        padding: 1em 2em 1.5em;
         
         a{
           @include single-text-shadow(#666, 1px, 1px);
           color: white;
-          font-family: "Alegreya SC";
+          font-family: "Alegreya";
           font-weight: bold;
           font-size: 18px;
           text-decoration: none;
         }
       }
     }// End Nav ul styles
-  } // End Nav Styles
+  } // End Global Nav Styles
+  
+  nav.secondary{
+    line-height: 2em;
+    position: absolute;
+    right: -15px;
+    text-transform: uppercase;
+    ul{
+      li{
+        float: left;
+        margin-right: 1.5em;
+        a{
+          color: $electric_blue;
+          font-family: "Alegreya";
+          font-weight:bold;
+          text-decoration: none;
+          
+          &:hover { text-decoration: underline; }
+        }
+      }
+    }
+  } // End Secondary Nav styles
 }

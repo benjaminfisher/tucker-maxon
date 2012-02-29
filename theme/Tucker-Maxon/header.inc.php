@@ -30,11 +30,20 @@ if(return_page_slug() == 'index') {
 		<img src="<?php get_theme_url() ?>/assets/images/logo.png" alt="Tucker-Maxon School" />
 	</a>
 	
-	<nav>
+	<nav class="global">
 		<ul>
 			<?php get_navigation(return_page_slug()); ?>
 		</ul>
 	</nav>
-
+	
+	<nav class="secondary">
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Donations</a></li>
+			<li><a href="#">Events</a></li>
+			<li><a href="#">Calendar</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
 </header>
 <div role="main" class="content">

@@ -13,6 +13,24 @@ div.content {
       background-color:#ccc;
       border:solid 3px white;
       
+      &::after, &::before {
+          @include border-radius(50%);
+          border: 2px solid white;
+          background: url(../images/arrow.png) 50% 50% yellow no-repeat;
+          content: "";
+          height: 55px;
+          position: absolute;
+          top: 50%;
+          width: 55px;
+      }
+      &::after{
+        right: -35px;
+      }
+      &::before{
+        @include rotate(180deg);
+        left: -30px;
+      }
+      
       hgroup {
         width:250px;
         height:auto;
