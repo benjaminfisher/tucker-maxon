@@ -1,23 +1,35 @@
 
 header{
   height:120px;
-  margin: 0 auto;
+  margin: 1em auto 0px;
   position:relative;
   width: $content_width;
   
   a.logo{ float:left; }
   
   nav{
-    bottom:0px;
+    bottom:-10px;
     position:absolute;
-    right:50px;
+    right: 0px;
     
     ul{
       list-style-type:none;
       
       li{
+        @include border-top-radius($default_border_radius);
+        background-color:#d85045;
         float:left;
-        margin-right:20px;
+        margin-left: 0.5em;
+        padding: 1em 1em 1.5em;
+        
+        a{
+          @include single-text-shadow(#666, 1px, 1px);
+          color: white;
+          font-family: "Alegreya SC";
+          font-weight: bold;
+          font-size: 18px;
+          text-decoration: none;
+        }
       }
     }// End Nav ul styles
   } // End Nav Styles

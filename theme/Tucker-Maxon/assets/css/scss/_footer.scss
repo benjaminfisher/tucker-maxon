@@ -4,7 +4,6 @@ footer{
   background-color: $footer_bg_color;
   clear:both;
   margin: 0 auto;
-  overflow: auto;
   width: $content_width;
   
   nav.tertiary{
@@ -60,7 +59,7 @@ footer{
   $h-padding:30px;
   $v-padding:20px;
   
-  p.copy{
+  div.tagline p {
     @include border-bottom-radius($default_border_radius);
     background-color: $tm_red;
     clear:both;
@@ -72,4 +71,6 @@ footer{
     padding: $v-padding 0 0 $h-padding;
     width: $content_width - $h-padding;
   }
+  
+  p.copy { color: $tm_red; text-indent: 2em; }
 } // End Global Footer styles

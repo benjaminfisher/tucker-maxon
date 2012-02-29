@@ -9,11 +9,13 @@
 
 include 'header.inc.php';
 
-get_component('slideshow');
+get_component('slideshow'); ?>
 
-get_component('mission_statement');
+<div class="mission">
+	<p><?php get_component('mission_statement'); ?></p>
+</div>
 
-echo '<div class="events">' .events_list() .'</div><!-- End Events -->';
+<?php echo '<div class="events">' .events_list() .'</div><!-- End Events -->';
 
 get_page_content();
 

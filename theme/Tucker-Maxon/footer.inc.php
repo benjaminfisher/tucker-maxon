@@ -76,6 +76,12 @@
 			<p>Phone: 503.235.6551</p>
 		</section>
 	</div>
+	
+	<div class="tagline">
+		<p>
+		<?php get_component('tagline'); ?>
+		</p>
+	</div>
 	<p class="copy">&copy; The Tucker-Maxon School 2012. All rights reserved.</p>
 </footer>
 

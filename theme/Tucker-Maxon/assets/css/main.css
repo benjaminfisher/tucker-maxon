@@ -66,7 +66,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 2, scss/_header.scss */
 header {
   height: 120px;
-  margin: 0 auto;
+  margin: 1em auto 0px;
   position: relative;
   width: 960px;
 }
@@ -76,9 +76,9 @@ header a.logo {
 }
 /* line 10, scss/_header.scss */
 header nav {
-  bottom: 0px;
+  bottom: -10px;
   position: absolute;
-  right: 50px;
+  right: 0px;
 }
 /* line 15, scss/_header.scss */
 header nav ul {
@@ -86,8 +86,31 @@ header nav ul {
 }
 /* line 18, scss/_header.scss */
 header nav ul li {
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -o-border-top-left-radius: 10px;
+  -ms-border-top-left-radius: 10px;
+  -khtml-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -o-border-top-right-radius: 10px;
+  -ms-border-top-right-radius: 10px;
+  -khtml-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #d85045;
   float: left;
-  margin-right: 20px;
+  margin-left: 0.5em;
+  padding: 1em 1em 1.5em;
+}
+/* line 25, scss/_header.scss */
+header nav ul li a {
+  text-shadow: #666666 1px 1px 1px;
+  color: white;
+  font-family: "Alegreya SC";
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
 }
 
 /* line 2, scss/_footer.scss */
@@ -107,34 +130,33 @@ footer {
   background-color: #fefbf2;
   clear: both;
   margin: 0 auto;
-  overflow: auto;
   width: 960px;
 }
-/* line 11, scss/_footer.scss */
+/* line 10, scss/_footer.scss */
 footer nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
-/* line 15, scss/_footer.scss */
+/* line 14, scss/_footer.scss */
 footer nav.tertiary div.column ul {
   width: 192px;
 }
-/* line 18, scss/_footer.scss */
+/* line 17, scss/_footer.scss */
 footer nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
-/* line 20, scss/_footer.scss */
+/* line 19, scss/_footer.scss */
 footer nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
-/* line 25, scss/_footer.scss */
+/* line 24, scss/_footer.scss */
 footer nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
-/* line 33, scss/_footer.scss */
+/* line 32, scss/_footer.scss */
 footer nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -144,27 +166,27 @@ footer nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
-/* line 42, scss/_footer.scss */
+/* line 41, scss/_footer.scss */
 footer nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -28px 0;
 }
-/* line 43, scss/_footer.scss */
+/* line 42, scss/_footer.scss */
 footer nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
   background-position: -56px 0;
 }
-/* line 49, scss/_footer.scss */
+/* line 48, scss/_footer.scss */
 footer div.locate {
   text-align: center;
 }
-/* line 52, scss/_footer.scss */
+/* line 51, scss/_footer.scss */
 footer div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 63, scss/_footer.scss */
-footer p.copy {
+/* line 62, scss/_footer.scss */
+footer div.tagline p {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
   -o-border-bottom-left-radius: 10px;
@@ -186,6 +208,11 @@ footer p.copy {
   height: 35px;
   padding: 20px 0 0 30px;
   width: 930px;
+}
+/* line 75, scss/_footer.scss */
+footer p.copy {
+  color: #e53728;
+  text-indent: 2em;
 }
 
 /*** Google Fonts import ***/
@@ -241,10 +268,16 @@ div.content {
 }
 /* line 9, scss/main.scss */
 div.content #slideshow {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
   width: auto;
   height: 350px;
   background-color: #ccc;
-  border: solid 1px black;
+  border: solid 3px white;
 }
 /* line 16, scss/main.scss */
 div.content #slideshow hgroup {
@@ -260,7 +293,7 @@ div.content #slideshow hgroup h2 {
 }
 
 /* line 28, scss/main.scss */
-div.content p.mission {
+div.content div.mission {
   width: 625px;
   height: 250px;
   float: left;
