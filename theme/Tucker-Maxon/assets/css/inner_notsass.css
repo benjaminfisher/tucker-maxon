@@ -1,0 +1,11 @@
+.inner_page #left-content{
+	width:300px;
+	float:left;
+	margin-right:44px;
+}
+.inner_page #left-content ul{
+	list-style-image:url('../images/star.png');
+}
+.inner_page #page-content ul{
+list-style-position:inside;
+}
