@@ -15,7 +15,7 @@ if(return_page_slug() == 'index') {
 } ?>
 <!DOCTYPE html>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
-	<title><?php return_page_slug(); ?> | <?php get_site_name(); ?></title>
+	<title><?php get_page_clean_title(); ?> | <?php get_site_name(); ?></title>
 	
 	<?php get_header(); ?>
 	
