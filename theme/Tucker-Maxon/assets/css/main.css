@@ -308,14 +308,14 @@ a {
 }
 
 /* line 3, scss/main.scss */
-div.content {
+div.wrapper {
   clear: both;
   height: auto;
   margin: auto;
   width: 960px;
 }
 /* line 9, scss/main.scss */
-div.content #slideshow {
+div.wrapper #slideshow {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
@@ -328,7 +328,7 @@ div.content #slideshow {
   border: solid 3px white;
 }
 /* line 16, scss/main.scss */
-div.content #slideshow::after, div.content #slideshow::before {
+div.wrapper #slideshow::after, div.wrapper #slideshow::before {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   -o-border-radius: 50%;
@@ -344,11 +344,11 @@ div.content #slideshow::after, div.content #slideshow::before {
   width: 55px;
 }
 /* line 26, scss/main.scss */
-div.content #slideshow::after {
+div.wrapper #slideshow::after {
   right: -35px;
 }
 /* line 29, scss/main.scss */
-div.content #slideshow::before {
+div.wrapper #slideshow::before {
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
   -o-transform: rotate(180deg);
@@ -357,7 +357,7 @@ div.content #slideshow::before {
   left: -30px;
 }
 /* line 34, scss/main.scss */
-div.content #slideshow hgroup {
+div.wrapper #slideshow hgroup {
   width: 250px;
   height: auto;
   padding: 20px;
@@ -365,28 +365,31 @@ div.content #slideshow hgroup {
   border: solid 1px black;
 }
 /* line 41, scss/main.scss */
-div.content #slideshow hgroup h2 {
+div.wrapper #slideshow hgroup h2 {
   font-size: 60px;
 }
 
 /* line 46, scss/main.scss */
-div.content div.mission {
-  width: 625px;
+div.wrapper div.mission {
   height: 250px;
   float: left;
+  padding: 1em;
+  margin-right: 10px;
+  width: 600px;
   border: solid 1px black;
 }
 
-/* line 54, scss/main.scss */
-div.content div.events {
+/* line 56, scss/main.scss */
+div.wrapper div.events {
   border: solid 1px black;
   float: right;
   height: 250px;
-  width: 315px;
+  margin-left: 10px;
+  width: 300px;
 }
 
-/* line 61, scss/main.scss */
-div.content div.gradeLevel {
+/* line 64, scss/main.scss */
+div.wrapper .gradeLevel {
   position: relative;
   width: 317px;
   height: 250px;
@@ -395,8 +398,8 @@ div.content div.gradeLevel {
   border: solid 1px black;
 }
 
-/* line 72, scss/main.scss */
-div.content .gradeLevel h2 {
+/* line 75, scss/main.scss */
+div.wrapper .gradeLevel h2 {
   font-size: 24px;
   position: absolute;
   bottom: 0px;

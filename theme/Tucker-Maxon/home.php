@@ -15,10 +15,8 @@ get_component('slideshow'); ?>
 	<p><?php get_component('mission_statement'); ?></p>
 </div>
 
-<?php echo '<div class="events">' .events_list() .'</div><!-- End Events -->';
+<?php echo '<div class="events">' .events_list() .'</div><!-- End Events -->'; ?>
 
-echo '<div role="main" class="content">' .get_page_content() .'</div>';
+<div role="main" class="content"><?php get_page_content(); ?></div>
 
-include 'footer.inc.php';
-
-?>
+<?php include 'footer.inc.php'; ?>
