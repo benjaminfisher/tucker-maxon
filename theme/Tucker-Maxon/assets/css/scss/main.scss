@@ -41,38 +41,37 @@ div.content {
         h2{ font-size:60px; }
     }
   } // End of slideshow styles
-}
 
-div.content div.mission {
-  width:625px;
-  height:250px;
-  float:left;
-  
-  border:solid 1px black;
-}
+  div.mission {
+    width:625px;
+    height:250px;
+    float:left;
+    
+    border:solid 1px black;
+  }
 
-div.content div.events {
-  border:solid 1px black;
-  float:right;
-  height:250px;
-  width:315px;
-}
+  div.events {
+    border:solid 1px black;
+    float:right;
+    height:250px;
+    width:315px;
+  }
 
-div.content div.gradeLevel {
-  position: relative;
-  width: ($content_width / 3) - 3;
-  height:250px;
-  float:left;
-  background-color:#ccc;
-  
-  border:solid 1px black;
-  
-}
+  div.gradeLevel {
+    position: relative;
+    width: ($content_width / 3) - 3;
+    height:250px;
+    float:left;
+    background-color:#ccc;
+    
+    border:solid 1px black;
 
-div.content .gradeLevel h2 {
-  font-size:24px;
-  position: absolute;
-  bottom: 0px;
-  text-align:center;
-  width:100%;
+    h2 {
+      font-size:24px;
+      position: absolute;
+      bottom: 0px;
+      text-align:center;
+      width:100%;
+    } 
+  } // End of content(div boxes) styles
 }
