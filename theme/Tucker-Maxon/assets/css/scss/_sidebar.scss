@@ -1,6 +1,12 @@
-#sidebar {
-  width: $column_width;
+aside.sidebar {
+  float: left;
   margin: 0 $gutter_width;
+  width: $column_width;
+  
+  ul{
+    list-style-image: url('../images/star.png');
+    list-style-position: inside;
+  }
   
   img.hero { @include border-radius($default_border_radius); margin-bottom: 50px };
 }

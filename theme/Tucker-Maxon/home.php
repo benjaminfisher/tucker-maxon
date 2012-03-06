@@ -17,7 +17,7 @@ get_component('slideshow'); ?>
 
 <?php echo '<div class="events">' .events_list() .'</div><!-- End Events -->';
 
-get_page_content();
+echo '<div role="main" class="content">' .get_page_content() .'</div>';
 
 include 'footer.inc.php';
 

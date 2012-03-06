@@ -46,4 +46,5 @@ if(return_page_slug() == 'index') {
 		</ul>
 	</nav>
 </header>
-<div role="main" class="content">
+
+<div class="wrapper">

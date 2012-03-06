@@ -308,12 +308,18 @@ a {
 }
 
 /* line 1, scss/_sidebar.scss */
-#sidebar {
-  width: 300px;
+aside.sidebar {
+  float: left;
   margin: 0 30px;
+  width: 300px;
 }
-/* line 5, scss/_sidebar.scss */
-#sidebar img.hero {
+/* line 6, scss/_sidebar.scss */
+aside.sidebar ul {
+  list-style-image: url("../images/star.png");
+  list-style-position: inside;
+}
+/* line 11, scss/_sidebar.scss */
+aside.sidebar img.hero {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;

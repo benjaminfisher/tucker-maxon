@@ -8,7 +8,7 @@
 *****************************************************/
 ?>
 
-</div><!-- End Main Content -->
+</div><!-- End Content Wrapper -->
 
 <!-- GLOBAL FOOTER: BENJAMIN F. -->
 <footer>
