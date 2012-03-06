@@ -85,7 +85,7 @@
 	<p class="copy">&copy; The Tucker-Maxon School 2012. All rights reserved.</p>
 </footer>
 
-<script>
+<script language="JavaScript">
 	// Put scripts that need to be loaded (internal or external) in a comma seperated
 	// list of strings inside the head.js method parameters
 	head.js('http://code.jquery.com/jquery.min.js', 
