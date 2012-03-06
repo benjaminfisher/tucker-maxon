@@ -275,9 +275,50 @@ html, body {
 body {
   background-color: white;
   color: #4c5a5e;
+  font-family: "Myriad Pro", arial, sans-serif;
   font-size: 16px;
+  line-height: 150%;
 }
-/* line 39, scss/_global.scss */
+/* line 41, scss/_global.scss */
 body a {
   color: #4c5a5e;
+}
+
+/* line 45, scss/_global.scss */
+h2, h3 {
+  color: #e53728;
+  line-height: 150%;
+}
+
+/* line 46, scss/_global.scss */
+h2 {
+  font-size: 1.875em;
+}
+
+/* line 47, scss/_global.scss */
+h3 {
+  font-size: 1.125em;
+  margin-bottom: 5px;
+}
+
+/* line 49, scss/_global.scss */
+a {
+  color: #e53728;
+  text-decoration: none;
+}
+
+/* line 1, scss/_sidebar.scss */
+#sidebar {
+  width: 300px;
+  margin: 0 30px;
+}
+/* line 5, scss/_sidebar.scss */
+#sidebar img.hero {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 50px;
 }

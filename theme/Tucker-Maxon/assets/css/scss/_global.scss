@@ -34,7 +34,16 @@ html, body { width: 100%; }
 body{
   background-color: $bg_color;
   color: $content_color;
+  font-family: "Myriad Pro", arial, sans-serif;
   font-size: 16px;
+  line-height: 150%;
   
   a { color: $content_color; }
+  
 }
+
+h2, h3{ color: $tm_red; line-height: 150%; }
+h2 { font-size: 1.875em; }
+h3 { font-size: 1.125em; margin-bottom: 5px; }
+
+a { color: $tm_red; text-decoration: none; }

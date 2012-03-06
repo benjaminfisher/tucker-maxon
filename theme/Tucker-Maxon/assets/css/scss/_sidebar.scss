@@ -1,0 +1,6 @@
+#sidebar {
+  width: $column_width;
+  margin: 0 $gutter_width;
+  
+  img.hero { @include border-radius($default_border_radius); margin-bottom: 50px };
+}

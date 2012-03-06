@@ -10,14 +10,9 @@
 	get_component('sidebar');
 ?>
 	
-	<section id="content">
-		<h1><?php get_page_title(); ?></h1>	
-			<div id="page-content">
-				<div class="page-text">
-					<?php get_page_content(); ?>
-				</div>
-			</div>
-	</section>
+	<div class="content">
+		<h2><?php get_page_title(); ?></h2>	
+		<?php get_page_content(); ?>
+	</div>
 
-</body>
-</html>
+<?php include 'footer.inc.php'; ?>
