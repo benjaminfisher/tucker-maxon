@@ -10,8 +10,8 @@
 include 'header.inc.php'; ?>
 	
 		<hgroup>
-			<h1><?php get_page_title(); ?></h1>	
-			<h2>Subhead</h2>
+			<h1><?php get_parent(); ?></h1>	
+			<h2><?php get_page_title(); ?></h2>
 		</hgroup>
 		
 		<div class="content">

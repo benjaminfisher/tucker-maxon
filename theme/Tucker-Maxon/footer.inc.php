@@ -15,12 +15,12 @@
 	<nav class="tertiary">
 		<div class="column">
 			<ul>
-				<li class="heading"><a href="#">Admissions</a></li>
+				<li class="heading"><a href=<?php get_site_url(); ?>admissions>Admissions</a></li>
 				<li><a href="#">Hearing</a></li>
 				<li><a href="#">Hearing Impaired</a></li>
 			</ul>
 			<ul>
-				<li class="heading"><a href="#">About</a></li>
+				<li class="heading"><a href=<?php get_site_url(); ?>about>About</a></li>
 				<li><a href="#">History</a></li>
 				<li><a href="#">Board/Staff</a></li>
 				<li><a href="#">Technology</a></li>
@@ -77,11 +77,7 @@
 		</section>
 	</div>
 	
-	<div class="tagline">
-		<p>
-		<?php get_component('tagline'); ?>
-		</p>
-	</div>
+	<p class="tagline"><?php get_component('tagline'); ?></p>
 	<p class="copy">&copy; The Tucker-Maxon School 2012. All rights reserved.</p>
 </footer>
 

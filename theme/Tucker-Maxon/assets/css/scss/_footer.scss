@@ -7,6 +7,9 @@ footer{
   width: $content_width;
   
   nav.tertiary{
+    float: left;
+    overflow: auto;
+    
     div.column{
       float:left;
       margin-left: 1em;
@@ -46,20 +49,25 @@ footer{
   } // End nav.tertiary sytles
   
   div.locate {
+    float: right;
     text-align: center;
+    width: $column_width;
     
-    section.address h3 {
-      color: $tm_red;
-      font-family: "Alegreya Black";
-      font-size: 1.2222222em;
-      margin: 1em 0;
+    section.address{
+      
+      h3 {
+        color: $tm_red;
+        font-family: "Alegreya Black";
+        font-size: 1.2222222em;
+        margin: 1em 0;
+      }
     }
   }
   
   $h-padding:30px;
   $v-padding:20px;
   
-  div.tagline p {
+  p.tagline{
     @include border-bottom-radius($default_border_radius);
     background-color: $tm_red;
     clear:both;
