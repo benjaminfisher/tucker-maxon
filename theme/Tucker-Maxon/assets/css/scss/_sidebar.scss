@@ -1,5 +1,4 @@
 aside.sidebar {
-  background: green;
   float: left;
   margin-right: $gutter_width;
   width: $column_width;
@@ -7,7 +6,18 @@ aside.sidebar {
   ul{
     list-style-image: url('../images/star.png');
     list-style-position: inside;
+    
+    li{
+      font: bold 1em "Myriad Pro", Arial, sans-serif;
+      
+      a:hover{
+        color: #5a97dc;
+      }
+    }
   }
   
-  img.hero { @include border-radius($default_border_radius); margin-bottom: 50px };
+  img.hero {
+    @include border-radius($default_border_radius);
+    margin: 10px 0px
+  };
 }

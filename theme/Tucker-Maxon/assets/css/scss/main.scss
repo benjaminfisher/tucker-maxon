@@ -3,8 +3,10 @@
 div.wrapper {
   clear:both;
   height:auto;
-  margin:auto;
+  margin:0 auto;
   width: $content_width;
+  
+  @include border-top-radius($default_border_radius);
   
   #slideshow {
       @include border-radius($default_border_radius);

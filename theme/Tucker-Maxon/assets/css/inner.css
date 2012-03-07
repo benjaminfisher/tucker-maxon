@@ -76,9 +76,9 @@ header a.logo {
 }
 /* line 9, scss/_header.scss */
 header nav.global {
-  bottom: -10px;
+  bottom: -18px;
   position: absolute;
-  right: 0px;
+  right: 2px;
 }
 /* line 14, scss/_header.scss */
 header nav.global ul {
@@ -102,36 +102,61 @@ header nav.global ul li {
   float: left;
   margin-left: 0.5em;
   padding: 1em 2em 1.5em;
+  top: 0px;
+  -moz-transition-property: top;
+  -webkit-transition-property: top;
+  -o-transition-property: top;
+  transition-property: top;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -moz-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+  -moz-transition-delay: ease-in;
+  -webkit-transition-delay: ease-in;
+  -o-transition-delay: ease-in;
+  transition-delay: ease-in;
 }
-/* line 24, scss/_header.scss */
+/* line 27, scss/_header.scss */
+header nav.global ul li:hover {
+  background-color: #e84c3f;
+  top: -5px;
+}
+/* line 31, scss/_header.scss */
 header nav.global ul li a {
   text-shadow: #666666 1px 1px 1px;
   color: white;
+  display: block;
   font-family: "Alegreya", "Times", serif;
   font-weight: bold;
   font-size: 18px;
+  height: 100%;
   text-decoration: none;
+  width: 100%;
 }
-/* line 36, scss/_header.scss */
+/* line 46, scss/_header.scss */
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
-/* line 42, scss/_header.scss */
+/* line 52, scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
-/* line 45, scss/_header.scss */
+/* line 55, scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
   font-family: "Alegreya";
   font-weight: bold;
   text-decoration: none;
 }
-/* line 51, scss/_header.scss */
+/* line 61, scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
 }
@@ -246,7 +271,7 @@ footer p.copy {
 }
 
 /*** Google Fonts import ***/
-@import url(http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic);
+@import url("http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic");
 /**
  * Global Styles for Tucker-Maxon Theme
  * 
@@ -280,7 +305,7 @@ html, body {
 
 /* line 34, scss/_global.scss */
 body {
-  background-color: white;
+  background-color: #fefefe;
   color: #4c5a5e;
   font-family: "Myriad Pro", arial, sans-serif;
   font-size: 16px;
@@ -292,29 +317,31 @@ body a {
 }
 /* line 43, scss/_global.scss */
 body div.wrapper {
+  background: #fefefe;
   clear: both;
   margin: 0 auto;
+  overflow: auto;
   width: 960px;
 }
 
-/* line 51, scss/_global.scss */
+/* line 53, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 52, scss/_global.scss */
+/* line 54, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 53, scss/_global.scss */
+/* line 55, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 55, scss/_global.scss */
+/* line 57, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;
@@ -322,17 +349,24 @@ a {
 
 /* line 1, scss/_sidebar.scss */
 aside.sidebar {
-  background: green;
   float: left;
   margin-right: 30px;
   width: 300px;
 }
-/* line 7, scss/_sidebar.scss */
+/* line 6, scss/_sidebar.scss */
 aside.sidebar ul {
   list-style-image: url("../images/star.png");
   list-style-position: inside;
 }
-/* line 12, scss/_sidebar.scss */
+/* line 10, scss/_sidebar.scss */
+aside.sidebar ul li {
+  font: bold 1em "Myriad Pro", Arial, sans-serif;
+}
+/* line 13, scss/_sidebar.scss */
+aside.sidebar ul li a:hover {
+  color: #5a97dc;
+}
+/* line 19, scss/_sidebar.scss */
 aside.sidebar img.hero {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -340,7 +374,7 @@ aside.sidebar img.hero {
   -ms-border-radius: 10px;
   -khtml-border-radius: 10px;
   border-radius: 10px;
-  margin-bottom: 50px;
+  margin: 10px 0px;
 }
 
 /* line 2, scss/_footer.scss */
@@ -452,37 +486,55 @@ footer p.copy {
   text-indent: 2em;
 }
 
+/* line 3, scss/inner.scss */
+header {
+  padding-bottom: 1em;
+}
+
+/* line 6, scss/inner.scss */
+div.wrapper {
+  border-top: 1px solid #e53728;
+  padding-top: 1em;
+}
+
 /*-----------------Brandon Gerke InnerPage--------------- */
-/* line 5, scss/inner.scss */
+/* line 13, scss/inner.scss */
 div.content {
+  float: right;
   width: 620px;
 }
-/* line 7, scss/inner.scss */
+/* line 16, scss/inner.scss */
 div.content section {
   width: 620px;
   margin: 0 auto;
-  padding: 50px 0px 20px 350px;
 }
-/* line 13, scss/inner.scss */
+/* line 21, scss/inner.scss */
 div.content ul {
   list-style-type: disc;
   padding: 10px;
 }
-/* line 16, scss/inner.scss */
+/* line 24, scss/inner.scss */
 div.content ul li {
   padding: 5px;
 }
-/* line 21, scss/inner.scss */
-div.content h4 {
-  font-size: 24px;
+/* line 29, scss/inner.scss */
+div.content h2 {
   color: #436199;
+  font-family: "Alegreya", Times, serif;
+  font-weight: bold;
+}
+/* line 34, scss/inner.scss */
+div.content h4 {
+  font-family: "Alegreya", Times, serif;
+  font-size: 24px;
+  color: #e53728;
   padding: 10px 0px 10px 0px;
 }
-/* line 27, scss/inner.scss */
+/* line 41, scss/inner.scss */
 div.content article {
   padding: 10px 0px 10px 0px;
 }
-/* line 31, scss/inner.scss */
+/* line 45, scss/inner.scss */
 div.content p {
   padding: 10px 20px 10px 0px;
 }

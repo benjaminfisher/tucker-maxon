@@ -1,13 +1,21 @@
 @import 'global', 'sidebar', 'footer';
 
+header {
+  padding-bottom: 1em;
+}
+div.wrapper{
+  border-top: 1px solid $tm_red;
+  padding-top: 1em;
+}
+
 /*-----------------Brandon Gerke InnerPage--------------- */
 
 div.content {
+  float: right;
   width: 620px;
   section{
     width: 620px;
     margin:0 auto;
-    padding:50px 0px 20px 350px;
   }
 
   ul{
@@ -17,10 +25,16 @@ div.content {
       padding:5px;
     }
   }
-
+  
+  h2{
+    color: $heading_color;
+    font-family: "Alegreya", Times, serif;
+    font-weight: bold;
+  }
   h4{
+    font-family: "Alegreya", Times, serif;
     font-size: 24px;
-    color:#436199;
+    color: $tm_red;
     padding:10px 0px 10px 0px;
   }
   
