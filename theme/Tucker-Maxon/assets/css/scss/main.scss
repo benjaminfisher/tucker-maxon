@@ -41,41 +41,39 @@ div.wrapper {
         h2{ font-size:60px; }
     }
   } // End of slideshow styles
-}
 
-div.wrapper div.mission {
-  height:250px;
-  float:left;
-  padding: 1em;
-  margin-right: $column_margin;
-  width: $column_width*2;
+	div.mission {
+  		height:250px;
+  		float:left;
+  		padding: 1em;
+  		margin-right: $column_margin;
+  		width: $column_width*2;
   
-  border:solid 1px black;
-}
+  		border:solid 1px black;
+	}
 
-div.wrapper div.events {
-  border:solid 1px black;
-  float:right;
-  height:250px;
-  margin-left: $column_margin;
-  width: $column_width;
-}
+  div.events {
+    border:solid 1px black;
+    float:right;
+    height:250px;
+    width: $column_width;
+  }
 
-div.wrapper .gradeLevel {
-  position: relative;
-  width: ($content_width / 3) - 3;
-  height:250px;
-  float:left;
-  background-color:#ccc;
-  
-  border:solid 1px black;
-  
-}
+  div.gradeLevel {
+    position: relative;
+    width: ($content_width / 3) - 3;
+    height:250px;
+    float:left;
+    background-color:#ccc;
+    
+    border:solid 1px black;
 
-div.wrapper .gradeLevel h2 {
-  font-size:24px;
-  position: absolute;
-  bottom: 0px;
-  text-align:center;
-  width:100%;
+    h2 {
+      font-size:24px;
+      position: absolute;
+      bottom: 0px;
+      text-align:center;
+      width:100%;
+    } 
+  } // End of content(div boxes) styles
 }
