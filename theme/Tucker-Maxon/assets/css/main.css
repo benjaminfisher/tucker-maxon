@@ -283,25 +283,30 @@ body {
 body a {
   color: #4c5a5e;
 }
+/* line 43, scss/_global.scss */
+body div.wrapper {
+  margin: 0 auto;
+  width: 960px;
+}
 
-/* line 45, scss/_global.scss */
+/* line 50, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 46, scss/_global.scss */
+/* line 51, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 47, scss/_global.scss */
+/* line 52, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 49, scss/_global.scss */
+/* line 54, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;

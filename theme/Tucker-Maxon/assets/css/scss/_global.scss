@@ -40,6 +40,11 @@ body{
   
   a { color: $content_color; }
   
+  div.wrapper{
+    margin: 0 auto;
+    width: $content_width;
+  }
+  
 }
 
 h2, h3{ color: $tm_red; line-height: 150%; }
