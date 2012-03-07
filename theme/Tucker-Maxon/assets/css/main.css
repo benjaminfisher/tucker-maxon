@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,71 +20,71 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 2, scss/_header.scss */
+/* line 1, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header {
   height: 120px;
   margin: 1em auto 0px;
   position: relative;
   width: 960px;
 }
-/* line 8, scss/_header.scss */
+/* line 7, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header a.logo {
   float: left;
 }
-/* line 10, scss/_header.scss */
+/* line 9, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.global {
   bottom: -10px;
   position: absolute;
   right: 0px;
 }
-/* line 15, scss/_header.scss */
+/* line 14, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.global ul {
   list-style-type: none;
 }
-/* line 18, scss/_header.scss */
+/* line 17, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.global ul li {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -103,7 +103,7 @@ header nav.global ul li {
   margin-left: 0.5em;
   padding: 1em 2em 1.5em;
 }
-/* line 25, scss/_header.scss */
+/* line 24, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.global ul li a {
   text-shadow: #666666 1px 1px 1px;
   color: white;
@@ -112,31 +112,31 @@ header nav.global ul li a {
   font-size: 18px;
   text-decoration: none;
 }
-/* line 37, scss/_header.scss */
+/* line 36, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
-/* line 43, scss/_header.scss */
+/* line 42, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
-/* line 46, scss/_header.scss */
+/* line 45, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
   font-family: "Alegreya";
   font-weight: bold;
   text-decoration: none;
 }
-/* line 52, scss/_header.scss */
+/* line 51, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
 }
 
-/* line 2, scss/_footer.scss */
+/* line 2, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -155,31 +155,31 @@ footer {
   margin: 0 auto;
   width: 960px;
 }
-/* line 10, scss/_footer.scss */
+/* line 10, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
-/* line 14, scss/_footer.scss */
+/* line 14, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column ul {
   width: 192px;
 }
-/* line 17, scss/_footer.scss */
+/* line 17, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
-/* line 19, scss/_footer.scss */
+/* line 19, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
-/* line 24, scss/_footer.scss */
+/* line 24, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
-/* line 32, scss/_footer.scss */
+/* line 32, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -189,26 +189,26 @@ footer nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
-/* line 41, scss/_footer.scss */
+/* line 41, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -28px 0;
 }
-/* line 42, scss/_footer.scss */
+/* line 42, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
   background-position: -56px 0;
 }
-/* line 48, scss/_footer.scss */
+/* line 48, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer div.locate {
   text-align: center;
 }
-/* line 51, scss/_footer.scss */
+/* line 51, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 62, scss/_footer.scss */
+/* line 62, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer div.tagline p {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -232,7 +232,7 @@ footer div.tagline p {
   padding: 20px 0 0 30px;
   width: 930px;
 }
-/* line 75, scss/_footer.scss */
+/* line 75, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   text-indent: 2em;
@@ -260,18 +260,18 @@ footer p.copy {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
-/* line 27, scss/_global.scss */
+/* line 27, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 * {
   background-repeat: no-repeat;
   position: relative;
 }
 
-/* line 32, scss/_global.scss */
+/* line 32, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 html, body {
   width: 100%;
 }
 
-/* line 34, scss/_global.scss */
+/* line 34, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 body {
   background-color: white;
   color: #4c5a5e;
@@ -279,34 +279,34 @@ body {
   font-size: 16px;
   line-height: 150%;
 }
-/* line 41, scss/_global.scss */
+/* line 41, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 body a {
   color: #4c5a5e;
 }
-/* line 43, scss/_global.scss */
+/* line 43, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 body div.wrapper {
   margin: 0 auto;
   width: 960px;
 }
 
-/* line 50, scss/_global.scss */
+/* line 50, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 51, scss/_global.scss */
+/* line 51, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 52, scss/_global.scss */
+/* line 52, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 54, scss/_global.scss */
+/* line 54, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;

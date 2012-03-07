@@ -18,6 +18,8 @@
 				<li class="heading"><a href="#">Admissions</a></li>
 				<li><a href="#">Hearing</a></li>
 				<li><a href="#">Hearing Impaired</a></li>
+				
+				<?php print_r(menu_data('Admissions')); ?>
 			</ul>
 			<ul>
 				<li class="heading"><a href="#">About</a></li>
