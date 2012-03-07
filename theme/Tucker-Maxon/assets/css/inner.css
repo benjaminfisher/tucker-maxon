@@ -1,4 +1,6 @@
-/* line 17, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/*** Google Fonts import ***/
+@import url("http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic");
+/* line 17, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +22,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 20, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 101, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, ../../../../../../../Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 114, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -67,24 +69,25 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 header {
   height: 120px;
   margin: 1em auto 0px;
+  padding-bottom: 1em;
   position: relative;
   width: 960px;
 }
-/* line 7, scss/_header.scss */
+/* line 8, scss/_header.scss */
 header a.logo {
   float: left;
 }
-/* line 9, scss/_header.scss */
+/* line 10, scss/_header.scss */
 header nav.global {
   bottom: -18px;
   position: absolute;
   right: 2px;
 }
-/* line 14, scss/_header.scss */
+/* line 15, scss/_header.scss */
 header nav.global ul {
   list-style-type: none;
 }
-/* line 17, scss/_header.scss */
+/* line 18, scss/_header.scss */
 header nav.global ul li {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -120,49 +123,57 @@ header nav.global ul li {
   -o-transition-delay: ease-in;
   transition-delay: ease-in;
 }
-/* line 27, scss/_header.scss */
+/* line 28, scss/_header.scss */
 header nav.global ul li:hover {
   background-color: #e84c3f;
   top: -5px;
 }
-/* line 31, scss/_header.scss */
+/* line 32, scss/_header.scss */
 header nav.global ul li a {
   text-shadow: #666666 1px 1px 1px;
   color: white;
   display: block;
-  font-family: "Alegreya", "Times", serif;
+  font-family: "Alegreya SC", "Times", serif;
   font-weight: bold;
   font-size: 18px;
   height: 100%;
   text-decoration: none;
   width: 100%;
 }
-/* line 46, scss/_header.scss */
+/* line 47, scss/_header.scss */
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
-/* line 52, scss/_header.scss */
+/* line 53, scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
-/* line 55, scss/_header.scss */
+/* line 56, scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
-  font-family: "Alegreya";
+  font-family: "Alegreya SC";
   font-weight: bold;
   text-decoration: none;
 }
-/* line 61, scss/_header.scss */
+/* line 62, scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
 }
 
 /* line 2, scss/_footer.scss */
 footer {
+  clear: both;
+  margin: 0 auto;
+  width: 960px;
+}
+/* line 7, scss/_footer.scss */
+footer section.top {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -176,41 +187,47 @@ footer {
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #fefbf2;
-  clear: both;
-  margin: 0 auto;
-  width: 960px;
 }
-/* line 9, scss/_footer.scss */
-footer nav.tertiary {
+/* line 20, scss/_mixins.scss */
+footer section.top:before, footer section.top:after {
+  content: "";
+  display: table;
+}
+/* line 24, scss/_mixins.scss */
+footer section.top:after {
+  clear: both;
+}
+/* line 12, scss/_footer.scss */
+footer section.top nav.tertiary {
   float: left;
   overflow: auto;
 }
-/* line 13, scss/_footer.scss */
-footer nav.tertiary div.column {
+/* line 16, scss/_footer.scss */
+footer section.top nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
-/* line 17, scss/_footer.scss */
-footer nav.tertiary div.column ul {
+/* line 20, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul {
   width: 192px;
 }
-/* line 20, scss/_footer.scss */
-footer nav.tertiary div.column ul li:not(.heading) a {
+/* line 23, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
-/* line 22, scss/_footer.scss */
-footer nav.tertiary div.column ul li.heading {
+/* line 25, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
-/* line 27, scss/_footer.scss */
-footer nav.tertiary div.column ul li.heading a {
+/* line 30, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
-/* line 35, scss/_footer.scss */
-footer nav.tertiary div.column ul.social li.social_link a {
+/* line 38, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
   height: 28px;
@@ -219,28 +236,28 @@ footer nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
-/* line 44, scss/_footer.scss */
-footer nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
+/* line 47, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -28px 0;
 }
-/* line 45, scss/_footer.scss */
-footer nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
+/* line 48, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
   background-position: -56px 0;
 }
-/* line 51, scss/_footer.scss */
-footer div.locate {
+/* line 54, scss/_footer.scss */
+footer section.top div.locate {
   float: right;
   text-align: center;
   width: 300px;
 }
-/* line 58, scss/_footer.scss */
-footer div.locate section.address h3 {
+/* line 61, scss/_footer.scss */
+footer section.top div.locate section.address h3 {
   color: #e53728;
-  font-family: "Alegreya Black";
+  font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 70, scss/_footer.scss */
+/* line 74, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -257,21 +274,19 @@ footer p.tagline {
   background-color: #e53728;
   clear: both;
   color: white;
-  font-family: "Alegreya", serif;
+  font-family: "Alegreya SC", serif;
   font-weight: bold;
   font-size: 1.22222em;
   height: 35px;
-  padding: 20px 0 0 30px;
+  padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 83, scss/_footer.scss */
+/* line 87, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   text-indent: 2em;
 }
 
-/*** Google Fonts import ***/
-@import url("http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic");
 /**
  * Global Styles for Tucker-Maxon Theme
  * 
@@ -320,31 +335,57 @@ body div.wrapper {
   background: #fefefe;
   clear: both;
   margin: 0 auto;
-  overflow: auto;
+  padding-bottom: 100px;
   width: 960px;
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+/* line 20, scss/_mixins.scss */
+body div.wrapper:before, body div.wrapper:after {
+  content: "";
+  display: table;
+}
+/* line 24, scss/_mixins.scss */
+body div.wrapper:after {
+  clear: both;
 }
 
-/* line 53, scss/_global.scss */
+/* line 57, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 54, scss/_global.scss */
+/* line 58, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 55, scss/_global.scss */
+/* line 59, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 57, scss/_global.scss */
+/* line 61, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;
+}
+
+/* line 63, scss/_global.scss */
+.group {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+/* line 20, scss/_mixins.scss */
+.group:before, .group:after {
+  content: "";
+  display: table;
+}
+/* line 24, scss/_mixins.scss */
+.group:after {
+  clear: both;
 }
 
 /* line 1, scss/_sidebar.scss */
@@ -379,6 +420,14 @@ aside.sidebar img.hero {
 
 /* line 2, scss/_footer.scss */
 footer {
+  clear: both;
+  margin: 0 auto;
+  width: 960px;
+}
+/* line 7, scss/_footer.scss */
+footer section.top {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -392,41 +441,47 @@ footer {
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
   background-color: #fefbf2;
-  clear: both;
-  margin: 0 auto;
-  width: 960px;
 }
-/* line 9, scss/_footer.scss */
-footer nav.tertiary {
+/* line 20, scss/_mixins.scss */
+footer section.top:before, footer section.top:after {
+  content: "";
+  display: table;
+}
+/* line 24, scss/_mixins.scss */
+footer section.top:after {
+  clear: both;
+}
+/* line 12, scss/_footer.scss */
+footer section.top nav.tertiary {
   float: left;
   overflow: auto;
 }
-/* line 13, scss/_footer.scss */
-footer nav.tertiary div.column {
+/* line 16, scss/_footer.scss */
+footer section.top nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
-/* line 17, scss/_footer.scss */
-footer nav.tertiary div.column ul {
+/* line 20, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul {
   width: 192px;
 }
-/* line 20, scss/_footer.scss */
-footer nav.tertiary div.column ul li:not(.heading) a {
+/* line 23, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
-/* line 22, scss/_footer.scss */
-footer nav.tertiary div.column ul li.heading {
+/* line 25, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
-/* line 27, scss/_footer.scss */
-footer nav.tertiary div.column ul li.heading a {
+/* line 30, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
-/* line 35, scss/_footer.scss */
-footer nav.tertiary div.column ul.social li.social_link a {
+/* line 38, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
   height: 28px;
@@ -435,28 +490,28 @@ footer nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
-/* line 44, scss/_footer.scss */
-footer nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
+/* line 47, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -28px 0;
 }
-/* line 45, scss/_footer.scss */
-footer nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
+/* line 48, scss/_footer.scss */
+footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
   background-position: -56px 0;
 }
-/* line 51, scss/_footer.scss */
-footer div.locate {
+/* line 54, scss/_footer.scss */
+footer section.top div.locate {
   float: right;
   text-align: center;
   width: 300px;
 }
-/* line 58, scss/_footer.scss */
-footer div.locate section.address h3 {
+/* line 61, scss/_footer.scss */
+footer section.top div.locate section.address h3 {
   color: #e53728;
-  font-family: "Alegreya Black";
+  font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 70, scss/_footer.scss */
+/* line 74, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -473,14 +528,14 @@ footer p.tagline {
   background-color: #e53728;
   clear: both;
   color: white;
-  font-family: "Alegreya", serif;
+  font-family: "Alegreya SC", serif;
   font-weight: bold;
   font-size: 1.22222em;
   height: 35px;
-  padding: 20px 0 0 30px;
+  padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 83, scss/_footer.scss */
+/* line 87, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   text-indent: 2em;
@@ -520,12 +575,12 @@ div.content ul li {
 /* line 29, scss/inner.scss */
 div.content h2 {
   color: #436199;
-  font-family: "Alegreya", Times, serif;
+  font-family: "Alegreya SC", Times, serif;
   font-weight: bold;
 }
 /* line 34, scss/inner.scss */
 div.content h4 {
-  font-family: "Alegreya", Times, serif;
+  font-family: "Alegreya SC", Times, serif;
   font-size: 24px;
   color: #e53728;
   padding: 10px 0px 10px 0px;

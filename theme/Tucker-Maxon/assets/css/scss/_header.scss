@@ -1,6 +1,7 @@
 header{
   height:120px;
   margin: 1em auto 0px;
+  padding-bottom: 1em;
   position:relative;
   width: $content_width;
   
@@ -32,7 +33,7 @@ header{
           @include single-text-shadow(#666, 1px, 1px);
           color: white;
           display: block;
-          font-family: "Alegreya", "Times", serif;
+          font-family: "Alegreya SC", "Times", serif;
           font-weight: bold;
           font-size: 18px;
           height: 100%;
@@ -54,7 +55,7 @@ header{
         margin-right: 1.5em;
         a{
           color: $electric_blue;
-          font-family: "Alegreya";
+          font-family: "Alegreya SC";
           font-weight:bold;
           text-decoration: none;
           

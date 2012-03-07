@@ -9,13 +9,23 @@
 
 include 'header.inc.php';
 
-get_component('slideshow'); ?>
+get_i18n_gallery('slideshow'); ?>
 
-<div class="mission">
-	<p><?php get_component('mission_statement'); ?></p>
-</div>
+<section class="home group">
+  <div class="mission">
+    <h2>Mission Statement</h2>
+    <p><?php get_component('mission_statement'); ?></p>
+    <a href="javascript:void(0)" class="learn-more">Learn More</a>
+  </div>
 
-<?php echo '<div class="events">' .events_list() .'</div><!-- End Events -->'; ?>
+  <div class="events">
+    <h2>Latest News</h2>
+    <article>
+      <?php echo events_list() ?>
+    </article>
+    <a href="javascript:void(0)" class="learn-more">Learn More</a>
+  </div>
+</section>
 
 <div role="main" class="content"><?php get_page_content(); ?></div>
 

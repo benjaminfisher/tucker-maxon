@@ -1,7 +1,7 @@
-@import 'compass/reset', 'compass/css3', 'compass/css3/transform', 'mixins', 'header', 'footer';
-
 /*** Google Fonts import ***/
 @import url("http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic");
+
+@import 'compass/reset', 'compass/css3', 'compass/css3/transform', 'mixins', 'header', 'footer';
 
 /**
  * Global Styles for Tucker-Maxon Theme
@@ -44,8 +44,12 @@ body{
     background: $bg_color;
     clear: both;
     margin: 0 auto;
-    overflow: auto;
+    // min-height: 300px;
+    // overflow: auto;
+    padding-bottom: 100px;
     width: $content_width;
+
+    @include clearfix;
   }
   
 }
@@ -55,3 +59,7 @@ h2 { font-size: 1.875em; }
 h3 { font-size: 1.125em; margin-bottom: 5px; }
 
 a { color: $tm_red; text-decoration: none; }
+
+.group {
+  @include clearfix;
+}
