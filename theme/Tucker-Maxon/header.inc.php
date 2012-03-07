@@ -32,7 +32,7 @@ if(return_page_slug() == 'index') {
 	
 	<nav class="global">
 		<ul>
-			<?php get_navigation(return_page_slug()); ?>
+			<?php get_i18n_navigation(return_page_slug()); ?>
 		</ul>
 	</nav>
 	

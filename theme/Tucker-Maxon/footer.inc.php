@@ -16,8 +16,8 @@
 		<div class="column">
 			<ul>
 				<li class="heading"><a href=<?php get_site_url(); ?>admissions>Admissions</a></li>
-				<li><a href="#">Hearing</a></li>
-				<li><a href="#">Hearing Impaired</a></li>
+				<li><a href=<?php get_site_url(); ?>admissions#hearing>Hearing</a></li>
+				<li><a href=<?php get_site_url(); ?>admissions#hearing-impaired>Hearing Impaired</a></li>
 			</ul>
 			<ul>
 				<li class="heading"><a href=<?php get_site_url(); ?>about>About</a></li>
@@ -26,6 +26,7 @@
 				<li><a href="#">Technology</a></li>
 				<li><a href="#">Multimedia</a></li>
 				<li><a href="#">Community Partnership</a></li>
+				
 			</ul>
 		</div>
 		
