@@ -1,1 +1,33 @@
-@import 'global', 'sidebar';
+@import 'global', 'sidebar', 'footer';
+
+/*-----------------Brandon Gerke InnerPage--------------- */
+div.content section{
+  width: 620px;
+  margin:0 auto;
+  padding:50px 0px 20px 350px;
+}
+
+div.content ul{
+  list-style-type:disc;
+  padding:10px;
+}
+
+div.content li{
+  padding:5px;
+}
+
+div.content h4{
+  font-size: 24px;
+  color:#436199;
+  padding:10px 0px 10px 0px;
+}
+
+div.content article{
+  padding:10px 0px 10px 0px;
+}
+
+div.content p{
+  padding:10px 20px 10px 0px;
+}
+
+/*------------------END Brandon Gerke------------------------*/

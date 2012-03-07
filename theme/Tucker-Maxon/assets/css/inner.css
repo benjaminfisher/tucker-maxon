@@ -328,3 +328,143 @@ aside.sidebar img.hero {
   border-radius: 10px;
   margin-bottom: 50px;
 }
+
+/* line 2, scss/_footer.scss */
+footer {
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -o-border-top-left-radius: 10px;
+  -ms-border-top-left-radius: 10px;
+  -khtml-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-topright: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -o-border-top-right-radius: 10px;
+  -ms-border-top-right-radius: 10px;
+  -khtml-border-top-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #fefbf2;
+  clear: both;
+  margin: 0 auto;
+  width: 960px;
+}
+/* line 10, scss/_footer.scss */
+footer nav.tertiary div.column {
+  float: left;
+  margin-left: 1em;
+}
+/* line 14, scss/_footer.scss */
+footer nav.tertiary div.column ul {
+  width: 192px;
+}
+/* line 17, scss/_footer.scss */
+footer nav.tertiary div.column ul li:not(.heading) a {
+  text-decoration: none;
+}
+/* line 19, scss/_footer.scss */
+footer nav.tertiary div.column ul li.heading {
+  font-family: 'Alegreya', serif;
+  font-weight: bold;
+  margin: 1em 0;
+}
+/* line 24, scss/_footer.scss */
+footer nav.tertiary div.column ul li.heading a {
+  color: #436199;
+  font-size: 1.222222em;
+}
+/* line 32, scss/_footer.scss */
+footer nav.tertiary div.column ul.social li.social_link a {
+  background-image: url(../images/social_sprite.jpg);
+  display: block;
+  height: 28px;
+  float: left;
+  margin-right: 1em;
+  text-indent: -9999em;
+  width: 28px;
+}
+/* line 41, scss/_footer.scss */
+footer nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
+  background-position: -28px 0;
+}
+/* line 42, scss/_footer.scss */
+footer nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
+  background-position: -56px 0;
+}
+/* line 48, scss/_footer.scss */
+footer div.locate {
+  text-align: center;
+}
+/* line 51, scss/_footer.scss */
+footer div.locate section.address h3 {
+  color: #e53728;
+  font-family: "Alegreya Black";
+  font-size: 1.2222222em;
+  margin: 1em 0;
+}
+/* line 62, scss/_footer.scss */
+footer div.tagline p {
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -o-border-bottom-left-radius: 10px;
+  -ms-border-bottom-left-radius: 10px;
+  -khtml-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -o-border-bottom-right-radius: 10px;
+  -ms-border-bottom-right-radius: 10px;
+  -khtml-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: #e53728;
+  clear: both;
+  color: white;
+  font-family: "Alegreya", serif;
+  font-weight: bold;
+  font-size: 1.22222em;
+  height: 35px;
+  padding: 20px 0 0 30px;
+  width: 930px;
+}
+/* line 75, scss/_footer.scss */
+footer p.copy {
+  color: #e53728;
+  text-indent: 2em;
+}
+
+/*-----------------Brandon Gerke InnerPage--------------- */
+/* line 4, scss/inner.scss */
+div.content section {
+  width: 620px;
+  margin: 0 auto;
+  padding: 50px 0px 20px 350px;
+}
+
+/* line 10, scss/inner.scss */
+div.content ul {
+  list-style-type: disc;
+  padding: 10px;
+}
+
+/* line 15, scss/inner.scss */
+div.content li {
+  padding: 5px;
+}
+
+/* line 19, scss/inner.scss */
+div.content h4 {
+  font-size: 24px;
+  color: #436199;
+  padding: 10px 0px 10px 0px;
+}
+
+/* line 25, scss/inner.scss */
+div.content article {
+  padding: 10px 0px 10px 0px;
+}
+
+/* line 29, scss/inner.scss */
+div.content p {
+  padding: 10px 20px 10px 0px;
+}
+
+/*------------------END Brandon Gerke------------------------*/

@@ -9,20 +9,13 @@
 
 include 'header.inc.php'; ?>
 	
-		<aside class="sidebar">
-			<img class="hero" src="<?php get_custom_field('hero'); ?>" />
-			<h3>Programs</h3>
-			<ul>
-				<li>Preschool</li>
-				<li>Kindergarten</li>
-				<li>Elementary</li>
-			</ul>
-		</aside>
-		
 		<hgroup>
 			<h1><?php get_page_title(); ?></h1>	
-			<h2><?php get_custom_field('subhead'); ?></h2>
+			<h2>Subhead</h2>
 		</hgroup>
-		<div class="content>
+		
+		<div class="content">
 			<?php get_page_content(); ?>
 		</div>
+		
+<?php include 'footer.inc.php'; ?>
