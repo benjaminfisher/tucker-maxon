@@ -292,28 +292,29 @@ body a {
 }
 /* line 43, scss/_global.scss */
 body div.wrapper {
+  clear: both;
   margin: 0 auto;
   width: 960px;
 }
 
-/* line 50, scss/_global.scss */
+/* line 51, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 51, scss/_global.scss */
+/* line 52, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 52, scss/_global.scss */
+/* line 53, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 54, scss/_global.scss */
+/* line 55, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;

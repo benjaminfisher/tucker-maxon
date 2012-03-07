@@ -1,6 +1,7 @@
 aside.sidebar {
+  background: green;
   float: left;
-  margin: 0 $gutter_width;
+  margin-right: $gutter_width;
   width: $column_width;
   
   ul{

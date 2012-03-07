@@ -41,6 +41,7 @@ body{
   a { color: $content_color; }
   
   div.wrapper{
+    clear: both;
     margin: 0 auto;
     width: $content_width;
   }

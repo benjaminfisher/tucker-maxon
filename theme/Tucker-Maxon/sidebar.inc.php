@@ -6,10 +6,8 @@
 ?>
 		<aside class="sidebar">
 			<img class="hero" src="<?php get_custom_field('hero'); ?>" />
-			<h3>Programs</h3>
-			<ul>
-				<li>Preschool</li>
-				<li>Kindergarten</li>
-				<li>Elementary</li>
-			</ul>
+			
+			<nav>
+				<?php get_i18n_navigation(return_page_slug(), 1, 99, I18N_SHOW_NORMAL); ?>
+			</nav>
 		</aside>

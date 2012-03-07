@@ -292,28 +292,29 @@ body a {
 }
 /* line 43, scss/_global.scss */
 body div.wrapper {
+  clear: both;
   margin: 0 auto;
   width: 960px;
 }
 
-/* line 50, scss/_global.scss */
+/* line 51, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 51, scss/_global.scss */
+/* line 52, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 52, scss/_global.scss */
+/* line 53, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 54, scss/_global.scss */
+/* line 55, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;
@@ -321,16 +322,17 @@ a {
 
 /* line 1, scss/_sidebar.scss */
 aside.sidebar {
+  background: green;
   float: left;
-  margin: 0 30px;
+  margin-right: 30px;
   width: 300px;
 }
-/* line 6, scss/_sidebar.scss */
+/* line 7, scss/_sidebar.scss */
 aside.sidebar ul {
   list-style-image: url("../images/star.png");
   list-style-position: inside;
 }
-/* line 11, scss/_sidebar.scss */
+/* line 12, scss/_sidebar.scss */
 aside.sidebar img.hero {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -452,36 +454,35 @@ footer p.copy {
 
 /*-----------------Brandon Gerke InnerPage--------------- */
 /* line 4, scss/inner.scss */
+div.content {
+  width: 620px;
+}
+/* line 6, scss/inner.scss */
 div.content section {
   width: 620px;
   margin: 0 auto;
   padding: 50px 0px 20px 350px;
 }
-
-/* line 10, scss/inner.scss */
+/* line 12, scss/inner.scss */
 div.content ul {
   list-style-type: disc;
   padding: 10px;
 }
-
 /* line 15, scss/inner.scss */
-div.content li {
+div.content ul li {
   padding: 5px;
 }
-
-/* line 19, scss/inner.scss */
+/* line 20, scss/inner.scss */
 div.content h4 {
   font-size: 24px;
   color: #436199;
   padding: 10px 0px 10px 0px;
 }
-
-/* line 25, scss/inner.scss */
+/* line 26, scss/inner.scss */
 div.content article {
   padding: 10px 0px 10px 0px;
 }
-
-/* line 29, scss/inner.scss */
+/* line 30, scss/inner.scss */
 div.content p {
   padding: 10px 20px 10px 0px;
 }
