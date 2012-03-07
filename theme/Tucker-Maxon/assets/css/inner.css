@@ -453,36 +453,36 @@ footer p.copy {
 }
 
 /*-----------------Brandon Gerke InnerPage--------------- */
-/* line 4, scss/inner.scss */
+/* line 5, scss/inner.scss */
 div.content {
   width: 620px;
 }
-/* line 6, scss/inner.scss */
+/* line 7, scss/inner.scss */
 div.content section {
   width: 620px;
   margin: 0 auto;
   padding: 50px 0px 20px 350px;
 }
-/* line 12, scss/inner.scss */
+/* line 13, scss/inner.scss */
 div.content ul {
   list-style-type: disc;
   padding: 10px;
 }
-/* line 15, scss/inner.scss */
+/* line 16, scss/inner.scss */
 div.content ul li {
   padding: 5px;
 }
-/* line 20, scss/inner.scss */
+/* line 21, scss/inner.scss */
 div.content h4 {
   font-size: 24px;
   color: #436199;
   padding: 10px 0px 10px 0px;
 }
-/* line 26, scss/inner.scss */
+/* line 27, scss/inner.scss */
 div.content article {
   padding: 10px 0px 10px 0px;
 }
-/* line 30, scss/inner.scss */
+/* line 31, scss/inner.scss */
 div.content p {
   padding: 10px 20px 10px 0px;
 }
