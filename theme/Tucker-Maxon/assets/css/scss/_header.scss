@@ -25,7 +25,7 @@ header{
         a{
           @include single-text-shadow(#666, 1px, 1px);
           color: white;
-          font-family: "Alegreya";
+          font-family: "Alegreya", "Times", serif;
           font-weight: bold;
           font-size: 18px;
           text-decoration: none;
