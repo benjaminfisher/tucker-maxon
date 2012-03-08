@@ -1,6 +1,7 @@
 node_modules
 data
-.sass-cache
+.sass-cache/
+.sass-cache/*
 .htaccess
 .settings
 .project
