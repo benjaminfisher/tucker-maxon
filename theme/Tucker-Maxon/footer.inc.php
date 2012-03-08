@@ -35,7 +35,7 @@
 					<li class="heading"><a href="#">Programs</a></li>
 					<li><a href="#">Preschool</a></li>
 					<li><a href="#">Elementary</a></li>
-					<li><a href="#">Kindergarden</a></li>
+					<li><a href="#">Kindergarten</a></li>
 					<li><a href="#">Summer Program</a></li>
 					<li><a href="#">Music and Art</a></li>
 				</ul>
