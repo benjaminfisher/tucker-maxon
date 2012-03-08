@@ -91,128 +91,7 @@ function i18n_gallery_cycle_header($gallery) {
 <?php
   } 
   if (i18n_gallery_check($gallery,'css') && i18n_gallery_needs_include('cycle.css')) {
-?> 
-    <style type="text/css">
-      .gallery-cycle {
-        padding: 3px;
-        border: solid 1px #C7C7C7;
-        position: relative;
-      }
-      .gallery-cycle a {
-        outline: none;
-      }
-      .gallery-cycle .gallery-container {
-        margin: 0;
-        padding: 0;
-        border: 0 none;
-        overflow: hidden;
-        position: relative;
-      }
-      div.gallery-cycle .gallery-slide {
-        margin: 0;
-        padding: 0;
-        border: 0 none;
-        width: 100%;
-        height: 100%;
-      }
-      .gallery-cycle .gallery-text {
-        margin: 0;
-        padding: 10px;
-        border: 0 none;
-        background-color: white;
-        overflow: hidden;
-      }
-      .gallery-cycle .gallery-image {
-        margin: 0;
-        padding: 0;
-        border: 0 none;
-        display: table-cell;
-        text-align: center;
-        vertical-align: middle;
-        background-color: white;
-      }
-      .gallery-cycle .gallery-image img {
-        margin: 0;
-        padding: 0;
-        border: 0 none;
-      }
-      .gallery-cycle .gallery-control {
-        position: absolute;
-        margin: 0;
-        padding: 5px 10px;
-        border: 0 none;
-        z-index: 10000;
-      }
-      .gallery-cycle .gallery-control-dots a {
-        font-size: 40px;
-        border: 0 none;
-        text-decoration: none;
-        color: #999999;
-      }
-      .gallery-cycle .gallery-control-numbers a {
-        font-size: 18px;
-        border: 0 none;
-        text-decoration: none;
-        color: #999999;
-        padding: 0px 5px;
-        margin: 0px 2px;
-        border: 1px solid #999999;
-        background-color: white;
-      }
-      .gallery-cycle .gallery-control-images a {
-        background: url(<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/pagination.png);
-        width: 12px;
-        height: 0px;
-        overflow: hidden;
-        padding-top: 12px;
-        margin: 10px 2px;
-        border: 0 none;
-        display: block;
-        float: left;
-      }
-      .gallery-cycle .gallery-control a:hover {
-        color: #666666;
-      }
-      .gallery-cycle .gallery-control a.activeSlide {
-        color: #C5400E;
-        background-position: 0 -12px;
-      }
-      .gallery-cycle .prev {
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 35%;
-        cursor: pointer;
-        position: absolute;
-        z-index: 9000;
-      }
-      .gallery-cycle .prev img {
-        left: 10px;
-        margin-top: -15px;
-        position: absolute;
-        top: 50%;
-        display: none;
-      }
-      .gallery-cycle .next {
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 35%;
-        cursor: pointer;
-        position: absolute;
-        z-index: 9000;
-      }
-      .gallery-cycle .next img {
-        right: 10px;
-        margin-top: -15px;
-        position: absolute;
-        top: 50%;
-        display: none;
-      }
-      .gallery-cycle .prev:hover img, .gallery-cycle .next:hover img {
-        display: block;
-      }
-    </style>
+?>
 <?php
   }
   if (i18n_gallery_check($gallery,'css')) { 
@@ -297,9 +176,10 @@ function i18n_gallery_cycle_content($gallery, $pic) {
 <?php
   } 
 ?>
-      <a class="prev" href="<?php i18n_gallery_pic_link($gallery,$pic>0 ? $pic-1 : $count-1); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/prev.png"/></a>
-      <a class="next" href="<?php i18n_gallery_pic_link($gallery,$pic<$count-1 ? $pic+1 : 0); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/next.png"/></a>
+      
     </div>
+	<a class="prev" href="<?php i18n_gallery_pic_link($gallery,$pic>0 ? $pic-1 : $count-1); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/prev.png"/></a>
+      <a class="next" href="<?php i18n_gallery_pic_link($gallery,$pic<$count-1 ? $pic+1 : 0); ?>"><img src="<?php echo $SITEURL; ?>plugins/i18n_gallery/images/cycle/next.png"/></a>
 <?php if (@$gallery['navtype']) { ?>
     <div class="gallery-control gallery-control-<?php echo $navtype; ?>">
       <?php for ($i=0; $i<count($gallery['items']); $i++) echo '<a href="'.i18n_gallery_pic_link($gallery,$i,false).'"'.($pic==$i ? ' class="activeSlide"' : '').'>'.($navtype == 'numbers' ? ($i+1) : '&#149;').'</a>'; ?>
@@ -325,8 +205,11 @@ function i18n_gallery_cycle_content($gallery, $pic) {
 		    speed: 1000,
 		    timeout: <?php echo @$gallery['interval'] ? intval(@$gallery['interval']) : 5000; ?>,
 		    pause: 1,
-        prev: $('.gallery-cycle.gallery-<?php echo $id; ?> .gallery-container .prev').get(),
-        next: $('.gallery-cycle.gallery-<?php echo $id; ?> .gallery-container .next').get(),
+			//////////////////////////////////////////////////////
+			/////////////////////////////////////////////////////////
+			///////////////////////////////////////////////
+        prev: $('.gallery-cycle.gallery-<?php echo $id; ?>  .prev').get(),
+        next: $('.gallery-cycle.gallery-<?php echo $id; ?>  .next').get(),
 <?php if ($tp == 'overlay') { ?>
         before: function(currSlideElem,nextSlideElem,options,forwardFlag) {
           $text = $(currSlideElem).find('.gallery-text');

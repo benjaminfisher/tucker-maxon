@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<channel><item><title><![CDATA[mission_statement]]></title><slug>mission_statement</slug><value><![CDATA[A families first choice for conversation, confidence, creativity, and community.
-For over 63 years, these four characteristics have driven the educational journey for our students at Tucker-Maxon, a nationally recognized small private school where children with hearing loss and children with typical hearing learn together.  Located on Southeast Holgate Boulevard, in inner Southeast Portland, Tucker-Maxon, has vegetable gardens growing on the back of the property where children can participate in planting, cultivating and harvesting.  Turkeys and chickens roam in a free-range area and lay eggs for sale.  A large playground provides opportunities for creative play and indoors, children love the full-sized gymnasium with a rock climbing wall.
-
-With one of the lowest master teacher to student ratios in Portland (1:9), The Tucker-Maxon School focus on individual learners set it apart as a school for all students  from early intervention to grade 5.]]></value></item><item><title><![CDATA[Sidebar]]></title><slug>sidebar</slug><value><![CDATA[&lt;h2&gt;GetSimple Features&lt;/h2&gt;
+<channel><item><title><![CDATA[mission_statement]]></title><slug>mission_statement</slug><value><![CDATA[Tucker-Maxon began in 1947 as a school where children with hearing loss learned to talk. Today we educate children with typical hearing and children with hearing loss together in small, collaborative classes. Our students who are deaf do not use sign language. Instead, with the help of digital hearing aids, student-teacher ratios, and an environment where individual attention is the norm.]]></value></item><item><title><![CDATA[Sidebar]]></title><slug>sidebar</slug><value><![CDATA[&lt;h2&gt;GetSimple Features&lt;/h2&gt;
 &lt;ul&gt; 
 &lt;li&gt;XML based data storage&lt;/li&gt; 
 &lt;li&gt;Best-in-Class User Interface&lt;/li&gt; 
-&lt;li&gt;&#039;Undo&#039; protection &amp;amp; backups&lt;/li&gt; 
+&lt;li&gt;\&#039;Undo\&#039; protection &amp;amp; backups&lt;/li&gt; 
 &lt;li&gt;Easy to theme&lt;/li&gt; 
 &lt;li&gt;Great documentation&lt;/li&gt; 
 &lt;li&gt;Growing community&lt;/li&gt; 
 &lt;/ul&gt;
 &lt;p&gt;This is your sidebar text. Please change me in &lt;em&gt;Theme -&gt; Edit Components&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;http://get-simple.info/download/&quot;&gt;Download the Latest GetSimple&lt;/a&gt;&lt;/p&gt;]]></value></item><item><title><![CDATA[slideshow]]></title><slug>slideshow</slug><value><![CDATA[&lt;div id=&quot;slideshow&quot;&gt;
+&lt;p&gt;&lt;a href=\&quot;http://get-simple.info/download/\&quot;&gt;Download the Latest GetSimple&lt;/a&gt;&lt;/p&gt;]]></value></item><item><title><![CDATA[slideshow]]></title><slug>slideshow</slug><value><![CDATA[&lt;div id=\&quot;slideshow\&quot;&gt;
   &lt;hgroup&gt;
     &lt;h2&gt;Welcome&lt;/h2&gt;
     &lt;h3&gt;Slogan or Desription for slide&lt;/h3&gt;
