@@ -487,32 +487,27 @@ div.wrapper #slideshow hgroup h2 {
 }
 /* line 48, scss/main.scss */
 div.wrapper #gallery-cycle-slideshow {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  border: solid 3px #fff;
+  border-top: solid 3px #fff;
   margin: 0 auto;
 }
-/* line 53, scss/main.scss */
+/* line 52, scss/main.scss */
 div.wrapper .gallery-cycle {
   /*padding: 3px;
   border: solid 1px #C7C7C7;*/
   position: relative;
 }
-/* line 58, scss/main.scss */
+/* line 57, scss/main.scss */
 div.wrapper .gallery-cycle a {
   outline: none;
 }
-/* line 61, scss/main.scss */
+/* line 60, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-container {
   margin: 0;
   padding: 0;
   border: 0 none;
   overflow: hidden;
   position: relative;
+  width: 958px;
 }
 /* line 68, scss/main.scss */
 div.wrapper div.gallery-cycle .gallery-slide {
@@ -720,15 +715,15 @@ div.wrapper div.gradeLevel:last-child {
 div.wrapper div.gradeLevel#preschool {
   background: url(../images/home/preschool.jpg) 0 0 no-repeat;
 }
-/* line 242, scss/main.scss */
+/* line 240, scss/main.scss */
 div.wrapper div.gradeLevel#kindergarten {
   background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
 }
-/* line 245, scss/main.scss */
+/* line 241, scss/main.scss */
 div.wrapper div.gradeLevel#elementary {
   background: url(../images/home/elementary.jpg) 0 0 no-repeat;
 }
-/* line 249, scss/main.scss */
+/* line 243, scss/main.scss */
 div.wrapper div.gradeLevel h1 {
   color: #436199;
   font-family: 'Alegreya SC', Times, serif;
