@@ -46,7 +46,9 @@ div.wrapper {
 
   // new slideshow styles, needs reformatting to comply with above
   #gallery-cycle-slideshow{
-  margin:0 auto;
+    @include border-radius($default_border_radius);
+    border: solid 3px #fff;
+    margin: 0 auto;
   }
   .gallery-cycle {
     /*padding: 3px;
@@ -197,6 +199,7 @@ div.wrapper {
       h2 {
         color: #436199;
         font-size: 30px;
+        padding-bottom: 10px;
       }
     }
 
@@ -210,6 +213,7 @@ div.wrapper {
         color: #E53728;
         font-size: 18px;
         margin-bottom: 5px;
+        padding-bottom: 10px;
       }
     }
   }
@@ -223,7 +227,7 @@ div.wrapper {
     @include border-radius(10px);
     position: relative;
     width: 280px;
-    height:250px;
+    height:220px;
     float:left;
     background-color:#ccc;
     margin-right: 30px;
@@ -232,12 +236,25 @@ div.wrapper {
       margin-right: 0;
     }
 
-    h2 {
-      font-size:24px;
+    &#preschool {
+      background: url(../images/home/preschool.jpg) 0 0 no-repeat;
+    }
+    &#kindergarten {
+      background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
+    }
+    &#elementary {
+      background: url(../images/home/elementary.jpg) 0 0 no-repeat;
+    }
+
+    h1 {
+      color: #436199;
+      font-family: 'Alegreya SC', Times, serif;
+      font-size: 24px;
+      font-weight: 600;
       position: absolute;
-      bottom: 0px;
-      text-align:center;
-      width:100%;
+      bottom: -30px;
+      text-align: center;
+      width: 100%;
     } 
   } // End of content(div boxes) styles
 }

@@ -487,19 +487,26 @@ div.wrapper #slideshow hgroup h2 {
 }
 /* line 48, scss/main.scss */
 div.wrapper #gallery-cycle-slideshow {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+  border: solid 3px #fff;
   margin: 0 auto;
 }
-/* line 51, scss/main.scss */
+/* line 53, scss/main.scss */
 div.wrapper .gallery-cycle {
   /*padding: 3px;
   border: solid 1px #C7C7C7;*/
   position: relative;
 }
-/* line 56, scss/main.scss */
+/* line 58, scss/main.scss */
 div.wrapper .gallery-cycle a {
   outline: none;
 }
-/* line 59, scss/main.scss */
+/* line 61, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-container {
   margin: 0;
   padding: 0;
@@ -507,7 +514,7 @@ div.wrapper .gallery-cycle .gallery-container {
   overflow: hidden;
   position: relative;
 }
-/* line 66, scss/main.scss */
+/* line 68, scss/main.scss */
 div.wrapper div.gallery-cycle .gallery-slide {
   margin: 0;
   padding: 0;
@@ -515,7 +522,7 @@ div.wrapper div.gallery-cycle .gallery-slide {
   width: 100%;
   height: 100%;
 }
-/* line 73, scss/main.scss */
+/* line 75, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-text {
   margin: 0;
   padding: 10px;
@@ -523,7 +530,7 @@ div.wrapper .gallery-cycle .gallery-text {
   background-color: white;
   overflow: hidden;
 }
-/* line 80, scss/main.scss */
+/* line 82, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-image {
   margin: 0;
   padding: 0;
@@ -533,13 +540,13 @@ div.wrapper .gallery-cycle .gallery-image {
   vertical-align: middle;
   background-color: white;
 }
-/* line 89, scss/main.scss */
+/* line 91, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-image img {
   margin: 0;
   padding: 0;
   border: 0 none;
 }
-/* line 94, scss/main.scss */
+/* line 96, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control {
   position: absolute;
   margin: 0;
@@ -547,14 +554,14 @@ div.wrapper .gallery-cycle .gallery-control {
   border: 0 none;
   z-index: 10000;
 }
-/* line 101, scss/main.scss */
+/* line 103, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-dots a {
   font-size: 40px;
   border: 0 none;
   text-decoration: none;
   color: #999999;
 }
-/* line 107, scss/main.scss */
+/* line 109, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-numbers a {
   font-size: 18px;
   border: 0 none;
@@ -565,7 +572,7 @@ div.wrapper .gallery-cycle .gallery-control-numbers a {
   border: 1px solid #999999;
   background-color: white;
 }
-/* line 117, scss/main.scss */
+/* line 119, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-images a {
   background: url(../../plugins/i18n_gallery/images/cycle/pagination.png);
   width: 12px;
@@ -577,16 +584,16 @@ div.wrapper .gallery-cycle .gallery-control-images a {
   display: block;
   float: left;
 }
-/* line 128, scss/main.scss */
+/* line 130, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control a:hover {
   color: #666666;
 }
-/* line 131, scss/main.scss */
+/* line 133, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control a.activeSlide {
   color: #C5400E;
   background-position: 0 -12px;
 }
-/* line 135, scss/main.scss */
+/* line 137, scss/main.scss */
 div.wrapper .gallery-cycle .prev {
   top: 0;
   left: -30px;
@@ -596,7 +603,7 @@ div.wrapper .gallery-cycle .prev {
   position: absolute;
   z-index: 9000;
 }
-/* line 144, scss/main.scss */
+/* line 146, scss/main.scss */
 div.wrapper .gallery-cycle .prev img {
   left: 0px;
   margin-top: -30px;
@@ -604,7 +611,7 @@ div.wrapper .gallery-cycle .prev img {
   top: 50%;
   /*display: none;*/
 }
-/* line 151, scss/main.scss */
+/* line 153, scss/main.scss */
 div.wrapper .gallery-cycle .next {
   top: 0;
   right: -30px;
@@ -614,7 +621,7 @@ div.wrapper .gallery-cycle .next {
   position: absolute;
   z-index: 9000;
 }
-/* line 160, scss/main.scss */
+/* line 162, scss/main.scss */
 div.wrapper .gallery-cycle .next img {
   right: 0px;
   margin-top: -30px;
@@ -622,21 +629,21 @@ div.wrapper .gallery-cycle .next img {
   top: 50%;
   /*display: none;*/
 }
-/* line 167, scss/main.scss */
+/* line 169, scss/main.scss */
 div.wrapper .gallery-cycle .prev:hover img, div.wrapper .gallery-cycle .next:hover img {
   display: block;
 }
-/* line 171, scss/main.scss */
+/* line 173, scss/main.scss */
 div.wrapper section.home.group {
   padding: 30px 0 85px;
 }
-/* line 174, scss/main.scss */
+/* line 176, scss/main.scss */
 div.wrapper section.home.group h2 {
   font-family: 'Alegreya SC', Times, serif;
   font-weight: 600;
   line-height: 150%;
 }
-/* line 180, scss/main.scss */
+/* line 182, scss/main.scss */
 div.wrapper section.home.group a.learn-more {
   background: url("../images/more_sprite.png") right -26px no-repeat;
   color: #e53728;
@@ -645,35 +652,37 @@ div.wrapper section.home.group a.learn-more {
   padding-right: 25px;
   text-decoration: none;
 }
-/* line 188, scss/main.scss */
+/* line 190, scss/main.scss */
 div.wrapper section.home.group a.learn-more:hover {
   background: url("../images/more_sprite.png") right 1px no-repeat;
 }
-/* line 192, scss/main.scss */
+/* line 194, scss/main.scss */
 div.wrapper section.home.group div.mission {
   float: left;
   padding: 0 30px;
   width: 570px;
 }
-/* line 197, scss/main.scss */
+/* line 199, scss/main.scss */
 div.wrapper section.home.group div.mission h2 {
   color: #436199;
   font-size: 30px;
+  padding-bottom: 10px;
 }
-/* line 203, scss/main.scss */
+/* line 206, scss/main.scss */
 div.wrapper section.home.group div.events {
   float: right;
   margin-top: 10px;
   padding-left: 30px;
   width: 270px;
 }
-/* line 209, scss/main.scss */
+/* line 212, scss/main.scss */
 div.wrapper section.home.group div.events h2 {
   color: #E53728;
   font-size: 18px;
   margin-bottom: 5px;
+  padding-bottom: 10px;
 }
-/* line 217, scss/main.scss */
+/* line 221, scss/main.scss */
 div.wrapper section#schoolFeature {
   margin: 0 30px;
   zoom: 1;
@@ -688,7 +697,7 @@ div.wrapper section#schoolFeature:before, div.wrapper section#schoolFeature:afte
 div.wrapper section#schoolFeature:after {
   clear: both;
 }
-/* line 222, scss/main.scss */
+/* line 226, scss/main.scss */
 div.wrapper div.gradeLevel {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -698,20 +707,35 @@ div.wrapper div.gradeLevel {
   border-radius: 10px;
   position: relative;
   width: 280px;
-  height: 250px;
+  height: 220px;
   float: left;
   background-color: #ccc;
   margin-right: 30px;
 }
-/* line 231, scss/main.scss */
+/* line 235, scss/main.scss */
 div.wrapper div.gradeLevel:last-child {
   margin-right: 0;
 }
-/* line 235, scss/main.scss */
-div.wrapper div.gradeLevel h2 {
+/* line 239, scss/main.scss */
+div.wrapper div.gradeLevel#preschool {
+  background: url(../images/home/preschool.jpg) 0 0 no-repeat;
+}
+/* line 242, scss/main.scss */
+div.wrapper div.gradeLevel#kindergarten {
+  background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
+}
+/* line 245, scss/main.scss */
+div.wrapper div.gradeLevel#elementary {
+  background: url(../images/home/elementary.jpg) 0 0 no-repeat;
+}
+/* line 249, scss/main.scss */
+div.wrapper div.gradeLevel h1 {
+  color: #436199;
+  font-family: 'Alegreya SC', Times, serif;
   font-size: 24px;
+  font-weight: 600;
   position: absolute;
-  bottom: 0px;
+  bottom: -30px;
   text-align: center;
   width: 100%;
 }
