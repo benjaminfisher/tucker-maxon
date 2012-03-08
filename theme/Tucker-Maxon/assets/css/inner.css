@@ -247,17 +247,39 @@ footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(4)
 /* line 54, scss/_footer.scss */
 footer section.top div.locate {
   float: right;
+  padding-top: 50px;
   text-align: center;
   width: 300px;
 }
-/* line 61, scss/_footer.scss */
+/* line 60, scss/_footer.scss */
+footer section.top div.locate #donate {
+  background: #E43728;
+  color: white;
+  font-size: 18px;
+  padding: 9px 15px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 67, scss/_footer.scss */
+footer section.top div.locate #donate:hover {
+  background: #ff4734;
+}
+/* line 72, scss/_footer.scss */
+footer section.top div.locate section.address {
+  padding-top: 35px;
+}
+/* line 75, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 74, scss/_footer.scss */
+/* line 88, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -281,10 +303,12 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 87, scss/_footer.scss */
+/* line 101, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
+  font-size: 12px;
   text-indent: 2em;
+  padding: 5px 0 30px 0;
 }
 
 /**
@@ -501,17 +525,39 @@ footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(4)
 /* line 54, scss/_footer.scss */
 footer section.top div.locate {
   float: right;
+  padding-top: 50px;
   text-align: center;
   width: 300px;
 }
-/* line 61, scss/_footer.scss */
+/* line 60, scss/_footer.scss */
+footer section.top div.locate #donate {
+  background: #E43728;
+  color: white;
+  font-size: 18px;
+  padding: 9px 15px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 67, scss/_footer.scss */
+footer section.top div.locate #donate:hover {
+  background: #ff4734;
+}
+/* line 72, scss/_footer.scss */
+footer section.top div.locate section.address {
+  padding-top: 35px;
+}
+/* line 75, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 74, scss/_footer.scss */
+/* line 88, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -535,10 +581,12 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 87, scss/_footer.scss */
+/* line 101, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
+  font-size: 12px;
   text-indent: 2em;
+  padding: 5px 0 30px 0;
 }
 
 /* line 3, scss/inner.scss */

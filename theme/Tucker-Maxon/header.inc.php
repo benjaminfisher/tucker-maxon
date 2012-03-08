@@ -14,14 +14,17 @@ if(return_page_slug() == 'index') {
 	//if(get_parent(FALSE) == 'index') {$style_sheet = get_page_slug().'.css'; } else { $style_sheet = get_parent().'.css'; }
 } ?>
 <!DOCTYPE html>
+<head>
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
 	<title><?php get_page_clean_title(); ?> | <?php get_site_name(); ?></title>
-	
+
 	<?php get_header(); ?>
-	
+
 	<script src="<?php get_theme_url(); ?>/assets/js/head.min.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="<?php echo get_theme_url() ."/assets/css/$style_sheet"; ?>" media="screen" />
-
+	<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+	<?php get_i18n_gallery_header('slideshow'); ?> 
+</head>
 <body class="<?php get_page_slug(); ?>" >
 
 <header>

@@ -69,7 +69,7 @@
 		</nav>
 
 		<div class="locate">
-			<img src="#" alt="Map" />
+			<a id="donate" href="javascript:void(0)">Donate</a>
 			<section class="address">
 				<h3>The Tucker-Maxon School</h3>
 				<p>2860 SE Holgate Blvd.</p>
@@ -83,10 +83,10 @@
 	<p class="copy">&copy; The Tucker-Maxon School 2012. All rights reserved.</p>
 </footer>
 
-<script language="JavaScript">
+<!--script language="JavaScript">
 	// Put scripts that need to be loaded (internal or external) in a comma seperated
 	// list of strings inside the head.js method parameters
-	head.js('http://code.jquery.com/jquery.min.js', 
+	head.js('http://code.jquery.com/jquery.min.js',
 	function(){
 		if(!$){
 			head.js("<?php get_theme_url(); ?>/assets/js/lib/jquery-1.7.1.min.js")
@@ -98,7 +98,7 @@
 			head.js();
 		}
 	});
-</script>
+</script-->
 
 </body>
 </html>

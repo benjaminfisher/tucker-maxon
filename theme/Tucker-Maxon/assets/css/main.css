@@ -247,17 +247,39 @@ footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(4)
 /* line 54, scss/_footer.scss */
 footer section.top div.locate {
   float: right;
+  padding-top: 50px;
   text-align: center;
   width: 300px;
 }
-/* line 61, scss/_footer.scss */
+/* line 60, scss/_footer.scss */
+footer section.top div.locate #donate {
+  background: #E43728;
+  color: white;
+  font-size: 18px;
+  padding: 9px 15px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
+}
+/* line 67, scss/_footer.scss */
+footer section.top div.locate #donate:hover {
+  background: #ff4734;
+}
+/* line 72, scss/_footer.scss */
+footer section.top div.locate section.address {
+  padding-top: 35px;
+}
+/* line 75, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 74, scss/_footer.scss */
+/* line 88, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -281,10 +303,12 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 87, scss/_footer.scss */
+/* line 101, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
+  font-size: 12px;
   text-indent: 2em;
+  padding: 5px 0 30px 0;
 }
 
 /**
@@ -461,54 +485,195 @@ div.wrapper #slideshow hgroup {
 div.wrapper #slideshow hgroup h2 {
   font-size: 60px;
 }
-/* line 47, scss/main.scss */
+/* line 48, scss/main.scss */
+div.wrapper #gallery-cycle-slideshow {
+  margin: 0 auto;
+}
+/* line 51, scss/main.scss */
+div.wrapper .gallery-cycle {
+  /*padding: 3px;
+  border: solid 1px #C7C7C7;*/
+  position: relative;
+}
+/* line 56, scss/main.scss */
+div.wrapper .gallery-cycle a {
+  outline: none;
+}
+/* line 59, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-container {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  overflow: hidden;
+  position: relative;
+}
+/* line 66, scss/main.scss */
+div.wrapper div.gallery-cycle .gallery-slide {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  width: 100%;
+  height: 100%;
+}
+/* line 73, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-text {
+  margin: 0;
+  padding: 10px;
+  border: 0 none;
+  background-color: white;
+  overflow: hidden;
+}
+/* line 80, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-image {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  background-color: white;
+}
+/* line 89, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-image img {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+}
+/* line 94, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-control {
+  position: absolute;
+  margin: 0;
+  padding: 5px 10px;
+  border: 0 none;
+  z-index: 10000;
+}
+/* line 101, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-control-dots a {
+  font-size: 40px;
+  border: 0 none;
+  text-decoration: none;
+  color: #999999;
+}
+/* line 107, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-control-numbers a {
+  font-size: 18px;
+  border: 0 none;
+  text-decoration: none;
+  color: #999999;
+  padding: 0px 5px;
+  margin: 0px 2px;
+  border: 1px solid #999999;
+  background-color: white;
+}
+/* line 117, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-control-images a {
+  background: url(../../plugins/i18n_gallery/images/cycle/pagination.png);
+  width: 12px;
+  height: 0px;
+  overflow: hidden;
+  padding-top: 12px;
+  margin: 10px 2px;
+  border: 0 none;
+  display: block;
+  float: left;
+}
+/* line 128, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-control a:hover {
+  color: #666666;
+}
+/* line 131, scss/main.scss */
+div.wrapper .gallery-cycle .gallery-control a.activeSlide {
+  color: #C5400E;
+  background-position: 0 -12px;
+}
+/* line 135, scss/main.scss */
+div.wrapper .gallery-cycle .prev {
+  top: 0;
+  left: -30px;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
+  position: absolute;
+  z-index: 9000;
+}
+/* line 144, scss/main.scss */
+div.wrapper .gallery-cycle .prev img {
+  left: 0px;
+  margin-top: -30px;
+  position: absolute;
+  top: 50%;
+  /*display: none;*/
+}
+/* line 151, scss/main.scss */
+div.wrapper .gallery-cycle .next {
+  top: 0;
+  right: -30px;
+  height: 100%;
+  width: 35%;
+  cursor: pointer;
+  position: absolute;
+  z-index: 9000;
+}
+/* line 160, scss/main.scss */
+div.wrapper .gallery-cycle .next img {
+  right: 0px;
+  margin-top: -30px;
+  position: absolute;
+  top: 50%;
+  /*display: none;*/
+}
+/* line 167, scss/main.scss */
+div.wrapper .gallery-cycle .prev:hover img, div.wrapper .gallery-cycle .next:hover img {
+  display: block;
+}
+/* line 171, scss/main.scss */
 div.wrapper section.home.group {
   padding: 30px 0 85px;
 }
-/* line 50, scss/main.scss */
+/* line 174, scss/main.scss */
 div.wrapper section.home.group h2 {
   font-family: 'Alegreya SC', Times, serif;
   font-weight: 600;
   line-height: 150%;
 }
-/* line 56, scss/main.scss */
+/* line 180, scss/main.scss */
 div.wrapper section.home.group a.learn-more {
-  background: url("images/more_sprite.png") right -26px no-repeat;
+  background: url("../images/more_sprite.png") right -26px no-repeat;
   color: #e53728;
   float: right;
   margin-top: 12px;
   padding-right: 25px;
   text-decoration: none;
 }
-/* line 64, scss/main.scss */
+/* line 188, scss/main.scss */
 div.wrapper section.home.group a.learn-more:hover {
-  background: url("images/more_sprite.png") right 1px no-repeat;
+  background: url("../images/more_sprite.png") right 1px no-repeat;
 }
-/* line 68, scss/main.scss */
+/* line 192, scss/main.scss */
 div.wrapper section.home.group div.mission {
   float: left;
   padding: 0 30px;
   width: 570px;
 }
-/* line 73, scss/main.scss */
+/* line 197, scss/main.scss */
 div.wrapper section.home.group div.mission h2 {
   color: #436199;
   font-size: 30px;
 }
-/* line 79, scss/main.scss */
+/* line 203, scss/main.scss */
 div.wrapper section.home.group div.events {
   float: right;
   margin-top: 10px;
   padding-left: 30px;
   width: 270px;
 }
-/* line 85, scss/main.scss */
+/* line 209, scss/main.scss */
 div.wrapper section.home.group div.events h2 {
   color: #E53728;
   font-size: 18px;
   margin-bottom: 5px;
 }
-/* line 93, scss/main.scss */
+/* line 217, scss/main.scss */
 div.wrapper section#schoolFeature {
   margin: 0 30px;
   zoom: 1;
@@ -523,7 +688,7 @@ div.wrapper section#schoolFeature:before, div.wrapper section#schoolFeature:afte
 div.wrapper section#schoolFeature:after {
   clear: both;
 }
-/* line 98, scss/main.scss */
+/* line 222, scss/main.scss */
 div.wrapper div.gradeLevel {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -538,11 +703,11 @@ div.wrapper div.gradeLevel {
   background-color: #ccc;
   margin-right: 30px;
 }
-/* line 107, scss/main.scss */
+/* line 231, scss/main.scss */
 div.wrapper div.gradeLevel:last-child {
   margin-right: 0;
 }
-/* line 111, scss/main.scss */
+/* line 235, scss/main.scss */
 div.wrapper div.gradeLevel h2 {
   font-size: 24px;
   position: absolute;
