@@ -86,7 +86,7 @@
 <!--script language="JavaScript">
 	// Put scripts that need to be loaded (internal or external) in a comma seperated
 	// list of strings inside the head.js method parameters
-	head.js('http://code.jquery.com/jquery.min.js',
+head.js('http://code.jquery.com/jquery.min.js', '<?php get_theme_url(); ?>/assets/js/ga.js',
 	function(){
 		if(!$){
 			head.js("<?php get_theme_url(); ?>/assets/js/lib/jquery-1.7.1.min.js")
