@@ -14,31 +14,29 @@ header{
     
     ul{
       list-style-type:none;
+
+      li { float: left;
       
-      li{
-        @include border-top-radius($default_border_radius);
-        background-color:#d85045;
-        float:left;
-        margin-left: 0.5em;
-        padding: 1em 2em 1.5em;
-        top:0px;
-        
-        @include single-transition(top, 0.2s, linear, ease-in);
-        
-        &:hover{
-          background-color: adjust-lightness($tm_red, 5%);
-          top: -5px;
-        }
-        a{
+        a {
+          @include border-top-radius($default_border_radius);
           @include single-text-shadow(#666, 1px, 1px);
+          @include single-transition(top, 0.15s, ease-in-out);
+          background-color:#d85045;
           color: white;
           display: block;
+          float:left;
           font-family: "Alegreya SC", "Times", serif;
           font-weight: bold;
           font-size: 18px;
-          height: 100%;
+          margin-left: 0.5em;
+          padding: 0.7em 2em 1.6em;
           text-decoration: none;
-          width: 100%;
+          top: 0;
+          
+          &:hover{
+            background-color: adjust-lightness($tm_red, 5%);
+            top: -5px;
+          }
         }
       }
     }// End Nav ul styles

@@ -89,6 +89,10 @@ header nav.global ul {
 }
 /* line 18, scss/_header.scss */
 header nav.global ul li {
+  float: left;
+}
+/* line 20, scss/_header.scss */
+header nav.global ul li a {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -101,65 +105,56 @@ header nav.global ul li {
   -ms-border-top-right-radius: 10px;
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #d85045;
-  float: left;
-  margin-left: 0.5em;
-  padding: 1em 2em 1.5em;
-  top: 0px;
+  text-shadow: #666666 1px 1px 1px;
   -moz-transition-property: top;
   -webkit-transition-property: top;
   -o-transition-property: top;
   transition-property: top;
-  -moz-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear;
-  -moz-transition-delay: ease-in;
-  -webkit-transition-delay: ease-in;
-  -o-transition-delay: ease-in;
-  transition-delay: ease-in;
-}
-/* line 28, scss/_header.scss */
-header nav.global ul li:hover {
-  background-color: #e84c3f;
-  top: -5px;
-}
-/* line 32, scss/_header.scss */
-header nav.global ul li a {
-  text-shadow: #666666 1px 1px 1px;
+  -moz-transition-duration: 0.15s;
+  -webkit-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #d85045;
   color: white;
   display: block;
+  float: left;
   font-family: "Alegreya SC", "Times", serif;
   font-weight: bold;
   font-size: 18px;
-  height: 100%;
+  margin-left: 0.5em;
+  padding: 0.7em 2em 1.6em;
   text-decoration: none;
-  width: 100%;
+  top: 0;
 }
-/* line 47, scss/_header.scss */
+/* line 36, scss/_header.scss */
+header nav.global ul li a:hover {
+  background-color: #e84c3f;
+  top: -5px;
+}
+/* line 45, scss/_header.scss */
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
-/* line 53, scss/_header.scss */
+/* line 51, scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
-/* line 56, scss/_header.scss */
+/* line 54, scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
   font-family: "Alegreya SC";
   font-weight: bold;
   text-decoration: none;
 }
-/* line 62, scss/_header.scss */
+/* line 60, scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
 }
