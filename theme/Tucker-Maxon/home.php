@@ -21,7 +21,7 @@ get_i18n_gallery('slideshow'); ?>
   <div class="events">
     <h2>Latest News</h2>
     <article>
-      <?php echo events_list() ?>
+      <?php echo '<h2>Upcoming events</h2><div class="feature">'.upcoming_events($SITEURL.'events/', 'strong').'</div>' ?>
     </article>
     <a href="javascript:void(0)" class="learn-more">Learn More</a>
   </div>
