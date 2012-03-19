@@ -89,6 +89,10 @@ header nav.global ul {
 }
 /* line 18, scss/_header.scss */
 header nav.global ul li {
+  float: left;
+}
+/* line 20, scss/_header.scss */
+header nav.global ul li a {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -101,65 +105,56 @@ header nav.global ul li {
   -ms-border-top-right-radius: 10px;
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #d85045;
-  float: left;
-  margin-left: 0.5em;
-  padding: 1em 2em 1.5em;
-  top: 0px;
+  text-shadow: #ad0e00 1px 1px 1px;
   -moz-transition-property: top;
   -webkit-transition-property: top;
   -o-transition-property: top;
   transition-property: top;
-  -moz-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear;
-  -moz-transition-delay: ease-in;
-  -webkit-transition-delay: ease-in;
-  -o-transition-delay: ease-in;
-  transition-delay: ease-in;
-}
-/* line 28, scss/_header.scss */
-header nav.global ul li:hover {
-  background-color: #e84c3f;
-  top: -5px;
-}
-/* line 32, scss/_header.scss */
-header nav.global ul li a {
-  text-shadow: #ad0e00 1px 1px 1px;
+  -moz-transition-duration: 0.15s;
+  -webkit-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #d85045;
   color: white;
   display: block;
+  float: left;
   font-family: "Alegreya SC", "Times", serif;
   font-weight: bold;
   font-size: 18px;
-  height: 100%;
+  margin-left: 0.5em;
+  padding: 0.7em 2em 1.6em;
   text-decoration: none;
-  width: 100%;
+  top: 0;
 }
-/* line 47, scss/_header.scss */
+/* line 36, scss/_header.scss */
+header nav.global ul li a:hover {
+  background-color: #e84c3f;
+  top: -5px;
+}
+/* line 45, scss/_header.scss */
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
-/* line 53, scss/_header.scss */
+/* line 51, scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
-/* line 56, scss/_header.scss */
+/* line 54, scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
   font-family: "Alegreya SC";
   font-weight: bold;
   text-decoration: none;
 }
-/* line 62, scss/_header.scss */
+/* line 60, scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
 }
@@ -483,26 +478,21 @@ div.wrapper #slideshow hgroup h2 {
 }
 /* line 48, scss/main.scss */
 div.wrapper #gallery-cycle-slideshow {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  border: solid 3px #fff;
+  border-top: solid 3px #fff;
   margin: 0 auto;
 }
-/* line 54, scss/main.scss */
+/* line 53, scss/main.scss */
 div.wrapper .gallery-cycle a {
   outline: none;
 }
-/* line 57, scss/main.scss */
+/* line 56, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-container {
   margin: 0;
   padding: 0;
   border: 0 none;
   overflow: hidden;
   position: relative;
+  width: 958px;
 }
 /* line 64, scss/main.scss */
 div.wrapper div.gallery-cycle .gallery-slide {
@@ -635,23 +625,22 @@ div.wrapper .gallery-cycle .next img {
   margin-top: -30px;
   position: absolute;
   top: 50%;
-  /*display: none;*/
 }
-/* line 169, scss/main.scss */
+/* line 168, scss/main.scss */
 div.wrapper .gallery-cycle .prev:hover img, div.wrapper .gallery-cycle .next:hover img {
   display: block;
 }
-/* line 173, scss/main.scss */
+/* line 172, scss/main.scss */
 div.wrapper section.home.group {
   padding: 30px 0 85px;
 }
-/* line 176, scss/main.scss */
+/* line 175, scss/main.scss */
 div.wrapper section.home.group h2 {
   font-family: 'Alegreya SC', Times, serif;
   font-weight: 600;
   line-height: 150%;
 }
-/* line 182, scss/main.scss */
+/* line 181, scss/main.scss */
 div.wrapper section.home.group a.learn-more {
   background: url("../images/more_sprite.png") right -26px no-repeat;
   color: #e53728;
@@ -660,37 +649,37 @@ div.wrapper section.home.group a.learn-more {
   padding-right: 25px;
   text-decoration: none;
 }
-/* line 190, scss/main.scss */
+/* line 189, scss/main.scss */
 div.wrapper section.home.group a.learn-more:hover {
   background: url("../images/more_sprite.png") right 1px no-repeat;
 }
-/* line 194, scss/main.scss */
+/* line 193, scss/main.scss */
 div.wrapper section.home.group div.mission {
   float: left;
   padding: 0 30px;
   width: 570px;
 }
-/* line 199, scss/main.scss */
+/* line 198, scss/main.scss */
 div.wrapper section.home.group div.mission h2 {
   color: #436199;
   font-size: 30px;
   padding-bottom: 10px;
 }
-/* line 206, scss/main.scss */
+/* line 205, scss/main.scss */
 div.wrapper section.home.group div.events {
   float: right;
   margin-top: 10px;
   padding-left: 30px;
   width: 270px;
 }
-/* line 212, scss/main.scss */
+/* line 211, scss/main.scss */
 div.wrapper section.home.group div.events h2 {
   color: #E53728;
   font-size: 18px;
   margin-bottom: 5px;
   padding-bottom: 10px;
 }
-/* line 221, scss/main.scss */
+/* line 220, scss/main.scss */
 div.wrapper section#schoolFeature {
   margin: 0 30px;
   zoom: 1;
@@ -705,7 +694,7 @@ div.wrapper section#schoolFeature:before, div.wrapper section#schoolFeature:afte
 div.wrapper section#schoolFeature:after {
   clear: both;
 }
-/* line 226, scss/main.scss */
+/* line 225, scss/main.scss */
 div.wrapper div.gradeLevel {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -720,23 +709,23 @@ div.wrapper div.gradeLevel {
   background-color: #ccc;
   margin-right: 30px;
 }
-/* line 235, scss/main.scss */
+/* line 234, scss/main.scss */
 div.wrapper div.gradeLevel:last-child {
   margin-right: 0;
 }
-/* line 239, scss/main.scss */
+/* line 238, scss/main.scss */
 div.wrapper div.gradeLevel#preschool {
   background: url(../images/home/preschool.jpg) 0 0 no-repeat;
 }
-/* line 242, scss/main.scss */
+/* line 239, scss/main.scss */
 div.wrapper div.gradeLevel#kindergarten {
   background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
 }
-/* line 245, scss/main.scss */
+/* line 240, scss/main.scss */
 div.wrapper div.gradeLevel#elementary {
   background: url(../images/home/elementary.jpg) 0 0 no-repeat;
 }
-/* line 249, scss/main.scss */
+/* line 242, scss/main.scss */
 div.wrapper div.gradeLevel h1 {
   color: #436199;
   font-family: 'Alegreya SC', Times, serif;

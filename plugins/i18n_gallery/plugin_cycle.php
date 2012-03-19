@@ -107,7 +107,7 @@ function i18n_gallery_cycle_header($gallery) {
         height: <?php echo $tp == 'top' || $tp == 'bottom' ? $h + $tw : $h; ?>px;
       }
       #gallery-cycle-<?php echo $id; ?>.gallery-cycle .gallery-container {
-        width: <?php echo $tp == 'left' || $tp == 'right' ? $w + $tw : $w; ?>px;
+        /*width: <?php echo $tp == 'left' || $tp == 'right' ? $w + $tw : $w; ?>px;*/
         height: <?php echo $tp == 'top' || $tp == 'bottom' ? $h + $tw : $h; ?>px;
         position: relative;
       }

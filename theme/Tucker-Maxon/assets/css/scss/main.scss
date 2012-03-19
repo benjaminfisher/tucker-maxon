@@ -5,7 +5,7 @@ div.wrapper {
   height: auto;
   margin:0 auto;
   width: $content_width;
-  
+
   @include border-top-radius($default_border_radius);
 
   #slideshow {
@@ -14,7 +14,7 @@ div.wrapper {
     height:350px;
     background-color:#ccc;
     border:solid 3px white;
-    
+
     &::after, &::before {
       @include border-radius(50%);
       border: 2px solid white;
@@ -32,22 +32,21 @@ div.wrapper {
       @include rotate(180deg);
       left: -30px;
     }
-    
+
     hgroup {
-      width:250px;
-      height:auto;
-      padding:20px;
+      width: 250px;
+      height: auto;
+      padding: 20px;
       background-color: $bg_color;
-      border:solid 1px black;
+      border: solid 1px black;
       
-      h2{ font-size:60px; }
+      h2{ font-size: 60px; }
     }
   } // End of slideshow styles
 
   // new slideshow styles, needs reformatting to comply with above
-  #gallery-cycle-slideshow{
-    @include border-radius($default_border_radius);
-    border: solid 3px #fff;
+  #gallery-cycle-slideshow {
+    border-top: solid 3px #fff;
     margin: 0 auto;
   }
 
@@ -60,6 +59,7 @@ div.wrapper {
     border: 0 none;
     overflow: hidden;
     position: relative;
+    width: 958px;
   }
   div.gallery-cycle .gallery-slide {
     margin: 0;
@@ -236,15 +236,9 @@ div.wrapper {
       margin-right: 0;
     }
 
-    &#preschool {
-      background: url(../images/home/preschool.jpg) 0 0 no-repeat;
-    }
-    &#kindergarten {
-      background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
-    }
-    &#elementary {
-      background: url(../images/home/elementary.jpg) 0 0 no-repeat;
-    }
+    &#preschool    { background: url(../images/home/preschool.jpg) 0 0 no-repeat; }
+    &#kindergarten { background: url(../images/home/kindergarten.jpg) 0 0 no-repeat; }
+    &#elementary   { background: url(../images/home/elementary.jpg) 0 0 no-repeat; }
 
     h1 {
       color: #436199;
