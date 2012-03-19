@@ -47,3 +47,82 @@ div.content {
   }
 }
 /*------------------END Brandon Gerke------------------------*/
+
+/* ----------------- contact page -------------------------------*/
+
+#form1  {
+	width:620px;
+	padding-top:15px;
+
+	label{
+		float:left;
+		color:#4c5a5e;
+	}
+	div{
+
+		label{
+			width:100px;
+		}
+
+		margin-bottom:20px;
+
+		#name {
+			width:514px;
+			height:20px;
+			background-color:#ebebeb;
+			border:#d7d7d7 solid 2px;
+			-moz-border-radius:2px;
+			-ms-border-radius:2px;
+			-o-border-radius:2px;
+			-webkit-border-radius:2px;
+			border-radius:2px;
+		}
+		#email {
+			width:514px;
+			height:20px;
+			background-color:#ebebeb;
+			border:#d7d7d7 solid 2px;
+			-moz-border-radius:2px;
+			-ms-border-radius:2px;
+			-o-border-radius:2px;
+			-webkit-border-radius:2px;
+			border-radius:2px;
+		}
+		#question {
+			width:510px;
+			height:200px;
+			resize:none;
+			background-color:#ebebeb;
+			border:#d7d7d7 solid 2px;
+			-moz-border-radius:2px;
+			-ms-border-radius:2px;
+			-o-border-radius:2px;
+			-webkit-border-radius:2px;
+		}
+	}
+	#submit_block {
+		position: relative;
+		left:8px;
+		float:right;
+		margin-top:20px;
+		margin-left:5px;
+
+		#Submit{
+			width:90px;
+			height:35px;
+			border:none;
+			color:#fff;
+			background-color:#d85045;
+			cursor:pointer;
+		}
+
+		#Submit:hover {
+			background-color:#e27970;
+		}
+	}
+	
+}
+
+.address { text-align: center; }
+
+/* --------------------------- end contact page -------------------*/

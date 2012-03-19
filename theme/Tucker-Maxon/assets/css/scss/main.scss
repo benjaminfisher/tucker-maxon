@@ -50,11 +50,7 @@ div.wrapper {
     border: solid 3px #fff;
     margin: 0 auto;
   }
-  .gallery-cycle {
-    /*padding: 3px;
-    border: solid 1px #C7C7C7;*/
-    position: relative;
-  }
+
   .gallery-cycle a {
     outline: none;
   }
@@ -71,6 +67,7 @@ div.wrapper {
     border: 0 none;
     width: 100%;
     height: 100%;
+    @include border-radius($default_border_radius);
   }
   .gallery-cycle .gallery-text {
     margin: 0;
@@ -87,11 +84,14 @@ div.wrapper {
     text-align: center;
     vertical-align: middle;
     background-color: white;
+    @include border-radius($default_border_radius);
   }
   .gallery-cycle .gallery-image img {
     margin: 0;
     padding: 0;
     border: 0 none;
+    
+    @include border-radius($default_border_radius);
   }
   .gallery-cycle .gallery-control {
     position: absolute;

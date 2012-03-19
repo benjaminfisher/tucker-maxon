@@ -44,8 +44,7 @@ footer{
               text-indent:-9999em;
               width: $sprite_size;
             }
-            &:nth-child(3) a { background-position:-$sprite_size 0; }
-            &:nth-child(4) a { background-position:-($sprite_size * 2) 0; }
+            &:nth-child(3) a { background-position:- ($sprite_size * 2) 0; }
           }
         }
       }
