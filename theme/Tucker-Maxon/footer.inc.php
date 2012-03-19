@@ -28,23 +28,23 @@
 
 			<div class="column">
 				<ul>
-					<li class="heading"><a href="#">Programs</a></li>
+					<li class="heading"><a href=<?php get_site_url(); ?>programs>Programs</a></li>
 					<?php get_i18n_navigation('programs', 1, 99, I18N_SHOW_NORMAL); ?>
 				</ul>
 				<ul>
-					<li class="heading"><a href="#">Events</a></li>
+					<li class="heading"><a href=<?php get_site_url(); ?>events>Events</a></li>
 				</ul>
 				<ul>
-					<li class="heading"><a href="#">Calendar</a></li>
+					<li class="heading"><a href=<?php get_site_url(); ?>calendar>Calendar</a></li>
 				</ul>
 				<ul>
-					<li class="heading"><a href="#">Contact</a></li>
+					<li class="heading"><a href=<?php get_site_url(); ?>contact>Contact</a></li>
 				</ul>
 			</div>
 
 			<div class="column">
 				<ul>
-					<li class="heading"><a href="#">Services</a></li>
+					<li class="heading"><a href=<?php get_site_url(); ?>services>Services</a></li>
 					<?php get_i18n_navigation('services', 1, 99, I18N_SHOW_NORMAL); ?>
 				</ul>
 				<ul class="social">
