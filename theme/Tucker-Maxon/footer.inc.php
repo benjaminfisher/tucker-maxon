@@ -22,22 +22,14 @@
 				</ul>
 				<ul>
 					<li class="heading"><a href=<?php get_site_url(); ?>about>About</a></li>
-					<li><a href="#">History</a></li>
-					<li><a href="#">Board/Staff</a></li>
-					<li><a href="#">Technology</a></li>
-					<li><a href="#">Multimedia</a></li>
-					<li><a href="#">Community Partnership</a></li>
+					<?php get_i18n_navigation('about', 1, 99, I18N_SHOW_NORMAL); ?>
 				</ul>
 			</div>
 
 			<div class="column">
 				<ul>
 					<li class="heading"><a href="#">Programs</a></li>
-					<li><a href="#">Preschool</a></li>
-					<li><a href="#">Elementary</a></li>
-					<li><a href="#">Kindergarten</a></li>
-					<li><a href="#">Summer Program</a></li>
-					<li><a href="#">Music and Art</a></li>
+					<?php get_i18n_navigation('programs', 1, 99, I18N_SHOW_NORMAL); ?>
 				</ul>
 				<ul>
 					<li class="heading"><a href="#">Events</a></li>
@@ -53,16 +45,11 @@
 			<div class="column">
 				<ul>
 					<li class="heading"><a href="#">Services</a></li>
-					<li><a href="#">Audiology</a></li>
-					<li><a href="#">Speech Pathology</a></li>
-					<li><a href="#">Before/After School Care</a></li>
-					<li><a href="#">Facility Rental</a></li>
-					<li><a href="#">Insurance</a></li>
+					<?php get_i18n_navigation('services', 1, 99, I18N_SHOW_NORMAL); ?>
 				</ul>
 				<ul class="social">
 					<li class="heading"><a href="#">Follow us</a></li>
 					<li class="social_link"><a href="#">Facebook</a></li>
-					<li class="social_link"><a href="#">Twitter</a></li>
 					<li class="social_link"><a href="#">YouTube</a></li>
 				</ul>
 			</div>
