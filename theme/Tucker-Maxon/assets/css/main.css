@@ -388,22 +388,6 @@ div.wrapper #gallery-cycle-slideshow {
   -khtml-border-radius: 30px;
   border-radius: 30px;
 }
-div.wrapper #slideshow {
-  width: auto;
-  height: 350px;
-  background-color: #ccc;
-  border: solid 3px white;
-}
-div.wrapper #slideshow hgroup {
-  width: 250px;
-  height: auto;
-  padding: 20px;
-  background-color: #fefefe;
-  border: solid 1px black;
-}
-div.wrapper #slideshow hgroup h2 {
-  font-size: 60px;
-}
 div.wrapper .gallery-cycle a {
   outline: none;
 }
@@ -414,13 +398,39 @@ div.wrapper .gallery-cycle .gallery-container {
   overflow: hidden;
   position: relative;
   width: 958px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -o-border-bottom-left-radius: 10px;
+  -ms-border-bottom-left-radius: 10px;
+  -khtml-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -o-border-bottom-right-radius: 10px;
+  -ms-border-bottom-right-radius: 10px;
+  -khtml-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
-div.wrapper .gallery-cycle .gallery-text {
+div.wrapper .gallery-cycle .gallery-text p {
+  font-size: 1.2em;
   margin: 0;
   padding: 10px;
   border: 0 none;
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  z-index: 100;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  -o-border-bottom-left-radius: 10px;
+  -ms-border-bottom-left-radius: 10px;
+  -khtml-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-border-radius-bottomright: 10px;
+  -webkit-border-bottom-right-radius: 10px;
+  -o-border-bottom-right-radius: 10px;
+  -ms-border-bottom-right-radius: 10px;
+  -khtml-border-bottom-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 div.wrapper .gallery-cycle .gallery-image {
   margin: 0;
@@ -602,6 +612,7 @@ div.wrapper div.gradeLevel#elementary, div.wrapper div.gradeLevel a#elementary {
   background: url(../images/home/elementary.jpg) 0 0 no-repeat;
 }
 div.wrapper div.gradeLevel h1, div.wrapper div.gradeLevel a h1 {
+  border: 0px;
   color: #436199;
   font-family: 'Alegreya SC', Times, serif;
   font-size: 24px;
@@ -610,6 +621,20 @@ div.wrapper div.gradeLevel h1, div.wrapper div.gradeLevel a h1 {
   bottom: -30px;
   text-align: center;
   width: 100%;
+}
+div.wrapper div.gradeLevel a, div.wrapper div.gradeLevel a a {
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -moz-transition-duration: 0.25s;
+  -webkit-transition-duration: 0.25s;
+  -o-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  -moz-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
 }
 div.wrapper div.gradeLevel a:hover, div.wrapper div.gradeLevel a a:hover {
   border: 3px solid rgba(229, 55, 40, 0.6);

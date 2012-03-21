@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<item><pubDate>Sat, 30 Apr 2011 09:47:26 -0400</pubDate><title>Gallery</title><url>gallery</url><meta></meta><metad></metad><menu></menu><menuStatus></menuStatus><template>template.php</template><parent></parent><content>&amp;lt;p&amp;gt;
+	(% gallery %)&amp;lt;/p&amp;gt;
+</content><private></private><creDate>Sat, 30 Apr 2011 09:47:26 -0400</creDate><user>mvlcek</user><menuOrder><![CDATA[1]]></menuOrder></item>

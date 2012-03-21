@@ -14,25 +14,6 @@ div.wrapper {
       @include border-radius(30px);
     }
 
-  #slideshow {
-    width:auto;
-    height:350px;
-    background-color:#ccc;
-    border:solid 3px white;
-
-    hgroup {
-      width: 250px;
-      height: auto;
-      padding: 20px;
-      background-color: $bg_color;
-      border: solid 1px black;
-      
-      h2{ font-size: 60px; }
-    }
-  } // End of slideshow styles
-
-  // new slideshow styles, needs reformatting to comply with above
-
 
   .gallery-cycle a {
     outline: none;
@@ -44,14 +25,20 @@ div.wrapper {
     overflow: hidden;
     position: relative;
     width: 958px;
+    
+    @include border-bottom-radius($default_border_radius);
   }
 
-  .gallery-cycle .gallery-text {
+  .gallery-cycle .gallery-text p {
+    font-size:1.2em;
     margin: 0;
     padding: 10px;
     border: 0 none;
-    background-color: white;
+    background-color: rgba(0,0,0,0.5);
     overflow: hidden;
+    z-index:100;
+    
+    @include border-bottom-radius($default_border_radius);
   }
   .gallery-cycle .gallery-image {
     margin: 0;
@@ -62,13 +49,14 @@ div.wrapper {
     vertical-align: middle;
     background-color: white;
     @include border-radius($default_border_radius);
-  }
-  .gallery-cycle .gallery-image img {
-    margin: 0;
-    padding: 0;
-    border: 0 none;
     
-    @include border-radius($default_border_radius);
+    img {
+        margin: 0;
+        padding: 0;
+        border: 0 none;
+        
+        @include border-radius($default_border_radius);
+      }
   }
   .gallery-cycle .gallery-control {
     position: absolute;
@@ -218,6 +206,7 @@ div.wrapper {
     &#elementary   { background: url(../images/home/elementary.jpg) 0 0 no-repeat; }
 
     h1 {
+      border: 0px;
       color: #436199;
       font-family: 'Alegreya SC', Times, serif;
       font-size: 24px;
@@ -230,6 +219,9 @@ div.wrapper {
     
     a{
       @extend div.gradeLevel;
+      @include transition-property(all);
+      @include transition-duration(0.25s);
+      @include transition-timing-function(ease-in);
       
       &:hover{
         border: 3px solid rgba($tm_red, 0.6);
