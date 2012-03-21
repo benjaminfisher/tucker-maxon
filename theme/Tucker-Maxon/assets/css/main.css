@@ -1,6 +1,5 @@
 /*** Google Fonts import ***/
 @import url("http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic");
-/* line 17, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -22,50 +21,41 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 20, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
-/* line 22, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 24, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 26, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 28, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 101, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 30, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 114, C:/Ruby192/lib/ruby/gems/1.9.1/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 1, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header {
   height: 120px;
   margin: 1em auto 0px;
@@ -73,22 +63,21 @@ header {
   position: relative;
   width: 960px;
 }
-/* line 8, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header a.logo {
   float: left;
 }
-/* line 10, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.global {
   bottom: -18px;
   position: absolute;
   right: 2px;
 }
-/* line 15, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.global ul {
   list-style-type: none;
 }
-/* line 18, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.global ul li {
+  float: left;
+}
+header nav.global ul li a {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
   -o-border-top-left-radius: 10px;
@@ -101,76 +90,61 @@ header nav.global ul li {
   -ms-border-top-right-radius: 10px;
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #d85045;
-  float: left;
-  margin-left: 0.5em;
-  padding: 1em 2em 1.5em;
-  top: 0px;
+  text-shadow: #ad0e00 1px 1px 1px;
   -moz-transition-property: top;
   -webkit-transition-property: top;
   -o-transition-property: top;
   transition-property: top;
-  -moz-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  transition-timing-function: linear;
-  -moz-transition-delay: ease-in;
-  -webkit-transition-delay: ease-in;
-  -o-transition-delay: ease-in;
-  transition-delay: ease-in;
-}
-/* line 28, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
-header nav.global ul li:hover {
-  background-color: #e84c3f;
-  top: -5px;
-}
-/* line 32, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
-header nav.global ul li a {
-  text-shadow: #ad0e00 1px 1px 1px;
+  -moz-transition-duration: 0.15s;
+  -webkit-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+  background-color: #d85045;
   color: white;
   display: block;
+  float: left;
   font-family: "Alegreya SC", "Times", serif;
   font-weight: bold;
   font-size: 18px;
-  height: 100%;
+  margin-left: 0.5em;
+  padding: 0.7em 2em 1.6em;
   text-decoration: none;
-  width: 100%;
+  top: 0;
 }
-/* line 47, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
+header nav.global ul li a:hover {
+  background-color: #e84c3f;
+  top: -5px;
+}
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
-/* line 53, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
-/* line 56, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
   font-family: "Alegreya SC";
   font-weight: bold;
   text-decoration: none;
 }
-/* line 62, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
+  color: #0751c0;
 }
 
-/* line 2, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer {
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
-/* line 7, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
@@ -188,45 +162,43 @@ footer section.top {
   border-top-right-radius: 10px;
   background-color: #fefbf2;
 }
-/* line 20, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 footer section.top:before, footer section.top:after {
   content: "";
   display: table;
 }
-/* line 24, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 footer section.top:after {
   clear: both;
 }
-/* line 12, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top nav.tertiary {
   float: left;
   overflow: auto;
 }
-/* line 16, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
-/* line 20, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top nav.tertiary div.column ul {
   width: 192px;
 }
-/* line 23, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
-/* line 25, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
+  text-decoration: underline;
+}
 footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
-/* line 30, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
-/* line 38, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
+footer section.top nav.tertiary div.column ul li.heading a:hover {
+  text-decoration: underline;
+  color: #5979b6;
+}
 footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -236,22 +208,20 @@ footer section.top nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
-/* line 47, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
-footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
-  background-position: -28px 0;
+footer section.top nav.tertiary div.column ul.social li.social_link a:hover {
+  border: 1px solid rgba(229, 55, 40, 0.8);
+  left: -1px;
+  top: -1px;
 }
-/* line 48, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
-footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(4) a {
+footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -56px 0;
 }
-/* line 54, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top div.locate {
   float: right;
   padding-top: 50px;
   text-align: center;
   width: 300px;
 }
-/* line 60, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top div.locate #donate {
   background: #E43728;
   color: white;
@@ -264,22 +234,18 @@ footer section.top div.locate #donate {
   -khtml-border-radius: 10px;
   border-radius: 10px;
 }
-/* line 67, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top div.locate #donate:hover {
   background: #ff4734;
 }
-/* line 72, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top div.locate section.address {
   padding-top: 35px;
 }
-/* line 75, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 88, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -303,7 +269,6 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 101, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   font-size: 12px;
@@ -331,18 +296,15 @@ footer p.copy {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
-/* line 27, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 * {
   background-repeat: no-repeat;
   position: relative;
 }
 
-/* line 32, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 html, body {
   width: 100%;
 }
 
-/* line 34, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 body {
   background-color: #fefefe;
   color: #4c5a5e;
@@ -350,11 +312,9 @@ body {
   font-size: 16px;
   line-height: 150%;
 }
-/* line 41, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 body a {
   color: #4c5a5e;
 }
-/* line 43, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 body div.wrapper {
   background: #fefefe;
   clear: both;
@@ -364,55 +324,45 @@ body div.wrapper {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
-/* line 20, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 body div.wrapper:before, body div.wrapper:after {
   content: "";
   display: table;
 }
-/* line 24, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 body div.wrapper:after {
   clear: both;
 }
 
-/* line 57, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 58, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 59, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 61, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;
 }
 
-/* line 63, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_global.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
-/* line 20, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 .group:before, .group:after {
   content: "";
   display: table;
 }
-/* line 24, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 .group:after {
   clear: both;
 }
 
-/* line 3, scss/main.scss */
 div.wrapper {
   clear: both;
   height: auto;
@@ -431,49 +381,22 @@ div.wrapper {
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
 }
-/* line 11, scss/main.scss */
+div.wrapper #gallery-cycle-slideshow {
+  margin-left: -3px;
+  border: 3px solid #fff;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -o-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -khtml-border-radius: 30px;
+  border-radius: 30px;
+}
 div.wrapper #slideshow {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
   width: auto;
   height: 350px;
   background-color: #ccc;
   border: solid 3px white;
 }
-/* line 18, scss/main.scss */
-div.wrapper #slideshow::after, div.wrapper #slideshow::before {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -khtml-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid white;
-  background: url(../images/arrow.png) 50% 50% yellow no-repeat;
-  content: "";
-  height: 55px;
-  position: absolute;
-  top: 40%;
-  width: 55px;
-}
-/* line 28, scss/main.scss */
-div.wrapper #slideshow::after {
-  right: -35px;
-}
-/* line 31, scss/main.scss */
-div.wrapper #slideshow::before {
-  -moz-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  left: -30px;
-}
-/* line 36, scss/main.scss */
 div.wrapper #slideshow hgroup {
   width: 250px;
   height: auto;
@@ -481,48 +404,20 @@ div.wrapper #slideshow hgroup {
   background-color: #fefefe;
   border: solid 1px black;
 }
-/* line 43, scss/main.scss */
 div.wrapper #slideshow hgroup h2 {
   font-size: 60px;
 }
-/* line 48, scss/main.scss */
-div.wrapper #gallery-cycle-slideshow {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  border: solid 3px #fff;
-  margin: 0 auto;
-}
-/* line 53, scss/main.scss */
-div.wrapper .gallery-cycle {
-  /*padding: 3px;
-  border: solid 1px #C7C7C7;*/
-  position: relative;
-}
-/* line 58, scss/main.scss */
 div.wrapper .gallery-cycle a {
   outline: none;
 }
-/* line 61, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-container {
   margin: 0;
   padding: 0;
   border: 0 none;
   overflow: hidden;
   position: relative;
+  width: 958px;
 }
-/* line 68, scss/main.scss */
-div.wrapper div.gallery-cycle .gallery-slide {
-  margin: 0;
-  padding: 0;
-  border: 0 none;
-  width: 100%;
-  height: 100%;
-}
-/* line 75, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-text {
   margin: 0;
   padding: 10px;
@@ -530,7 +425,6 @@ div.wrapper .gallery-cycle .gallery-text {
   background-color: white;
   overflow: hidden;
 }
-/* line 82, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-image {
   margin: 0;
   padding: 0;
@@ -539,14 +433,24 @@ div.wrapper .gallery-cycle .gallery-image {
   text-align: center;
   vertical-align: middle;
   background-color: white;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
 }
-/* line 91, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-image img {
   margin: 0;
   padding: 0;
   border: 0 none;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -khtml-border-radius: 10px;
+  border-radius: 10px;
 }
-/* line 96, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control {
   position: absolute;
   margin: 0;
@@ -554,14 +458,12 @@ div.wrapper .gallery-cycle .gallery-control {
   border: 0 none;
   z-index: 10000;
 }
-/* line 103, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-dots a {
   font-size: 40px;
   border: 0 none;
   text-decoration: none;
   color: #999999;
 }
-/* line 109, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-numbers a {
   font-size: 18px;
   border: 0 none;
@@ -572,7 +474,6 @@ div.wrapper .gallery-cycle .gallery-control-numbers a {
   border: 1px solid #999999;
   background-color: white;
 }
-/* line 119, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-images a {
   background: url(../../plugins/i18n_gallery/images/cycle/pagination.png);
   width: 12px;
@@ -584,16 +485,13 @@ div.wrapper .gallery-cycle .gallery-control-images a {
   display: block;
   float: left;
 }
-/* line 130, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control a:hover {
   color: #666666;
 }
-/* line 133, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control a.activeSlide {
   color: #C5400E;
   background-position: 0 -12px;
 }
-/* line 137, scss/main.scss */
 div.wrapper .gallery-cycle .prev {
   top: 0;
   left: -30px;
@@ -603,7 +501,6 @@ div.wrapper .gallery-cycle .prev {
   position: absolute;
   z-index: 9000;
 }
-/* line 146, scss/main.scss */
 div.wrapper .gallery-cycle .prev img {
   left: 0px;
   margin-top: -30px;
@@ -611,7 +508,6 @@ div.wrapper .gallery-cycle .prev img {
   top: 50%;
   /*display: none;*/
 }
-/* line 153, scss/main.scss */
 div.wrapper .gallery-cycle .next {
   top: 0;
   right: -30px;
@@ -621,29 +517,23 @@ div.wrapper .gallery-cycle .next {
   position: absolute;
   z-index: 9000;
 }
-/* line 162, scss/main.scss */
 div.wrapper .gallery-cycle .next img {
   right: 0px;
   margin-top: -30px;
   position: absolute;
   top: 50%;
-  /*display: none;*/
 }
-/* line 169, scss/main.scss */
 div.wrapper .gallery-cycle .prev:hover img, div.wrapper .gallery-cycle .next:hover img {
   display: block;
 }
-/* line 173, scss/main.scss */
 div.wrapper section.home.group {
   padding: 30px 0 85px;
 }
-/* line 176, scss/main.scss */
 div.wrapper section.home.group h2 {
   font-family: 'Alegreya SC', Times, serif;
   font-weight: 600;
   line-height: 150%;
 }
-/* line 182, scss/main.scss */
 div.wrapper section.home.group a.learn-more {
   background: url("../images/more_sprite.png") right -26px no-repeat;
   color: #e53728;
@@ -652,52 +542,43 @@ div.wrapper section.home.group a.learn-more {
   padding-right: 25px;
   text-decoration: none;
 }
-/* line 190, scss/main.scss */
 div.wrapper section.home.group a.learn-more:hover {
   background: url("../images/more_sprite.png") right 1px no-repeat;
 }
-/* line 194, scss/main.scss */
 div.wrapper section.home.group div.mission {
   float: left;
   padding: 0 30px;
   width: 570px;
 }
-/* line 199, scss/main.scss */
 div.wrapper section.home.group div.mission h2 {
   color: #436199;
   font-size: 30px;
   padding-bottom: 10px;
 }
-/* line 206, scss/main.scss */
 div.wrapper section.home.group div.events {
   float: right;
   margin-top: 10px;
   padding-left: 30px;
   width: 270px;
 }
-/* line 212, scss/main.scss */
 div.wrapper section.home.group div.events h2 {
   color: #E53728;
   font-size: 18px;
   margin-bottom: 5px;
   padding-bottom: 10px;
 }
-/* line 221, scss/main.scss */
 div.wrapper section#schoolFeature {
   margin: 0 30px;
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
-/* line 20, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 div.wrapper section#schoolFeature:before, div.wrapper section#schoolFeature:after {
   content: "";
   display: table;
 }
-/* line 24, c:/xampp/htdocs/tucker-maxon/theme/Tucker-Maxon/assets/css/scss/_mixins.scss */
 div.wrapper section#schoolFeature:after {
   clear: both;
 }
-/* line 226, scss/main.scss */
 div.wrapper div.gradeLevel {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -712,23 +593,18 @@ div.wrapper div.gradeLevel {
   background-color: #ccc;
   margin-right: 30px;
 }
-/* line 235, scss/main.scss */
 div.wrapper div.gradeLevel:last-child {
   margin-right: 0;
 }
-/* line 239, scss/main.scss */
 div.wrapper div.gradeLevel#preschool {
   background: url(../images/home/preschool.jpg) 0 0 no-repeat;
 }
-/* line 242, scss/main.scss */
 div.wrapper div.gradeLevel#kindergarten {
   background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
 }
-/* line 245, scss/main.scss */
 div.wrapper div.gradeLevel#elementary {
   background: url(../images/home/elementary.jpg) 0 0 no-repeat;
 }
-/* line 249, scss/main.scss */
 div.wrapper div.gradeLevel h1 {
   color: #436199;
   font-family: 'Alegreya SC', Times, serif;

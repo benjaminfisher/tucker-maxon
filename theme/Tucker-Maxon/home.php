@@ -13,7 +13,7 @@ get_i18n_gallery('slideshow'); ?>
 
 <section class="home group">
   <div class="mission">
-    <h2>Mission Statement</h2>
+    <h2>Welcome</h2>
     <p><?php get_component('mission_statement'); ?></p>
     <a href="javascript:void(0)" class="learn-more">Learn More</a>
   </div>

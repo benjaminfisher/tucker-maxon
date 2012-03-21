@@ -20,7 +20,11 @@ footer{
         ul{
           width:$content_width / 5;
           
-          li:not(.heading) a { text-decoration: none; }
+          li:not(.heading) a {
+            text-decoration: none;
+            
+            &:hover{ text-decoration:underline; }
+          }
           
           li.heading{
             font-family: 'Alegreya', serif;
@@ -30,6 +34,11 @@ footer{
             a{
               color: $heading_color;
               font-size: 1.222222em;
+              
+              &:hover{
+                text-decoration:underline;
+                color: adjust-lightness($heading_color, 10%);
+              }
             }
           }
           
@@ -43,9 +52,14 @@ footer{
               margin-right: 1em;
               text-indent:-9999em;
               width: $sprite_size;
+              
+              &:hover{
+                border: 1px solid rgba($tm-red, 0.8);
+                left: -1px;
+                top: -1px;
+              }
             }
-            &:nth-child(3) a { background-position:-$sprite_size 0; }
-            &:nth-child(4) a { background-position:-($sprite_size * 2) 0; }
+            &:nth-child(3) a { background-position: -($sprite_size * 2) 0; }
           }
         }
       }

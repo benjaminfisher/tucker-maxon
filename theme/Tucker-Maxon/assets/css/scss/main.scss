@@ -5,56 +5,35 @@ div.wrapper {
   height: auto;
   margin:0 auto;
   width: $content_width;
-  
+
   @include border-top-radius($default_border_radius);
+  
+    #gallery-cycle-slideshow {
+      margin-left: -3px;
+      border: 3px solid #fff;
+      @include border-radius(30px);
+    }
 
   #slideshow {
-    @include border-radius($default_border_radius);
     width:auto;
     height:350px;
     background-color:#ccc;
     border:solid 3px white;
-    
-    &::after, &::before {
-      @include border-radius(50%);
-      border: 2px solid white;
-      background: url(../images/arrow.png) 50% 50% yellow no-repeat;
-      content: "";
-      height: 55px;
-      position: absolute;
-      top: 40%;
-      width: 55px;
-    }
-    &::after{
-      right: -35px;
-    }
-    &::before{
-      @include rotate(180deg);
-      left: -30px;
-    }
-    
+
     hgroup {
-      width:250px;
-      height:auto;
-      padding:20px;
+      width: 250px;
+      height: auto;
+      padding: 20px;
       background-color: $bg_color;
-      border:solid 1px black;
+      border: solid 1px black;
       
-      h2{ font-size:60px; }
+      h2{ font-size: 60px; }
     }
   } // End of slideshow styles
 
   // new slideshow styles, needs reformatting to comply with above
-  #gallery-cycle-slideshow{
-    @include border-radius($default_border_radius);
-    border: solid 3px #fff;
-    margin: 0 auto;
-  }
-  .gallery-cycle {
-    /*padding: 3px;
-    border: solid 1px #C7C7C7;*/
-    position: relative;
-  }
+
+
   .gallery-cycle a {
     outline: none;
   }
@@ -64,14 +43,9 @@ div.wrapper {
     border: 0 none;
     overflow: hidden;
     position: relative;
+    width: 958px;
   }
-  div.gallery-cycle .gallery-slide {
-    margin: 0;
-    padding: 0;
-    border: 0 none;
-    width: 100%;
-    height: 100%;
-  }
+
   .gallery-cycle .gallery-text {
     margin: 0;
     padding: 10px;
@@ -87,11 +61,14 @@ div.wrapper {
     text-align: center;
     vertical-align: middle;
     background-color: white;
+    @include border-radius($default_border_radius);
   }
   .gallery-cycle .gallery-image img {
     margin: 0;
     padding: 0;
     border: 0 none;
+    
+    @include border-radius($default_border_radius);
   }
   .gallery-cycle .gallery-control {
     position: absolute;
@@ -164,7 +141,6 @@ div.wrapper {
     margin-top: -30px;
     position: absolute;
     top: 50%;
-    /*display: none;*/
   }
   .gallery-cycle .prev:hover img, .gallery-cycle .next:hover img {
     display: block;
@@ -236,15 +212,9 @@ div.wrapper {
       margin-right: 0;
     }
 
-    &#preschool {
-      background: url(../images/home/preschool.jpg) 0 0 no-repeat;
-    }
-    &#kindergarten {
-      background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
-    }
-    &#elementary {
-      background: url(../images/home/elementary.jpg) 0 0 no-repeat;
-    }
+    &#preschool    { background: url(../images/home/preschool.jpg) 0 0 no-repeat; }
+    &#kindergarten { background: url(../images/home/kindergarten.jpg) 0 0 no-repeat; }
+    &#elementary   { background: url(../images/home/elementary.jpg) 0 0 no-repeat; }
 
     h1 {
       color: #436199;
