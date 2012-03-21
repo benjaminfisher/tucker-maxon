@@ -126,3 +126,115 @@ div.content {
 .address { text-align: center; }
 
 /* --------------------------- end contact page -------------------*/
+
+/* ----------------- events page -------------------------------*/
+
+div.content {
+  ul.events_list_brief {
+    li {
+      span {
+        &.event_title {
+          a {}
+        }
+        &.times {}
+      }
+    }
+  }
+}
+
+/* --------------------------- end events page -------------------*/
+
+/* ----------------- calendar page -------------------------------*/
+
+div.content {
+  table.calendar {
+    width: 100%;
+
+    a {
+      color: #436199;
+      font-weight: bold;
+      text-decoration: underline;
+
+      &:hover {
+        color: #5979B6;
+        text-decoration: none;
+      }
+    }
+
+    caption {
+      margin: 10px 0 20px;
+
+      span {
+        display: block;
+        position: relative;
+
+        &.previousmonth {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1000;
+        }
+        &.currentmonth {
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          position: relative;
+          z-index: 1;
+        }
+        &.nextmonth {
+          position: absolute;
+          top: 0;
+          right: 0;
+          z-index: 1000;
+        }
+      }
+    }
+    tr {
+      &:first-child {
+        td { border-top: none; }
+      }
+      th, td {
+        text-align: center;
+        width: 14%;
+      }
+      th {
+        background: #5979B6;
+        color: #fff;
+        font-weight: bold;
+        height: 30px;
+        margin-bottom: 5px;
+
+        &:first-child {
+          @include border-radius(10px 0 0 0);
+        }
+        &:last-child {
+          @include border-radius(0 10px 0 0);
+        }
+      }
+      td {
+        border: 1px dotted #bbb;
+        height: 75px;
+        &:nth-child(2n) {
+          @include border-radius(5px);
+          background: #f3f3f3;
+        }
+
+        a {
+          color: #D85045;
+          text-decoration: underline;
+        }
+      }
+      &:nth-child(2n) {
+        td {
+          @include border-radius(5px);
+          background: #f3f3f3;
+          &:nth-child(2n) {
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* --------------------------- end calendar page -------------------*/

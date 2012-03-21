@@ -160,7 +160,7 @@ footer section.top {
   -ms-border-top-right-radius: 10px;
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #fefbf2;
+  background-color: #fcf4da;
 }
 footer section.top:before, footer section.top:after {
   content: "";
@@ -223,22 +223,16 @@ footer section.top div.locate {
   width: 300px;
 }
 footer section.top div.locate #donate {
-  background: #E43728;
-  border: 1px solid rgba(34, 34, 34, 0.75);
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 24px;
-  padding: 9px 15px;
-  text-transform: uppercase;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
-  text-shadow: black 1 1 1px;
+  background-image: url(../images/donate.png);
+  display: block;
+  height: 48px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-indent: -9999em;
+  width: 167px;
 }
 footer section.top div.locate #donate:hover {
-  background: #ff4734;
+  background-position: 0 -48px;
 }
 footer section.top div.locate section.address {
   padding-top: 35px;
