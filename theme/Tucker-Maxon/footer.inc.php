@@ -49,14 +49,14 @@
 				</ul>
 				<ul class="social">
 					<li class="heading"><a href="#">Follow us</a></li>
-					<li class="social_link"><a href="#">Facebook</a></li>
+					<li class="social_link"><a href="http://www.facebook.com/pages/Tucker-Maxon-School/54984880854">Facebook</a></li>
 					<li class="social_link"><a href="#">YouTube</a></li>
 				</ul>
 			</div>
 		</nav>
 
 		<div class="locate">
-			<a id="donate" href="javascript:void(0)">Donate</a>
+			<a id="donate" href="http://www.therightbank.com/home/home">Donate</a>
 			<section class="address">
 				<h3>The Tucker-Maxon School</h3>
 				<p>2860 SE Holgate Blvd.</p>
@@ -73,7 +73,7 @@
 <!--script language="JavaScript">
 	// Put scripts that need to be loaded (internal or external) in a comma seperated
 	// list of strings inside the head.js method parameters
-	head.js('http://code.jquery.com/jquery.min.js',
+head.js('http://code.jquery.com/jquery.min.js', '<?php get_theme_url(); ?>/assets/js/ga.js',
 	function(){
 		if(!$){
 			head.js("<?php get_theme_url(); ?>/assets/js/lib/jquery-1.7.1.min.js")
