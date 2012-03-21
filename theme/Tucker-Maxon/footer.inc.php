@@ -50,7 +50,7 @@
 				<ul class="social">
 					<li class="heading"><a href="#">Follow us</a></li>
 					<li class="social_link"><a href="http://www.facebook.com/pages/Tucker-Maxon-School/54984880854">Facebook</a></li>
-					<li class="social_link"><a href="#">YouTube</a></li>
+					<li class="social_link"><a href="http://www.youtube.com/user/tuckermaxon">YouTube</a></li>
 				</ul>
 			</div>
 		</nav>
