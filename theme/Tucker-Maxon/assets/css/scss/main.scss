@@ -198,14 +198,15 @@ div.wrapper {
     margin: 0 30px;
     @include clearfix;
   }
-
+  
+  $glHeight:220px;
+  $glWidth:280px;
   div.gradeLevel {
     @include border-radius(10px);
     position: relative;
-    width: 280px;
-    height:220px;
+    width: $glWidth;
+    height: $glHeight;
     float:left;
-    background-color:#ccc;
     margin-right: 30px;
 
     &:last-child {
@@ -225,6 +226,16 @@ div.wrapper {
       bottom: -30px;
       text-align: center;
       width: 100%;
-    } 
+    }
+    
+    a{
+      @extend div.gradeLevel;
+      
+      &:hover{
+        border: 3px solid rgba($tm_red, 0.6);
+        height: ($glHeight - 6);
+        width: ($glWidth - 6);
+      }
+    }
   } // End of content(div boxes) styles
 }

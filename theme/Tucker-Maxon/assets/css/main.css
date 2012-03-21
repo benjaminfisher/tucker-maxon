@@ -160,7 +160,7 @@ footer section.top {
   -ms-border-top-right-radius: 10px;
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #fefbf2;
+  background-color: #fcf4da;
 }
 footer section.top:before, footer section.top:after {
   content: "";
@@ -223,19 +223,16 @@ footer section.top div.locate {
   width: 300px;
 }
 footer section.top div.locate #donate {
-  background: #E43728;
-  color: white;
-  font-size: 18px;
-  padding: 9px 15px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
+  background-image: url(../images/donate.png);
+  display: block;
+  height: 48px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-indent: -9999em;
+  width: 167px;
 }
 footer section.top div.locate #donate:hover {
-  background: #ff4734;
+  background-position: 0 -48px;
 }
 footer section.top div.locate section.address {
   padding-top: 35px;
@@ -579,7 +576,7 @@ div.wrapper section#schoolFeature:before, div.wrapper section#schoolFeature:afte
 div.wrapper section#schoolFeature:after {
   clear: both;
 }
-div.wrapper div.gradeLevel {
+div.wrapper div.gradeLevel, div.wrapper div.gradeLevel a {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
@@ -590,22 +587,21 @@ div.wrapper div.gradeLevel {
   width: 280px;
   height: 220px;
   float: left;
-  background-color: #ccc;
   margin-right: 30px;
 }
-div.wrapper div.gradeLevel:last-child {
+div.wrapper div.gradeLevel:last-child, div.wrapper div.gradeLevel a:last-child {
   margin-right: 0;
 }
-div.wrapper div.gradeLevel#preschool {
+div.wrapper div.gradeLevel#preschool, div.wrapper div.gradeLevel a#preschool {
   background: url(../images/home/preschool.jpg) 0 0 no-repeat;
 }
-div.wrapper div.gradeLevel#kindergarten {
+div.wrapper div.gradeLevel#kindergarten, div.wrapper div.gradeLevel a#kindergarten {
   background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
 }
-div.wrapper div.gradeLevel#elementary {
+div.wrapper div.gradeLevel#elementary, div.wrapper div.gradeLevel a#elementary {
   background: url(../images/home/elementary.jpg) 0 0 no-repeat;
 }
-div.wrapper div.gradeLevel h1 {
+div.wrapper div.gradeLevel h1, div.wrapper div.gradeLevel a h1 {
   color: #436199;
   font-family: 'Alegreya SC', Times, serif;
   font-size: 24px;
@@ -614,4 +610,9 @@ div.wrapper div.gradeLevel h1 {
   bottom: -30px;
   text-align: center;
   width: 100%;
+}
+div.wrapper div.gradeLevel a:hover, div.wrapper div.gradeLevel a a:hover {
+  border: 3px solid rgba(229, 55, 40, 0.6);
+  height: 214px;
+  width: 274px;
 }
