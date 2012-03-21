@@ -6,3 +6,4 @@ data
 .settings/*
 .project
 config.rb
+sitemap.xml

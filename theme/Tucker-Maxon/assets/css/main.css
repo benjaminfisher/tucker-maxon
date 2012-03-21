@@ -368,43 +368,21 @@ div.wrapper {
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
 }
+div.wrapper #gallery-cycle-slideshow {
+  margin-left: -3px;
+  border: 3px solid #fff;
+  -moz-border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -o-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -khtml-border-radius: 30px;
+  border-radius: 30px;
+}
 div.wrapper #slideshow {
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
   width: auto;
   height: 350px;
   background-color: #ccc;
   border: solid 3px white;
-}
-div.wrapper #slideshow::after, div.wrapper #slideshow::before {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -o-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -khtml-border-radius: 50%;
-  border-radius: 50%;
-  border: 2px solid white;
-  background: url(../images/arrow.png) 50% 50% yellow no-repeat;
-  content: "";
-  height: 55px;
-  position: absolute;
-  top: 40%;
-  width: 55px;
-}
-div.wrapper #slideshow::after {
-  right: -35px;
-}
-div.wrapper #slideshow::before {
-  -moz-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  left: -30px;
 }
 div.wrapper #slideshow hgroup {
   width: 250px;
@@ -416,10 +394,6 @@ div.wrapper #slideshow hgroup {
 div.wrapper #slideshow hgroup h2 {
   font-size: 60px;
 }
-div.wrapper #gallery-cycle-slideshow {
-  border-top: solid 3px #fff;
-  margin: 0 auto;
-}
 div.wrapper .gallery-cycle a {
   outline: none;
 }
@@ -430,19 +404,6 @@ div.wrapper .gallery-cycle .gallery-container {
   overflow: hidden;
   position: relative;
   width: 958px;
-}
-div.wrapper div.gallery-cycle .gallery-slide {
-  margin: 0;
-  padding: 0;
-  border: 0 none;
-  width: 100%;
-  height: 100%;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
 }
 div.wrapper .gallery-cycle .gallery-text {
   margin: 0;
