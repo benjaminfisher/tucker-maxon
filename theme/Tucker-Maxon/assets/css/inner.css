@@ -137,6 +137,7 @@ header nav.secondary ul li a {
 }
 header nav.secondary ul li a:hover {
   text-decoration: underline;
+  color: #0751c0;
 }
 
 footer {
@@ -182,6 +183,9 @@ footer section.top nav.tertiary div.column ul {
 footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
+footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
+  text-decoration: underline;
+}
 footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
@@ -191,6 +195,10 @@ footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
+footer section.top nav.tertiary div.column ul li.heading a:hover {
+  text-decoration: underline;
+  color: #5979b6;
+}
 footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -199,6 +207,11 @@ footer section.top nav.tertiary div.column ul.social li.social_link a {
   margin-right: 1em;
   text-indent: -9999em;
   width: 28px;
+}
+footer section.top nav.tertiary div.column ul.social li.social_link a:hover {
+  border: 1px solid rgba(229, 55, 40, 0.8);
+  left: -1px;
+  top: -1px;
 }
 footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -56px 0;
@@ -418,6 +431,9 @@ footer section.top nav.tertiary div.column ul {
 footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
+footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
+  text-decoration: underline;
+}
 footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
@@ -427,6 +443,10 @@ footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
+footer section.top nav.tertiary div.column ul li.heading a:hover {
+  text-decoration: underline;
+  color: #5979b6;
+}
 footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -435,6 +455,11 @@ footer section.top nav.tertiary div.column ul.social li.social_link a {
   margin-right: 1em;
   text-indent: -9999em;
   width: 28px;
+}
+footer section.top nav.tertiary div.column ul.social li.social_link a:hover {
+  border: 1px solid rgba(229, 55, 40, 0.8);
+  left: -1px;
+  top: -1px;
 }
 footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -56px 0;

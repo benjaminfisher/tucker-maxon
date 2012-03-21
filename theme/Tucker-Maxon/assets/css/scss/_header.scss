@@ -57,7 +57,10 @@ header{
           font-weight:bold;
           text-decoration: none;
           
-          &:hover { text-decoration: underline; }
+          &:hover {
+            text-decoration: underline;
+            color: adjust-lightness($electric_blue, 15%);
+          }
         }
       }
     }
