@@ -182,7 +182,7 @@ footer section.top {
   -ms-border-top-right-radius: 10px;
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #fefbf2;
+  background-color: #fcf4da;
 }
 /* line 21, scss/_mixins.scss */
 footer section.top:before, footer section.top:after {
@@ -260,33 +260,30 @@ footer section.top div.locate {
 }
 /* line 74, scss/_footer.scss */
 footer section.top div.locate #donate {
-  background: #E43728;
-  color: white;
-  font-size: 18px;
-  padding: 9px 15px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
+  background-image: url(../images/donate.png);
+  display: block;
+  height: 48px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-indent: -9999em;
+  width: 167px;
 }
-/* line 81, scss/_footer.scss */
+/* line 83, scss/_footer.scss */
 footer section.top div.locate #donate:hover {
-  background: #ff4734;
+  background-position: 0 -48px;
 }
-/* line 86, scss/_footer.scss */
+/* line 88, scss/_footer.scss */
 footer section.top div.locate section.address {
   padding-top: 35px;
 }
-/* line 89, scss/_footer.scss */
+/* line 91, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 102, scss/_footer.scss */
+/* line 104, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -310,7 +307,7 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 115, scss/_footer.scss */
+/* line 117, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   font-size: 12px;
@@ -471,7 +468,7 @@ footer section.top {
   -ms-border-top-right-radius: 10px;
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #fefbf2;
+  background-color: #fcf4da;
 }
 /* line 21, scss/_mixins.scss */
 footer section.top:before, footer section.top:after {
@@ -549,33 +546,30 @@ footer section.top div.locate {
 }
 /* line 74, scss/_footer.scss */
 footer section.top div.locate #donate {
-  background: #E43728;
-  color: white;
-  font-size: 18px;
-  padding: 9px 15px;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  -o-border-radius: 10px;
-  -ms-border-radius: 10px;
-  -khtml-border-radius: 10px;
-  border-radius: 10px;
+  background-image: url(../images/donate.png);
+  display: block;
+  height: 48px;
+  margin: 0 auto;
+  overflow: hidden;
+  text-indent: -9999em;
+  width: 167px;
 }
-/* line 81, scss/_footer.scss */
+/* line 83, scss/_footer.scss */
 footer section.top div.locate #donate:hover {
-  background: #ff4734;
+  background-position: 0 -48px;
 }
-/* line 86, scss/_footer.scss */
+/* line 88, scss/_footer.scss */
 footer section.top div.locate section.address {
   padding-top: 35px;
 }
-/* line 89, scss/_footer.scss */
+/* line 91, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
-/* line 102, scss/_footer.scss */
+/* line 104, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -599,7 +593,7 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
-/* line 115, scss/_footer.scss */
+/* line 117, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   font-size: 12px;

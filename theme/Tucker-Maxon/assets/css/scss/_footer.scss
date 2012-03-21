@@ -7,7 +7,7 @@ footer{
   section.top {
     @include clearfix;
     @include border-top-radius($default_border_radius);
-    background-color: $footer_bg_color;
+    background-color: darken($footer_bg_color, 5%);
     
     nav.tertiary{
       float: left;
@@ -72,14 +72,16 @@ footer{
       width: $column_width;
 
       #donate {
-        background: #E43728;
-        color: white;
-        font-size: 18px;
-        padding: 9px 15px;
-        @include border-radius($default_border_radius);
+        background-image: url(../images/donate.png);
+        display: block;
+        height: 48px;
+        margin: 0 auto;
+        overflow: hidden;
+        text-indent: -9999em;
+        width: 167px;
 
         &:hover {
-          background: #E43728 * 1.3;
+          background-position: 0 -48px;
         }
       }
       
