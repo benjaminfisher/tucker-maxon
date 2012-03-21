@@ -73,10 +73,13 @@ footer{
 
       #donate {
         background: #E43728;
-        color: white;
-        font-size: 18px;
+        border: 1px solid rgba(#222, 0.75);
+        color: rgba(white, 0.8);
+        font-size: 24px;
         padding: 9px 15px;
+        text-transform: uppercase;
         @include border-radius($default_border_radius);
+        @include text-shadow(#000, 1, 1);
 
         &:hover {
           background: #E43728 * 1.3;

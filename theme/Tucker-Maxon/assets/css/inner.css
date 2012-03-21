@@ -224,15 +224,18 @@ footer section.top div.locate {
 }
 footer section.top div.locate #donate {
   background: #E43728;
-  color: white;
-  font-size: 18px;
+  border: 1px solid rgba(34, 34, 34, 0.75);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
   padding: 9px 15px;
+  text-transform: uppercase;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
   -ms-border-radius: 10px;
   -khtml-border-radius: 10px;
   border-radius: 10px;
+  text-shadow: black 1 1 1px;
 }
 footer section.top div.locate #donate:hover {
   background: #ff4734;
@@ -472,15 +475,18 @@ footer section.top div.locate {
 }
 footer section.top div.locate #donate {
   background: #E43728;
-  color: white;
-  font-size: 18px;
+  border: 1px solid rgba(34, 34, 34, 0.75);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
   padding: 9px 15px;
+  text-transform: uppercase;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   -o-border-radius: 10px;
   -ms-border-radius: 10px;
   -khtml-border-radius: 10px;
   border-radius: 10px;
+  text-shadow: black 1 1 1px;
 }
 footer section.top div.locate #donate:hover {
   background: #ff4734;
