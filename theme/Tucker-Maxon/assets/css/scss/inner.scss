@@ -238,3 +238,36 @@ div.content {
 }
 
 /* --------------------------- end calendar page -------------------*/
+
+/* ---------------------- community partnerships page -----------------------*/
+
+
+div.content.partnerships {
+  h3 {
+    padding-bottom: 1em;
+  }
+  ul {
+    @include clearfix;
+    list-style: none;
+    padding: 0;
+
+    li {
+      float: left;
+      padding: 0.5em 0 1em;
+      height: 150px;
+      width: 50%;
+      margin: 0;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      p {
+        text-align: center;
+        display: none;
+      }
+    }
+  }
+}
+
+/* ---------------------- end community partnerships page -------------------*/
