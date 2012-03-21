@@ -49,14 +49,14 @@
 				</ul>
 				<ul class="social">
 					<li class="heading"><a href="#">Follow us</a></li>
-					<li class="social_link"><a href="#">Facebook</a></li>
+					<li class="social_link"><a href="http://www.facebook.com/pages/Tucker-Maxon-School/54984880854">Facebook</a></li>
 					<li class="social_link"><a href="#">YouTube</a></li>
 				</ul>
 			</div>
 		</nav>
 
 		<div class="locate">
-			<a id="donate" href="javascript:void(0)">Donate</a>
+			<a id="donate" href="http://www.therightbank.com/home/home">Donate</a>
 			<section class="address">
 				<h3>The Tucker-Maxon School</h3>
 				<p>2860 SE Holgate Blvd.</p>
