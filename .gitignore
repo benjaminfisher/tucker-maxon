@@ -3,5 +3,6 @@ data
 .sass-cache/
 .sass-cache/*
 .htaccess
-.settings
+.settings/*
 .project
+config.rb
