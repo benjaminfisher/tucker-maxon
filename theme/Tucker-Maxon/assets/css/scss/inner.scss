@@ -127,6 +127,23 @@ div.content {
 
 /* --------------------------- end contact page -------------------*/
 
+/* ----------------- events page -------------------------------*/
+
+div.content {
+  ul.events_list_brief {
+    li {
+      span {
+        &.event_title {
+          a {}
+        }
+        &.times {}
+      }
+    }
+  }
+}
+
+/* --------------------------- end events page -------------------*/
+
 /* ----------------- calendar page -------------------------------*/
 
 div.content {

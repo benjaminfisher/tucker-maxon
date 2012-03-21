@@ -738,39 +738,41 @@ div.content p {
 }
 
 /* --------------------------- end contact page -------------------*/
+/* ----------------- events page -------------------------------*/
+/* --------------------------- end events page -------------------*/
 /* ----------------- calendar page -------------------------------*/
-/* line 133, scss/inner.scss */
+/* line 150, scss/inner.scss */
 div.content table.calendar {
   width: 100%;
 }
-/* line 136, scss/inner.scss */
+/* line 153, scss/inner.scss */
 div.content table.calendar a {
   color: #436199;
   font-weight: bold;
   text-decoration: underline;
 }
-/* line 141, scss/inner.scss */
+/* line 158, scss/inner.scss */
 div.content table.calendar a:hover {
   color: #5979B6;
   text-decoration: none;
 }
-/* line 147, scss/inner.scss */
+/* line 164, scss/inner.scss */
 div.content table.calendar caption {
   margin: 10px 0 20px;
 }
-/* line 150, scss/inner.scss */
+/* line 167, scss/inner.scss */
 div.content table.calendar caption span {
   display: block;
   position: relative;
 }
-/* line 154, scss/inner.scss */
+/* line 171, scss/inner.scss */
 div.content table.calendar caption span.previousmonth {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
 }
-/* line 160, scss/inner.scss */
+/* line 177, scss/inner.scss */
 div.content table.calendar caption span.currentmonth {
   font-size: 20px;
   font-weight: bold;
@@ -778,23 +780,23 @@ div.content table.calendar caption span.currentmonth {
   position: relative;
   z-index: 1;
 }
-/* line 167, scss/inner.scss */
+/* line 184, scss/inner.scss */
 div.content table.calendar caption span.nextmonth {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1000;
 }
-/* line 177, scss/inner.scss */
+/* line 194, scss/inner.scss */
 div.content table.calendar tr:first-child td {
   border-top: none;
 }
-/* line 179, scss/inner.scss */
+/* line 196, scss/inner.scss */
 div.content table.calendar tr th, div.content table.calendar tr td {
   text-align: center;
   width: 14%;
 }
-/* line 183, scss/inner.scss */
+/* line 200, scss/inner.scss */
 div.content table.calendar tr th {
   background: #5979B6;
   color: #fff;
@@ -802,7 +804,7 @@ div.content table.calendar tr th {
   height: 30px;
   margin-bottom: 5px;
 }
-/* line 190, scss/inner.scss */
+/* line 207, scss/inner.scss */
 div.content table.calendar tr th:first-child {
   -moz-border-radius: 10px 0 0 0;
   -webkit-border-radius: 10px 0 0 0;
@@ -811,7 +813,7 @@ div.content table.calendar tr th:first-child {
   -khtml-border-radius: 10px 0 0 0;
   border-radius: 10px 0 0 0;
 }
-/* line 193, scss/inner.scss */
+/* line 210, scss/inner.scss */
 div.content table.calendar tr th:last-child {
   -moz-border-radius: 0 10px 0 0;
   -webkit-border-radius: 0 10px 0 0;
@@ -820,12 +822,12 @@ div.content table.calendar tr th:last-child {
   -khtml-border-radius: 0 10px 0 0;
   border-radius: 0 10px 0 0;
 }
-/* line 197, scss/inner.scss */
+/* line 214, scss/inner.scss */
 div.content table.calendar tr td {
   border: 1px dotted #bbb;
   height: 75px;
 }
-/* line 200, scss/inner.scss */
+/* line 217, scss/inner.scss */
 div.content table.calendar tr td:nth-child(2n) {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -835,12 +837,12 @@ div.content table.calendar tr td:nth-child(2n) {
   border-radius: 5px;
   background: #f3f3f3;
 }
-/* line 205, scss/inner.scss */
+/* line 222, scss/inner.scss */
 div.content table.calendar tr td a {
   color: #D85045;
   text-decoration: underline;
 }
-/* line 211, scss/inner.scss */
+/* line 228, scss/inner.scss */
 div.content table.calendar tr:nth-child(2n) td {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -850,7 +852,7 @@ div.content table.calendar tr:nth-child(2n) td {
   border-radius: 5px;
   background: #f3f3f3;
 }
-/* line 214, scss/inner.scss */
+/* line 231, scss/inner.scss */
 div.content table.calendar tr:nth-child(2n) td:nth-child(2n) {
   background: #fff;
 }
