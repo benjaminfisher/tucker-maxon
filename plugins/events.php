@@ -3,7 +3,9 @@
  * Events
  *
  * @description   Simple event management
- * @version       2.1j
+ * @version       2.1.1j
+ * @author		  Douglas Reynolds
+ * @license		  https://github.com/dougrdotnet/get-simple-plugins/blob/master/LICENSE
  * @author        Sam Collett
  * @license       http://github.com/SamWM/get-simple-plugins/blob/master/LICENSE
  */
@@ -15,9 +17,9 @@ $thisfile=basename(__FILE__, ".php");
 register_plugin(
 	$thisfile, 
 	'Events',
-	'2.1j',
-	'Sam Collett',
-	'http://www.texotela.co.uk', 
+	'2.1.1j',
+	'Douglas Reynolds',
+	'http://douglasreynoldsconsulting.com', 
 	'Manage Events',
 	'pages',
 	'events_form'  
@@ -430,14 +432,14 @@ FORM;
 		echo $form;
 		
 		// convert $events_calendar_date to string (minus time), then back to int to get the numerical representation of the date for midnight on the same day
-		$current_events = $events_xml->xpath('//events/event[@event_date='.strtotime(gmdate('Y-m-d', $events_calendar_date)).']');
-		
+		//$current_events = $events_xml->xpath('//event_date='.strtotime(gmdate('Y-m-d', $events_calendar_date)).']');
+		$current_events = $events_xml->xpath('//event');
 		// old method (only works in English locale?)
 		//$current_events = $events_xml->xpath('//events/event[@event_date='.strtotime(date('j F Y', $events_calendar_date)).']');
 		$event_count = count($current_events);
 		if($event_count > 0)
 		{
-			events_sidebar($current_events);
+			events_sidebar($current_events, $events_calendar_date);
 		}
 	}
 	else
@@ -558,12 +560,11 @@ function event_caption_render($event_date)
 	return utf8_encode('<span class="previousmonth">'.$previous_month_link.'</span> <span class="currentmonth">'.gmstrftime('%B %Y', $event_date).'</span> <span class="nextmonth">'.$next_month_link.'</span>');
 }
 
-function events_sidebar($events = null)
+function events_sidebar($events = null, $event_date)
 {
 	global $events_base_url, $events_xml;
 	// preload data
 	events_preload();
-	
 	if($events == null)
 	{
 		$events = $events_xml->xpath('//events/event[@event_date='.strtotime(gmdate('Y-m-d', time())).']');
@@ -573,7 +574,9 @@ function events_sidebar($events = null)
 	{
 		foreach($events as $event)
 		{
-			add_action('pages-sidebar','createSideMenu',array('events&event_id='.$event['event_id'], 'Event: '.$event['event_title'])); 	
+			if(gmdate('j n Y', (int)$event['event_date']) == gmdate('j n Y', $event_date)) {
+				add_action('pages-sidebar','createSideMenu',array('events&event_id='.$event['event_id'], 'Event: '.$event['event_title']));
+			}
 		}
 	}
 }

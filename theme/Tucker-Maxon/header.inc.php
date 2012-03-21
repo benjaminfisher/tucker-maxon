@@ -42,7 +42,7 @@ if(return_page_slug() == 'index') {
 	<nav class="secondary">
 		<ul>
 			<li><a href="<?php get_site_url(); ?>">Home</a></li>
-			<li><a href="#">Donations</a></li>
+			<li><a href="http://www.therightbank.com/home/home">Donations</a></li>
 			<li><a href="<?php get_site_url(); ?>events">Events</a></li>
 			<li><a href="<?php get_site_url(); ?>calendar">Calendar</a></li>
 			<li><a href="<?php get_site_url(); ?>contact">Contact</a></li>
