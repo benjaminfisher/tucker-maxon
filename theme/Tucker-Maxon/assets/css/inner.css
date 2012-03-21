@@ -1,5 +1,6 @@
 /*** Google Fonts import ***/
 @import url("http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic");
+/* line 17, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,41 +22,50 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+/* line 20, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
+/* line 22, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
+/* line 24, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+/* line 26, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
+/* line 28, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
+/* line 101, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
+/* line 30, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
+/* line 114, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
+/* line 1, scss/_header.scss */
 header {
   height: 120px;
   margin: 1em auto 0px;
@@ -63,20 +73,25 @@ header {
   position: relative;
   width: 960px;
 }
+/* line 8, scss/_header.scss */
 header a.logo {
   float: left;
 }
+/* line 10, scss/_header.scss */
 header nav.global {
   bottom: -18px;
   position: absolute;
   right: 2px;
 }
+/* line 15, scss/_header.scss */
 header nav.global ul {
   list-style-type: none;
 }
+/* line 18, scss/_header.scss */
 header nav.global ul li {
   float: left;
 }
+/* line 20, scss/_header.scss */
 header nav.global ul li a {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -115,36 +130,43 @@ header nav.global ul li a {
   text-decoration: none;
   top: 0;
 }
+/* line 36, scss/_header.scss */
 header nav.global ul li a:hover {
   background-color: #e84c3f;
   top: -5px;
 }
+/* line 45, scss/_header.scss */
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
+/* line 51, scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
+/* line 54, scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
   font-family: "Alegreya SC";
   font-weight: bold;
   text-decoration: none;
 }
+/* line 60, scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
   color: #0751c0;
 }
 
+/* line 2, scss/_footer.scss */
 footer {
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
+/* line 7, scss/_footer.scss */
 footer section.top {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
@@ -162,43 +184,54 @@ footer section.top {
   border-top-right-radius: 10px;
   background-color: #fefbf2;
 }
+/* line 21, scss/_mixins.scss */
 footer section.top:before, footer section.top:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 footer section.top:after {
   clear: both;
 }
+/* line 12, scss/_footer.scss */
 footer section.top nav.tertiary {
   float: left;
   overflow: auto;
 }
+/* line 16, scss/_footer.scss */
 footer section.top nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
+/* line 20, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul {
   width: 192px;
 }
+/* line 23, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
+/* line 26, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
   text-decoration: underline;
 }
+/* line 29, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
+/* line 34, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
+/* line 38, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading a:hover {
   text-decoration: underline;
   color: #5979b6;
 }
+/* line 47, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -208,20 +241,24 @@ footer section.top nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
+/* line 56, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link a:hover {
   border: 1px solid rgba(229, 55, 40, 0.8);
   left: -1px;
   top: -1px;
 }
+/* line 62, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -56px 0;
 }
+/* line 68, scss/_footer.scss */
 footer section.top div.locate {
   float: right;
   padding-top: 50px;
   text-align: center;
   width: 300px;
 }
+/* line 74, scss/_footer.scss */
 footer section.top div.locate #donate {
   background: #E43728;
   color: white;
@@ -234,18 +271,22 @@ footer section.top div.locate #donate {
   -khtml-border-radius: 10px;
   border-radius: 10px;
 }
+/* line 81, scss/_footer.scss */
 footer section.top div.locate #donate:hover {
   background: #ff4734;
 }
+/* line 86, scss/_footer.scss */
 footer section.top div.locate section.address {
   padding-top: 35px;
 }
+/* line 89, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
+/* line 102, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -269,6 +310,7 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
+/* line 115, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   font-size: 12px;
@@ -296,15 +338,18 @@ footer p.copy {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
+/* line 27, scss/_global.scss */
 * {
   background-repeat: no-repeat;
   position: relative;
 }
 
+/* line 32, scss/_global.scss */
 html, body {
   width: 100%;
 }
 
+/* line 34, scss/_global.scss */
 body {
   background-color: #fefefe;
   color: #4c5a5e;
@@ -312,9 +357,11 @@ body {
   font-size: 16px;
   line-height: 150%;
 }
+/* line 41, scss/_global.scss */
 body a {
   color: #4c5a5e;
 }
+/* line 43, scss/_global.scss */
 body div.wrapper {
   background: #fefefe;
   clear: both;
@@ -324,60 +371,74 @@ body div.wrapper {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
+/* line 21, scss/_mixins.scss */
 body div.wrapper:before, body div.wrapper:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 body div.wrapper:after {
   clear: both;
 }
 
+/* line 57, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
+/* line 58, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
+/* line 59, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
+/* line 61, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;
 }
 
+/* line 63, scss/_global.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
+/* line 21, scss/_mixins.scss */
 .group:before, .group:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 .group:after {
   clear: both;
 }
 
+/* line 1, scss/_sidebar.scss */
 aside.sidebar {
   float: left;
   margin-right: 30px;
   width: 300px;
 }
+/* line 6, scss/_sidebar.scss */
 aside.sidebar ul {
   list-style-image: url("../images/star.png");
   list-style-position: inside;
 }
+/* line 10, scss/_sidebar.scss */
 aside.sidebar ul li {
   font: bold 1em "Myriad Pro", Arial, sans-serif;
 }
+/* line 13, scss/_sidebar.scss */
 aside.sidebar ul li a:hover {
   color: #5a97dc;
 }
+/* line 19, scss/_sidebar.scss */
 aside.sidebar img.hero {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -388,11 +449,13 @@ aside.sidebar img.hero {
   margin: 10px 0px;
 }
 
+/* line 2, scss/_footer.scss */
 footer {
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
+/* line 7, scss/_footer.scss */
 footer section.top {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
@@ -410,43 +473,54 @@ footer section.top {
   border-top-right-radius: 10px;
   background-color: #fefbf2;
 }
+/* line 21, scss/_mixins.scss */
 footer section.top:before, footer section.top:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 footer section.top:after {
   clear: both;
 }
+/* line 12, scss/_footer.scss */
 footer section.top nav.tertiary {
   float: left;
   overflow: auto;
 }
+/* line 16, scss/_footer.scss */
 footer section.top nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
+/* line 20, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul {
   width: 192px;
 }
+/* line 23, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
+/* line 26, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
   text-decoration: underline;
 }
+/* line 29, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
+/* line 34, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
+/* line 38, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading a:hover {
   text-decoration: underline;
   color: #5979b6;
 }
+/* line 47, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -456,20 +530,24 @@ footer section.top nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
+/* line 56, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link a:hover {
   border: 1px solid rgba(229, 55, 40, 0.8);
   left: -1px;
   top: -1px;
 }
+/* line 62, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -56px 0;
 }
+/* line 68, scss/_footer.scss */
 footer section.top div.locate {
   float: right;
   padding-top: 50px;
   text-align: center;
   width: 300px;
 }
+/* line 74, scss/_footer.scss */
 footer section.top div.locate #donate {
   background: #E43728;
   color: white;
@@ -482,18 +560,22 @@ footer section.top div.locate #donate {
   -khtml-border-radius: 10px;
   border-radius: 10px;
 }
+/* line 81, scss/_footer.scss */
 footer section.top div.locate #donate:hover {
   background: #ff4734;
 }
+/* line 86, scss/_footer.scss */
 footer section.top div.locate section.address {
   padding-top: 35px;
 }
+/* line 89, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
+/* line 102, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -517,6 +599,7 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
+/* line 115, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   font-size: 12px;
@@ -524,65 +607,80 @@ footer p.copy {
   padding: 5px 0 30px 0;
 }
 
+/* line 3, scss/inner.scss */
 header {
   padding-bottom: 1em;
 }
 
+/* line 6, scss/inner.scss */
 div.wrapper {
   border-top: 1px solid #e53728;
   padding-top: 1em;
 }
 
 /*-----------------Brandon Gerke InnerPage--------------- */
+/* line 13, scss/inner.scss */
 div.content {
   float: right;
   width: 620px;
 }
+/* line 16, scss/inner.scss */
 div.content section {
   width: 620px;
   margin: 0 auto;
 }
+/* line 21, scss/inner.scss */
 div.content ul {
   list-style-type: disc;
   padding: 10px;
 }
+/* line 24, scss/inner.scss */
 div.content ul li {
   padding: 5px;
 }
+/* line 29, scss/inner.scss */
 div.content h2 {
   color: #436199;
   font-family: "Alegreya SC", Times, serif;
   font-weight: bold;
 }
+/* line 34, scss/inner.scss */
 div.content h4 {
   font-family: "Alegreya SC", Times, serif;
   font-size: 24px;
   color: #e53728;
   padding: 10px 0px 10px 0px;
 }
+/* line 41, scss/inner.scss */
 div.content article {
   padding: 10px 0px 10px 0px;
 }
+/* line 45, scss/inner.scss */
 div.content p {
   padding: 10px 20px 10px 0px;
 }
 
 /*------------------END Brandon Gerke------------------------*/
 /* ----------------- contact page -------------------------------*/
+/* line 53, scss/inner.scss */
 #form1 {
   width: 620px;
   padding-top: 15px;
 }
+/* line 57, scss/inner.scss */
 #form1 label {
   float: left;
   color: #4c5a5e;
 }
+/* line 61, scss/inner.scss */
 #form1 div {
   margin-bottom: 20px;
 }
+/* line 63, scss/inner.scss */
 #form1 div label {
   width: 100px;
 }
+/* line 69, scss/inner.scss */
 #form1 div #name {
   width: 514px;
   height: 20px;
@@ -594,6 +692,7 @@ div.content p {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
+/* line 80, scss/inner.scss */
 #form1 div #email {
   width: 514px;
   height: 20px;
@@ -605,6 +704,7 @@ div.content p {
   -webkit-border-radius: 2px;
   border-radius: 2px;
 }
+/* line 91, scss/inner.scss */
 #form1 div #question {
   width: 510px;
   height: 200px;
@@ -616,6 +716,7 @@ div.content p {
   -o-border-radius: 2px;
   -webkit-border-radius: 2px;
 }
+/* line 103, scss/inner.scss */
 #form1 #submit_block {
   position: relative;
   left: 8px;
@@ -623,6 +724,7 @@ div.content p {
   margin-top: 20px;
   margin-left: 5px;
 }
+/* line 110, scss/inner.scss */
 #form1 #submit_block #Submit {
   width: 90px;
   height: 35px;
@@ -631,12 +733,132 @@ div.content p {
   background-color: #d85045;
   cursor: pointer;
 }
+/* line 119, scss/inner.scss */
 #form1 #submit_block #Submit:hover {
   background-color: #e27970;
 }
 
+/* line 126, scss/inner.scss */
 .address {
   text-align: center;
 }
 
 /* --------------------------- end contact page -------------------*/
+/* ----------------- calendar page -------------------------------*/
+/* line 133, scss/inner.scss */
+div.content table.calendar {
+  width: 100%;
+}
+/* line 136, scss/inner.scss */
+div.content table.calendar a {
+  color: #436199;
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* line 141, scss/inner.scss */
+div.content table.calendar a:hover {
+  color: #5979B6;
+  text-decoration: none;
+}
+/* line 147, scss/inner.scss */
+div.content table.calendar caption {
+  margin: 10px 0 20px;
+}
+/* line 150, scss/inner.scss */
+div.content table.calendar caption span {
+  display: block;
+  position: relative;
+}
+/* line 154, scss/inner.scss */
+div.content table.calendar caption span.previousmonth {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+/* line 160, scss/inner.scss */
+div.content table.calendar caption span.currentmonth {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+/* line 167, scss/inner.scss */
+div.content table.calendar caption span.nextmonth {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+/* line 177, scss/inner.scss */
+div.content table.calendar tr:first-child td {
+  border-top: none;
+}
+/* line 179, scss/inner.scss */
+div.content table.calendar tr th, div.content table.calendar tr td {
+  text-align: center;
+  width: 14%;
+}
+/* line 183, scss/inner.scss */
+div.content table.calendar tr th {
+  background: #5979B6;
+  color: #fff;
+  font-weight: bold;
+  height: 30px;
+  margin-bottom: 5px;
+}
+/* line 190, scss/inner.scss */
+div.content table.calendar tr th:first-child {
+  -moz-border-radius: 10px 0 0 0;
+  -webkit-border-radius: 10px 0 0 0;
+  -o-border-radius: 10px 0 0 0;
+  -ms-border-radius: 10px 0 0 0;
+  -khtml-border-radius: 10px 0 0 0;
+  border-radius: 10px 0 0 0;
+}
+/* line 193, scss/inner.scss */
+div.content table.calendar tr th:last-child {
+  -moz-border-radius: 0 10px 0 0;
+  -webkit-border-radius: 0 10px 0 0;
+  -o-border-radius: 0 10px 0 0;
+  -ms-border-radius: 0 10px 0 0;
+  -khtml-border-radius: 0 10px 0 0;
+  border-radius: 0 10px 0 0;
+}
+/* line 197, scss/inner.scss */
+div.content table.calendar tr td {
+  border: 1px dotted #bbb;
+  height: 75px;
+}
+/* line 200, scss/inner.scss */
+div.content table.calendar tr td:nth-child(2n) {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  background: #f3f3f3;
+}
+/* line 205, scss/inner.scss */
+div.content table.calendar tr td a {
+  color: #D85045;
+  text-decoration: underline;
+}
+/* line 211, scss/inner.scss */
+div.content table.calendar tr:nth-child(2n) td {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  background: #f3f3f3;
+}
+/* line 214, scss/inner.scss */
+div.content table.calendar tr:nth-child(2n) td:nth-child(2n) {
+  background: #fff;
+}
+
+/* --------------------------- end calendar page -------------------*/
