@@ -38,7 +38,7 @@ body{
   font-size: 16px;
   line-height: 150%;
   
-  a { color: $content_color; }
+  a { color: $content_color; outline:0; }
   
   div.wrapper{
     background: $bg_color;

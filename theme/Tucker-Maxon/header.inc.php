@@ -20,8 +20,8 @@ if(return_page_slug() == 'index') {
 
 	<?php get_header(); ?>
 
-	<script src="<?php get_theme_url(); ?>/assets/js/head.min.js" charset="utf-8"></script>
 	<link rel="stylesheet" href="<?php echo get_theme_url() ."/assets/css/$style_sheet"; ?>" media="screen" />
+	<script src="<?php get_theme_url(); ?>/assets/js/head.min.js" charset="utf-8"></script>
 	<?php get_i18n_gallery_header('slideshow'); ?> 
 </head>
 <body class="<?php get_page_slug(); ?>" >
