@@ -1,5 +1,6 @@
 /*** Google Fonts import ***/
 @import url("http://fonts.googleapis.com/css?family=Puritan:400,700,400italic,700italic|Alegreya+SC:400,400italic,700,700italic,900,900italic");
+/* line 17, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,41 +22,50 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+/* line 20, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 body {
   line-height: 1;
 }
 
+/* line 22, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
+/* line 24, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
+/* line 26, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
+/* line 28, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
+/* line 101, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
+/* line 30, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
+/* line 114, ../../../../../../../../Users/ng/.rvm/gems/ruby-1.9.2-p290/gems/compass-0.11.7/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
+/* line 1, scss/_header.scss */
 header {
   height: 120px;
   margin: 1em auto 0px;
@@ -63,20 +73,25 @@ header {
   position: relative;
   width: 960px;
 }
+/* line 8, scss/_header.scss */
 header a.logo {
   float: left;
 }
+/* line 10, scss/_header.scss */
 header nav.global {
   bottom: -18px;
   position: absolute;
   right: 2px;
 }
+/* line 15, scss/_header.scss */
 header nav.global ul {
   list-style-type: none;
 }
+/* line 18, scss/_header.scss */
 header nav.global ul li {
   float: left;
 }
+/* line 20, scss/_header.scss */
 header nav.global ul li a {
   -moz-border-radius-topleft: 10px;
   -webkit-border-top-left-radius: 10px;
@@ -115,36 +130,43 @@ header nav.global ul li a {
   text-decoration: none;
   top: 0;
 }
+/* line 36, scss/_header.scss */
 header nav.global ul li a:hover {
   background-color: #e84c3f;
   top: -5px;
 }
+/* line 45, scss/_header.scss */
 header nav.secondary {
   line-height: 2em;
   position: absolute;
   right: -15px;
   text-transform: uppercase;
 }
+/* line 51, scss/_header.scss */
 header nav.secondary ul li {
   float: left;
   margin-right: 1.5em;
 }
+/* line 54, scss/_header.scss */
 header nav.secondary ul li a {
   color: #043276;
   font-family: "Alegreya SC";
   font-weight: bold;
   text-decoration: none;
 }
+/* line 60, scss/_header.scss */
 header nav.secondary ul li a:hover {
   text-decoration: underline;
   color: #0751c0;
 }
 
+/* line 1, scss/_footer.scss */
 footer {
   clear: both;
   margin: 0 auto;
   width: 960px;
 }
+/* line 6, scss/_footer.scss */
 footer section.top {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
@@ -162,43 +184,54 @@ footer section.top {
   border-top-right-radius: 10px;
   background-color: #fcf4da;
 }
+/* line 21, scss/_mixins.scss */
 footer section.top:before, footer section.top:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 footer section.top:after {
   clear: both;
 }
+/* line 11, scss/_footer.scss */
 footer section.top nav.tertiary {
   float: left;
   overflow: auto;
 }
+/* line 15, scss/_footer.scss */
 footer section.top nav.tertiary div.column {
   float: left;
   margin-left: 1em;
 }
+/* line 19, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul {
   width: 192px;
 }
+/* line 22, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li:not(.heading) a {
   text-decoration: none;
 }
+/* line 25, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
   text-decoration: underline;
 }
+/* line 28, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading {
   font-family: 'Alegreya', serif;
   font-weight: bold;
   margin: 1em 0;
 }
+/* line 33, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading a {
   color: #436199;
   font-size: 1.222222em;
 }
+/* line 37, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul li.heading a:hover {
   text-decoration: underline;
   color: #5979b6;
 }
+/* line 46, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link a {
   background-image: url(../images/social_sprite.jpg);
   display: block;
@@ -208,20 +241,24 @@ footer section.top nav.tertiary div.column ul.social li.social_link a {
   text-indent: -9999em;
   width: 28px;
 }
+/* line 55, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link a:hover {
   border: 1px solid rgba(229, 55, 40, 0.8);
   left: -1px;
   top: -1px;
 }
+/* line 61, scss/_footer.scss */
 footer section.top nav.tertiary div.column ul.social li.social_link:nth-child(3) a {
   background-position: -56px 0;
 }
+/* line 67, scss/_footer.scss */
 footer section.top div.locate {
   float: right;
   padding-top: 50px;
   text-align: center;
   width: 300px;
 }
+/* line 73, scss/_footer.scss */
 footer section.top div.locate #donate {
   background-image: url(../images/donate.png);
   display: block;
@@ -231,18 +268,22 @@ footer section.top div.locate #donate {
   text-indent: -9999em;
   width: 167px;
 }
+/* line 82, scss/_footer.scss */
 footer section.top div.locate #donate:hover {
   background-position: 0 -48px;
 }
+/* line 87, scss/_footer.scss */
 footer section.top div.locate section.address {
   padding-top: 35px;
 }
+/* line 90, scss/_footer.scss */
 footer section.top div.locate section.address h3 {
   color: #e53728;
   font-family: "Alegreya SC Black";
   font-size: 1.2222222em;
   margin: 1em 0;
 }
+/* line 103, scss/_footer.scss */
 footer p.tagline {
   -moz-border-radius-bottomleft: 10px;
   -webkit-border-bottom-left-radius: 10px;
@@ -266,6 +307,7 @@ footer p.tagline {
   padding: 10px 0 0 30px;
   width: 930px;
 }
+/* line 116, scss/_footer.scss */
 footer p.copy {
   color: #e53728;
   font-size: 12px;
@@ -293,15 +335,18 @@ footer p.copy {
  * _footer_ contains styles for the site wide footer.  
  * 
  */
+/* line 27, scss/_global.scss */
 * {
   background-repeat: no-repeat;
   position: relative;
 }
 
+/* line 32, scss/_global.scss */
 html, body {
   width: 100%;
 }
 
+/* line 34, scss/_global.scss */
 body {
   background-color: #fefefe;
   color: #4c5a5e;
@@ -309,9 +354,16 @@ body {
   font-size: 16px;
   line-height: 150%;
 }
+/* line 41, scss/_global.scss */
 body a {
-  color: #4c5a5e;
+  color: #e84c3f;
+  text-decoration: none;
 }
+/* line 45, scss/_global.scss */
+body a:hover {
+  text-decoration: underline;
+}
+/* line 50, scss/_global.scss */
 body div.wrapper {
   background: #fefefe;
   clear: both;
@@ -321,45 +373,55 @@ body div.wrapper {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
+/* line 21, scss/_mixins.scss */
 body div.wrapper:before, body div.wrapper:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 body div.wrapper:after {
   clear: both;
 }
 
+/* line 64, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
+/* line 65, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
+/* line 66, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
+/* line 68, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;
 }
 
+/* line 70, scss/_global.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
+/* line 21, scss/_mixins.scss */
 .group:before, .group:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 .group:after {
   clear: both;
 }
 
+/* line 3, scss/main.scss */
 div.wrapper {
   clear: both;
   height: auto;
@@ -378,6 +440,7 @@ div.wrapper {
   -khtml-border-top-right-radius: 10px;
   border-top-right-radius: 10px;
 }
+/* line 11, scss/main.scss */
 div.wrapper #gallery-cycle-slideshow {
   margin-left: -3px;
   border: 3px solid #fff;
@@ -388,9 +451,11 @@ div.wrapper #gallery-cycle-slideshow {
   -khtml-border-radius: 30px;
   border-radius: 30px;
 }
+/* line 18, scss/main.scss */
 div.wrapper .gallery-cycle a {
   outline: none;
 }
+/* line 21, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-container {
   margin: 0;
   padding: 0;
@@ -411,6 +476,7 @@ div.wrapper .gallery-cycle .gallery-container {
   -khtml-border-bottom-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+/* line 32, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-text p {
   font-size: 1.2em;
   margin: 0;
@@ -432,6 +498,7 @@ div.wrapper .gallery-cycle .gallery-text p {
   -khtml-border-bottom-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+/* line 43, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-image {
   margin: 0;
   padding: 0;
@@ -447,6 +514,7 @@ div.wrapper .gallery-cycle .gallery-image {
   -khtml-border-radius: 10px;
   border-radius: 10px;
 }
+/* line 53, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-image img {
   margin: 0;
   padding: 0;
@@ -458,6 +526,7 @@ div.wrapper .gallery-cycle .gallery-image img {
   -khtml-border-radius: 10px;
   border-radius: 10px;
 }
+/* line 61, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control {
   position: absolute;
   margin: 0;
@@ -465,12 +534,14 @@ div.wrapper .gallery-cycle .gallery-control {
   border: 0 none;
   z-index: 10000;
 }
+/* line 68, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-dots a {
   font-size: 40px;
   border: 0 none;
   text-decoration: none;
   color: #999999;
 }
+/* line 74, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-numbers a {
   font-size: 18px;
   border: 0 none;
@@ -481,6 +552,7 @@ div.wrapper .gallery-cycle .gallery-control-numbers a {
   border: 1px solid #999999;
   background-color: white;
 }
+/* line 84, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control-images a {
   background: url(../../plugins/i18n_gallery/images/cycle/pagination.png);
   width: 12px;
@@ -492,13 +564,16 @@ div.wrapper .gallery-cycle .gallery-control-images a {
   display: block;
   float: left;
 }
+/* line 95, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control a:hover {
   color: #666666;
 }
+/* line 98, scss/main.scss */
 div.wrapper .gallery-cycle .gallery-control a.activeSlide {
   color: #C5400E;
   background-position: 0 -12px;
 }
+/* line 102, scss/main.scss */
 div.wrapper .gallery-cycle .prev {
   top: 0;
   left: -30px;
@@ -508,6 +583,7 @@ div.wrapper .gallery-cycle .prev {
   position: absolute;
   z-index: 9000;
 }
+/* line 111, scss/main.scss */
 div.wrapper .gallery-cycle .prev img {
   left: 0px;
   margin-top: -30px;
@@ -515,6 +591,7 @@ div.wrapper .gallery-cycle .prev img {
   top: 50%;
   /*display: none;*/
 }
+/* line 118, scss/main.scss */
 div.wrapper .gallery-cycle .next {
   top: 0;
   right: -30px;
@@ -524,23 +601,28 @@ div.wrapper .gallery-cycle .next {
   position: absolute;
   z-index: 9000;
 }
+/* line 127, scss/main.scss */
 div.wrapper .gallery-cycle .next img {
   right: 0px;
   margin-top: -30px;
   position: absolute;
   top: 50%;
 }
+/* line 133, scss/main.scss */
 div.wrapper .gallery-cycle .prev:hover img, div.wrapper .gallery-cycle .next:hover img {
   display: block;
 }
+/* line 137, scss/main.scss */
 div.wrapper section.home.group {
   padding: 30px 0 85px;
 }
+/* line 140, scss/main.scss */
 div.wrapper section.home.group h2 {
   font-family: 'Alegreya SC', Times, serif;
   font-weight: 600;
   line-height: 150%;
 }
+/* line 146, scss/main.scss */
 div.wrapper section.home.group a.learn-more {
   background: url("../images/more_sprite.png") right -26px no-repeat;
   color: #e53728;
@@ -549,43 +631,52 @@ div.wrapper section.home.group a.learn-more {
   padding-right: 25px;
   text-decoration: none;
 }
+/* line 154, scss/main.scss */
 div.wrapper section.home.group a.learn-more:hover {
   background: url("../images/more_sprite.png") right 1px no-repeat;
 }
+/* line 158, scss/main.scss */
 div.wrapper section.home.group div.mission {
   float: left;
   padding: 0 30px;
   width: 570px;
 }
+/* line 163, scss/main.scss */
 div.wrapper section.home.group div.mission h2 {
   color: #436199;
   font-size: 30px;
   padding-bottom: 10px;
 }
+/* line 170, scss/main.scss */
 div.wrapper section.home.group div.events {
   float: right;
   margin-top: 10px;
   padding-left: 30px;
   width: 270px;
 }
+/* line 176, scss/main.scss */
 div.wrapper section.home.group div.events h2 {
   color: #E53728;
   font-size: 18px;
   margin-bottom: 5px;
   padding-bottom: 10px;
 }
+/* line 185, scss/main.scss */
 div.wrapper section#schoolFeature {
   margin: 0 30px;
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
 }
+/* line 21, scss/_mixins.scss */
 div.wrapper section#schoolFeature:before, div.wrapper section#schoolFeature:after {
   content: "";
   display: table;
 }
+/* line 25, scss/_mixins.scss */
 div.wrapper section#schoolFeature:after {
   clear: both;
 }
+/* line 192, scss/main.scss */
 div.wrapper div.gradeLevel, div.wrapper div.gradeLevel a {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -599,18 +690,23 @@ div.wrapper div.gradeLevel, div.wrapper div.gradeLevel a {
   float: left;
   margin-right: 30px;
 }
+/* line 200, scss/main.scss */
 div.wrapper div.gradeLevel:last-child, div.wrapper div.gradeLevel a:last-child {
   margin-right: 0;
 }
+/* line 204, scss/main.scss */
 div.wrapper div.gradeLevel#preschool, div.wrapper div.gradeLevel a#preschool {
   background: url(../images/home/preschool.jpg) 0 0 no-repeat;
 }
+/* line 205, scss/main.scss */
 div.wrapper div.gradeLevel#kindergarten, div.wrapper div.gradeLevel a#kindergarten {
   background: url(../images/home/kindergarten.jpg) 0 0 no-repeat;
 }
+/* line 206, scss/main.scss */
 div.wrapper div.gradeLevel#elementary, div.wrapper div.gradeLevel a#elementary {
   background: url(../images/home/elementary.jpg) 0 0 no-repeat;
 }
+/* line 208, scss/main.scss */
 div.wrapper div.gradeLevel h1, div.wrapper div.gradeLevel a h1 {
   border: 0px;
   color: #436199;
@@ -622,6 +718,7 @@ div.wrapper div.gradeLevel h1, div.wrapper div.gradeLevel a h1 {
   text-align: center;
   width: 100%;
 }
+/* line 220, scss/main.scss */
 div.wrapper div.gradeLevel a, div.wrapper div.gradeLevel a a {
   -moz-transition-property: all;
   -webkit-transition-property: all;
@@ -636,6 +733,7 @@ div.wrapper div.gradeLevel a, div.wrapper div.gradeLevel a a {
   -o-transition-timing-function: ease-in;
   transition-timing-function: ease-in;
 }
+/* line 226, scss/main.scss */
 div.wrapper div.gradeLevel a:hover, div.wrapper div.gradeLevel a a:hover {
   border: 3px solid rgba(229, 55, 40, 0.6);
   height: 214px;

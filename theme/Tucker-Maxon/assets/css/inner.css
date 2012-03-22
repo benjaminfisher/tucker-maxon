@@ -356,9 +356,14 @@ body {
 }
 /* line 41, scss/_global.scss */
 body a {
-  color: #4c5a5e;
+  color: #e84c3f;
+  text-decoration: none;
 }
-/* line 43, scss/_global.scss */
+/* line 45, scss/_global.scss */
+body a:hover {
+  text-decoration: underline;
+}
+/* line 50, scss/_global.scss */
 body div.wrapper {
   background: #fefefe;
   clear: both;
@@ -378,30 +383,30 @@ body div.wrapper:after {
   clear: both;
 }
 
-/* line 57, scss/_global.scss */
+/* line 64, scss/_global.scss */
 h2, h3 {
   color: #e53728;
   line-height: 150%;
 }
 
-/* line 58, scss/_global.scss */
+/* line 65, scss/_global.scss */
 h2 {
   font-size: 1.875em;
 }
 
-/* line 59, scss/_global.scss */
+/* line 66, scss/_global.scss */
 h3 {
   font-size: 1.125em;
   margin-bottom: 5px;
 }
 
-/* line 61, scss/_global.scss */
+/* line 68, scss/_global.scss */
 a {
   color: #e53728;
   text-decoration: none;
 }
 
-/* line 63, scss/_global.scss */
+/* line 70, scss/_global.scss */
 .group {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
@@ -739,40 +744,54 @@ div.content p {
 
 /* --------------------------- end contact page -------------------*/
 /* ----------------- events page -------------------------------*/
+/* line 136, scss/inner.scss */
+div.content ul.events_list_brief li span.event_title, div.content ul.events_list li span.event_title, div.feature ul.events_list_brief li span.event_title, div.feature ul.events_list li span.event_title {
+  color: #436199;
+  display: block;
+  font-weight: bold;
+}
+/* line 142, scss/inner.scss */
+div.content ul.events_list_brief li span.times, div.content ul.events_list li span.times, div.feature ul.events_list_brief li span.times, div.feature ul.events_list li span.times {
+  color: #777;
+  font-size: 12px;
+  display: block;
+  line-height: 1;
+}
+
 /* --------------------------- end events page -------------------*/
 /* ----------------- calendar page -------------------------------*/
-/* line 150, scss/inner.scss */
+/* line 158, scss/inner.scss */
 div.content table.calendar {
   width: 100%;
 }
-/* line 153, scss/inner.scss */
+/* line 161, scss/inner.scss */
 div.content table.calendar a {
   color: #436199;
   font-weight: bold;
   text-decoration: underline;
 }
-/* line 158, scss/inner.scss */
+/* line 166, scss/inner.scss */
 div.content table.calendar a:hover {
   color: #5979B6;
   text-decoration: none;
 }
-/* line 164, scss/inner.scss */
+/* line 172, scss/inner.scss */
 div.content table.calendar caption {
   margin: 10px 0 20px;
 }
-/* line 167, scss/inner.scss */
+/* line 175, scss/inner.scss */
 div.content table.calendar caption span {
   display: block;
   position: relative;
 }
-/* line 171, scss/inner.scss */
+/* line 179, scss/inner.scss */
 div.content table.calendar caption span.previousmonth {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
 }
-/* line 177, scss/inner.scss */
+/* line 185, scss/inner.scss */
 div.content table.calendar caption span.currentmonth {
   font-size: 20px;
   font-weight: bold;
@@ -780,23 +799,23 @@ div.content table.calendar caption span.currentmonth {
   position: relative;
   z-index: 1;
 }
-/* line 184, scss/inner.scss */
+/* line 192, scss/inner.scss */
 div.content table.calendar caption span.nextmonth {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1000;
 }
-/* line 194, scss/inner.scss */
+/* line 202, scss/inner.scss */
 div.content table.calendar tr:first-child td {
   border-top: none;
 }
-/* line 196, scss/inner.scss */
+/* line 204, scss/inner.scss */
 div.content table.calendar tr th, div.content table.calendar tr td {
   text-align: center;
   width: 14%;
 }
-/* line 200, scss/inner.scss */
+/* line 208, scss/inner.scss */
 div.content table.calendar tr th {
   background: #5979B6;
   color: #fff;
@@ -804,7 +823,7 @@ div.content table.calendar tr th {
   height: 30px;
   margin-bottom: 5px;
 }
-/* line 207, scss/inner.scss */
+/* line 215, scss/inner.scss */
 div.content table.calendar tr th:first-child {
   -moz-border-radius: 10px 0 0 0;
   -webkit-border-radius: 10px 0 0 0;
@@ -813,7 +832,7 @@ div.content table.calendar tr th:first-child {
   -khtml-border-radius: 10px 0 0 0;
   border-radius: 10px 0 0 0;
 }
-/* line 210, scss/inner.scss */
+/* line 218, scss/inner.scss */
 div.content table.calendar tr th:last-child {
   -moz-border-radius: 0 10px 0 0;
   -webkit-border-radius: 0 10px 0 0;
@@ -822,12 +841,12 @@ div.content table.calendar tr th:last-child {
   -khtml-border-radius: 0 10px 0 0;
   border-radius: 0 10px 0 0;
 }
-/* line 214, scss/inner.scss */
+/* line 222, scss/inner.scss */
 div.content table.calendar tr td {
   border: 1px dotted #bbb;
   height: 75px;
 }
-/* line 217, scss/inner.scss */
+/* line 225, scss/inner.scss */
 div.content table.calendar tr td:nth-child(2n) {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -837,12 +856,12 @@ div.content table.calendar tr td:nth-child(2n) {
   border-radius: 5px;
   background: #f3f3f3;
 }
-/* line 222, scss/inner.scss */
+/* line 230, scss/inner.scss */
 div.content table.calendar tr td a {
   color: #D85045;
   text-decoration: underline;
 }
-/* line 228, scss/inner.scss */
+/* line 236, scss/inner.scss */
 div.content table.calendar tr:nth-child(2n) td {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
@@ -852,18 +871,18 @@ div.content table.calendar tr:nth-child(2n) td {
   border-radius: 5px;
   background: #f3f3f3;
 }
-/* line 231, scss/inner.scss */
+/* line 239, scss/inner.scss */
 div.content table.calendar tr:nth-child(2n) td:nth-child(2n) {
   background: #fff;
 }
 
 /* --------------------------- end calendar page -------------------*/
 /* ---------------------- community partnerships page -----------------------*/
-/* line 246, scss/inner.scss */
+/* line 254, scss/inner.scss */
 div.content.partnerships h3 {
   padding-bottom: 1em;
 }
-/* line 249, scss/inner.scss */
+/* line 257, scss/inner.scss */
 div.content.partnerships ul {
   zoom: 1;
   /* For IE 6/7 (trigger hasLayout) */
@@ -879,7 +898,7 @@ div.content.partnerships ul:before, div.content.partnerships ul:after {
 div.content.partnerships ul:after {
   clear: both;
 }
-/* line 254, scss/inner.scss */
+/* line 262, scss/inner.scss */
 div.content.partnerships ul li {
   float: left;
   padding: 0.5em 0 1em;
@@ -887,12 +906,12 @@ div.content.partnerships ul li {
   width: 50%;
   margin: 0;
 }
-/* line 261, scss/inner.scss */
+/* line 269, scss/inner.scss */
 div.content.partnerships ul li img {
   display: block;
   margin: 0 auto;
 }
-/* line 265, scss/inner.scss */
+/* line 273, scss/inner.scss */
 div.content.partnerships ul li p {
   text-align: center;
   display: none;

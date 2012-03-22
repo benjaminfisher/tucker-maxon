@@ -38,7 +38,14 @@ body{
   font-size: 16px;
   line-height: 150%;
   
-  a { color: $content_color; }
+  a { 
+    color: lighten($tm_red, 5%);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
   
   div.wrapper{
     background: $bg_color;

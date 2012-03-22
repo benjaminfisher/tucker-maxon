@@ -129,14 +129,22 @@ div.content {
 
 /* ----------------- events page -------------------------------*/
 
-div.content {
-  ul.events_list_brief {
+div.content, div.feature {
+  ul.events_list_brief, ul.events_list {
     li {
       span {
         &.event_title {
+          color: #436199;
+          display: block;
+          font-weight: bold;
           a {}
         }
-        &.times {}
+        &.times {
+          color: #777;
+          font-size: 12px;
+          display: block;
+          line-height: 1;
+        }
       }
     }
   }
