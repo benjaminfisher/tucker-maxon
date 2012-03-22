@@ -745,13 +745,13 @@ div.content p {
 /* --------------------------- end contact page -------------------*/
 /* ----------------- events page -------------------------------*/
 /* line 136, scss/inner.scss */
-div.content ul.events_list_brief li span.event_title, div.content ul.events_list li span.event_title, div.feature ul.events_list_brief li span.event_title, div.feature ul.events_list li span.event_title {
+div.content ul.events_list_brief li span.event_title, div.content ul.events_list li span.event_title {
   color: #436199;
   display: block;
   font-weight: bold;
 }
 /* line 142, scss/inner.scss */
-div.content ul.events_list_brief li span.times, div.content ul.events_list li span.times, div.feature ul.events_list_brief li span.times, div.feature ul.events_list li span.times {
+div.content ul.events_list_brief li span.times, div.content ul.events_list li span.times {
   color: #777;
   font-size: 12px;
   display: block;

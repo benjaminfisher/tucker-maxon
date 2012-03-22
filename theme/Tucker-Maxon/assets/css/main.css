@@ -739,3 +739,18 @@ div.wrapper div.gradeLevel a:hover, div.wrapper div.gradeLevel a a:hover {
   height: 214px;
   width: 274px;
 }
+
+/* events sidebar style */
+/* line 241, scss/main.scss */
+div.feature ul.events_list_brief li span.event_title, div.feature ul.events_list li span.event_title {
+  color: #436199;
+  display: block;
+  font-weight: bold;
+}
+/* line 247, scss/main.scss */
+div.feature ul.events_list_brief li span.times, div.feature ul.events_list li span.times {
+  color: #777;
+  font-size: 12px;
+  display: block;
+  line-height: 1;
+}
