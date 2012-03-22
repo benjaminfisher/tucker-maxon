@@ -130,13 +130,21 @@ div.content {
 /* ----------------- events page -------------------------------*/
 
 div.content {
-  ul.events_list_brief {
+  ul.events_list_brief, ul.events_list {
     li {
       span {
         &.event_title {
+          color: #436199;
+          display: block;
+          font-weight: bold;
           a {}
         }
-        &.times {}
+        &.times {
+          color: #777;
+          font-size: 12px;
+          display: block;
+          line-height: 1;
+        }
       }
     }
   }
@@ -238,3 +246,36 @@ div.content {
 }
 
 /* --------------------------- end calendar page -------------------*/
+
+/* ---------------------- community partnerships page -----------------------*/
+
+
+div.content.partnerships {
+  h3 {
+    padding-bottom: 1em;
+  }
+  ul {
+    @include clearfix;
+    list-style: none;
+    padding: 0;
+
+    li {
+      float: left;
+      padding: 0.5em 0 1em;
+      height: 150px;
+      width: 50%;
+      margin: 0;
+
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      p {
+        text-align: center;
+        display: none;
+      }
+    }
+  }
+}
+
+/* ---------------------- end community partnerships page -------------------*/

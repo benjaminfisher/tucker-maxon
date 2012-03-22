@@ -311,8 +311,12 @@ body {
   line-height: 150%;
 }
 body a {
-  color: #4c5a5e;
+  color: #e84c3f;
+  text-decoration: none;
   outline: 0;
+}
+body a:hover {
+  text-decoration: underline;
 }
 body div.wrapper {
   background: #fefefe;
@@ -642,4 +646,17 @@ div.wrapper div.gradeLevel a:hover, div.wrapper div.gradeLevel a a:hover {
   border: 3px solid rgba(229, 55, 40, 0.6);
   height: 214px;
   width: 274px;
+}
+
+/* events sidebar style */
+div.feature ul.events_list_brief li span.event_title, div.feature ul.events_list li span.event_title {
+  color: #436199;
+  display: block;
+  font-weight: bold;
+}
+div.feature ul.events_list_brief li span.times, div.feature ul.events_list li span.times {
+  color: #777;
+  font-size: 12px;
+  display: block;
+  line-height: 1;
 }

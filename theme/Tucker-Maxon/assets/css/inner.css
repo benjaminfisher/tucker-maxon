@@ -311,8 +311,12 @@ body {
   line-height: 150%;
 }
 body a {
-  color: #4c5a5e;
+  color: #e84c3f;
+  text-decoration: none;
   outline: 0;
+}
+body a:hover {
+  text-decoration: underline;
 }
 body div.wrapper {
   background: #fefefe;
@@ -637,6 +641,18 @@ div.content p {
 
 /* --------------------------- end contact page -------------------*/
 /* ----------------- events page -------------------------------*/
+div.content ul.events_list_brief li span.event_title, div.content ul.events_list li span.event_title {
+  color: #436199;
+  display: block;
+  font-weight: bold;
+}
+div.content ul.events_list_brief li span.times, div.content ul.events_list li span.times {
+  color: #777;
+  font-size: 12px;
+  display: block;
+  line-height: 1;
+}
+
 /* --------------------------- end events page -------------------*/
 /* ----------------- calendar page -------------------------------*/
 div.content table.calendar {
@@ -738,3 +754,37 @@ div.content table.calendar tr:nth-child(2n) td:nth-child(2n) {
 }
 
 /* --------------------------- end calendar page -------------------*/
+/* ---------------------- community partnerships page -----------------------*/
+div.content.partnerships h3 {
+  padding-bottom: 1em;
+}
+div.content.partnerships ul {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+  list-style: none;
+  padding: 0;
+}
+div.content.partnerships ul:before, div.content.partnerships ul:after {
+  content: "";
+  display: table;
+}
+div.content.partnerships ul:after {
+  clear: both;
+}
+div.content.partnerships ul li {
+  float: left;
+  padding: 0.5em 0 1em;
+  height: 150px;
+  width: 50%;
+  margin: 0;
+}
+div.content.partnerships ul li img {
+  display: block;
+  margin: 0 auto;
+}
+div.content.partnerships ul li p {
+  text-align: center;
+  display: none;
+}
+
+/* ---------------------- end community partnerships page -------------------*/

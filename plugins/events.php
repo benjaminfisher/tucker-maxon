@@ -668,7 +668,7 @@ function events_list($events = null, $base_url = null, $date_heading_tag = 'h2')
 				$current_content = $event->xpath('content');
 				if(count($current_content) > 0)
 				{
-					$content = '<br /><span class="event_details">'.$current_content[0][0].'</span>';
+					$content = '<span class="event_details">'.$current_content[0][0].'</span>';
 				}
 				$event_title = $event['event_title'];
 			}
