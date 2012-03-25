@@ -48,7 +48,7 @@
 					<?php get_i18n_navigation('services', 1, 99, I18N_SHOW_NORMAL); ?>
 				</ul>
 				<ul class="social">
-					<li class="heading"><a href="#">Follow us</a></li>
+					<li class="heading">Follow us</li>
 					<li class="social_link"><a href="http://www.facebook.com/pages/Tucker-Maxon-School/54984880854">Facebook</a></li>
 					<li class="social_link"><a href="http://www.youtube.com/user/tuckermaxon">YouTube</a></li>
 				</ul>

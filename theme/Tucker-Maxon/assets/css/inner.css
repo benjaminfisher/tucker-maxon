@@ -188,8 +188,7 @@ footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
   text-decoration: underline;
 }
 footer section.top nav.tertiary div.column ul li.heading {
-  font-family: 'Alegreya', serif;
-  font-weight: bold;
+  font: bold 1.1em 'Alegreya', serif;
   margin: 1em 0;
 }
 footer section.top nav.tertiary div.column ul li.heading a {
@@ -438,8 +437,7 @@ footer section.top nav.tertiary div.column ul li:not(.heading) a:hover {
   text-decoration: underline;
 }
 footer section.top nav.tertiary div.column ul li.heading {
-  font-family: 'Alegreya', serif;
-  font-weight: bold;
+  font: bold 1.1em 'Alegreya', serif;
   margin: 1em 0;
 }
 footer section.top nav.tertiary div.column ul li.heading a {

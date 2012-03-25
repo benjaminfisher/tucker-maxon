@@ -15,7 +15,7 @@ get_i18n_gallery('slideshow'); ?>
   <div class="mission">
     <h2>Welcome</h2>
     <p><?php get_component('mission_statement'); ?></p>
-    <a href="javascript:void(0)" class="learn-more">Learn More</a>
+    <a href="<?php get_site_url(); ?>about" class="learn-more">Learn More</a>
   </div>
 
   <div class="events">
@@ -23,7 +23,7 @@ get_i18n_gallery('slideshow'); ?>
     <article>
       <?php echo '<h2>Upcoming events</h2><div class="feature">'.upcoming_events($SITEURL.'events/', 'strong').'</div>' ?>
     </article>
-    <a href="javascript:void(0)" class="learn-more">Learn More</a>
+    <a href="<?php get_site_url(); ?>events" class="learn-more">View More</a>
   </div>
 </section>
 
