@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<item><pubDate>Wed, 14 Mar 2012 19:20:31 -0700</pubDate><creDate>Wed, 14 Mar 2012 19:20:31 -0700</creDate><title><![CDATA[Home]]></title><url><![CDATA[index]]></url><meta><![CDATA[Tucker-Maxon, Portland Oregon]]></meta><metad><![CDATA[]]></metad><template><![CDATA[home.php]]></template><content><![CDATA[&lt;!-- INDEX BODY CONTENT: JAKE R. --&gt;
+<item><pubDate>Sat, 24 Mar 2012 18:25:23 -0700</pubDate><title><![CDATA[Home]]></title><url><![CDATA[index]]></url><meta><![CDATA[Tucker-Maxon, Portland Oregon]]></meta><metad><![CDATA[]]></metad><menu><![CDATA[Home]]></menu><menuStatus><![CDATA[]]></menuStatus><template><![CDATA[home.php]]></template><parent><![CDATA[]]></parent><content><![CDATA[&lt;!-- INDEX BODY CONTENT: JAKE R. --&gt;
 &lt;section id=&quot;schoolFeature&quot;&gt;
-	&lt;div class=&quot;gradeLevel&quot; id=&quot;preschool&quot;&gt;
+	&lt;div class=&quot;gradeLevel&quot; id=&quot;preschool&quot;&gt;&lt;a href=&quot;/programs/preschool&quot;&gt;&lt;/a&gt;
 		&lt;h1&gt;
 			Preschool&lt;/h1&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;gradeLevel&quot; id=&quot;kindergarten&quot;&gt;
+	&lt;div class=&quot;gradeLevel&quot; id=&quot;kindergarten&quot;&gt;&lt;a href=&quot;/programs/kindergarten&quot;&gt;&lt;/a&gt;
 		&lt;h1&gt;
 			Kindergarten&lt;/h1&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;gradeLevel&quot; id=&quot;elementary&quot;&gt;
+	&lt;div class=&quot;gradeLevel&quot; id=&quot;elementary&quot;&gt;&lt;a href=&quot;/programs/elementary&quot;&gt;&lt;/a&gt;
 		&lt;h1&gt;
 			Elementary&lt;/h1&gt;
 	&lt;/div&gt;
 &lt;/section&gt;
-&lt;!-- END: schoolCategory --&gt;]]></content><author><![CDATA[nate]]></author><hero><![CDATA[]]></hero><helplert><![CDATA[test]]></helplert><user><![CDATA[nate]]></user><hero><![CDATA[]]></hero><helplert><![CDATA[test]]></helplert><parent><![CDATA[]]></parent><menuOrder><![CDATA[4]]></menuOrder><menu><![CDATA[]]></menu><menuStatus><![CDATA[]]></menuStatus><private><![CDATA[]]></private></item>
+&lt;!-- END: schoolCategory --&gt;]]></content><private><![CDATA[]]></private><author><![CDATA[admin]]></author><hero><![CDATA[]]></hero><hero><![CDATA[]]></hero><creDate>Sat, 24 Mar 2012 18:25:23 -0700</creDate><user><![CDATA[admin]]></user><menuOrder><![CDATA[4]]></menuOrder></item>

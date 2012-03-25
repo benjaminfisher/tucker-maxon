@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<channel><item><desc><![CDATA[hero]]></desc><label><![CDATA[]]></label><type><![CDATA[image]]></type></item></channel>
+<channel><item><desc><![CDATA[hero]]></desc><label><![CDATA[Image]]></label><type><![CDATA[image]]></type><value><![CDATA[/data/uploads/images/classroom_1.jpg]]></value></item><item><desc><![CDATA[alert]]></desc><label><![CDATA[Home Alert]]></label><type><![CDATA[text]]></type></item></channel>
